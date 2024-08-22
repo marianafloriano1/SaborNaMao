@@ -1,7 +1,27 @@
 {
   "expo": {
-    "name": "SaborNaMao",
-    "slug": "SaborNaMao",
-    "version": "1.0.0"
+    "name": "sabor_na_mao",
+    "slug": "snack-1026af29-62af-4e52-be5e-4d17cbc582b2",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
   }
 }
