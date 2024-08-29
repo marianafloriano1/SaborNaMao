@@ -16,7 +16,6 @@ const firebaseConfig = {
 
 
 
-
 import Login from './src/pages/login';
 import Home from './src/pages/home';
 import Almoco_domingo from './src/pages/almoco_domingo';
@@ -102,13 +101,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="login" component={Login} options={{ headerStyle:{backgroundColor:'#fae7c4',},headerTitleStyle:{color:'#fae7c4'}, headerTintColor: '#fae7c4'}}/>
+      <Stack.Screen name="login" component={Login} options={{ headerShown: false }}/>
 
-        <Stack.Screen name="cadastro" component={Cadastro} options={{ headerStyle:{backgroundColor:'#fae7c4',},headerTitleStyle:{color:'#fae7c4'}, headerTintColor: '#fae7c4'}}/>
+        <Stack.Screen name="cadastro" component={Cadastro} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="home" component={Home}  options={{title:'', headerStyle:{backgroundColor:'#ffebc6',headerTitleStyle:{color:'#ffebc6'}}, headerTintColor: '#ffebc6'}}/>
+         <Stack.Screen name="home" component={Home}  options={{ headerShown: false }}/>
          
-               <Stack.Screen name="perfil" component={Perfil} options={{ headerStyle:{backgroundColor:'#DBE1F8',},headerTitleStyle:{color:'#DBE1F8'}}}/>
+               <Stack.Screen name="perfil" component={Perfil} options={{ headerShown: false }}/>
 
                
 

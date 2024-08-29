@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-       <ScrollView showsVerticalScrollIndicator={false}>
+       <ScrollView contentContainerStyle={styles.scroll}>
 
       <View
         style={{

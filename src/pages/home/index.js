@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TextInput, Text, Pressable, Image, TouchableOpacity,ScrollView} from 'react-native';
+import { View, StyleSheet, TextInput, Text, Pressable, Image, TouchableOpacity,ScrollView, ImageBackground} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function App() {
   const nav = useNavigation();
 
   return (
+    
+<ImageBackground 
+      source={require('../../img/fundo.png')} 
+      style={styles.background}
+    >
+
+
     <ScrollView>
     <View style={styles.container}>
     
@@ -17,11 +24,7 @@ export default function App() {
      </TouchableOpacity>
      </View>
 
-      <TextInput
-        style={styles.input}
-        placeholder="pesquisar receitas..."
-        underlineColorAndroid={'transparent'}
-      />
+      
 
 
       <View
@@ -29,26 +32,31 @@ export default function App() {
           flex: 1,
           flexDirection: 'row',
           justifyContent: 'space-evenly',
-          marginTop: 30,
+          marginTop: 140,
+          
         }}>
-        <Pressable
+          
+          <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#FF8F7E',
             marginRight:20,
             borderRadius: 25,
             marginBottom:20,
+            
            
           }}
           onPress={() => nav.navigate('noite_garotas')}>
           <Text style={styles.texto}>Noite De Snacks</Text>
         </Pressable>
+          
+        
 
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#657AB6',
             borderRadius: 25,
            
@@ -66,8 +74,8 @@ export default function App() {
         }}>
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#F1C744',
             borderRadius: 25,
             marginRight:20,
@@ -79,8 +87,8 @@ export default function App() {
 
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#A4BE89',
             borderRadius: 25,
            
@@ -98,8 +106,8 @@ export default function App() {
         }}>
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#EB7732',
             borderRadius: 25,
             marginRight:20,
@@ -111,8 +119,8 @@ export default function App() {
 
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#C13050',
             borderRadius: 25,
        
@@ -132,8 +140,8 @@ export default function App() {
         }}>
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#766daa',
             borderRadius: 25,
             marginRight:20,
@@ -145,8 +153,8 @@ export default function App() {
 
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#f04f30',
             borderRadius: 25,
             marginBottom:20,
@@ -167,8 +175,8 @@ export default function App() {
         }}>
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#a2cdba',
             borderRadius: 25,
             marginRight:20,
@@ -180,8 +188,8 @@ export default function App() {
 
         <Pressable
           style={{
-            width: 175,
-            height: 175,
+            width: 155,
+            height: 155,
             backgroundColor: '#9f87b4',
             borderRadius: 25,
             marginBottom:10,
@@ -196,25 +204,27 @@ export default function App() {
 
     </View>
     </ScrollView>
-
+</ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffebc6',
+    
   },
   imagem:{
     width: 45,
     height: 45,
+    marginTop: 40,
   },
+  
   texto2: {
     fontSize: 24,
     color: 'white',
     textAlign: 'center',
     justifyContent: 'center',
-    marginTop: 70,
+    marginTop: 60,
     fontWeight: 'bold',
     
   },
@@ -223,7 +233,7 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     justifyContent: 'center',
-    marginTop: 60,
+    marginTop: 50,
     fontWeight: 'bold',
   },
   texto: {
@@ -231,8 +241,9 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     justifyContent: 'center',
-    marginTop: 60,
+    marginTop: 50,
     fontWeight: 'bold',
+    
     
   },
   input: {
