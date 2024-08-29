@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Image, StyleSheet, TextInput, Text, Pressable, Modal, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Image, StyleSheet, TextInput, Text, Pressable, Modal, Animated, ImageBackground } from 'react-native';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 const LoginScreen = ({ navigation }) => {
@@ -8,12 +8,19 @@ const LoginScreen = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const auth = getAuth();
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   const handleLogin = () => {
+    if (email === "" || password === "") {
+      setAlertMessage("Preencha todos os campos!");
+      setModalVisible(true);
+      return;
+    }
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential.user);
-        setAlertMessage("Você foi logado com sucesso!");
+        setAlertMessage("Sucesso!");
         setModalVisible(true);
       })
       .catch((error) => {
@@ -23,10 +30,39 @@ const LoginScreen = ({ navigation }) => {
       });
   };
 
+  useEffect(() => {
+    if (modalVisible) {
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+
+      const timer = setTimeout(() => {
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }).start(() => {
+          setModalVisible(false);
+          if (alertMessage === "Sucesso!") {
+            navigation.navigate('home');
+          }
+        });
+      }, 1300);
+
+      return () => clearTimeout(timer);
+    }
+  }, [modalVisible, fadeAnim, navigation, alertMessage]);
+
   return (
+    <ImageBackground  source={require('../../img/fundo_login.png')} style={styles.container}>
+
+   
     <View style={styles.container}>
       <View>
-        <Image style={styles.img} source={require('../../img/sucesso.png')} />
+        <Image style={styles.img} source={require('../../img/logo_teste.png')} />
+        <Text style={styles.texto3}>Bem vindo ao Sabor Na Mão! Faça o login e descubra novas receitas.</Text>
       </View>
 
       <TextInput
@@ -55,71 +91,78 @@ const LoginScreen = ({ navigation }) => {
         <Text style={styles.botaoTexto}>Entrar</Text>
       </Pressable>
 
-      
       <Modal
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => setModalVisible(false)}
-        animationType="slide"
+        animationType="none"
       >
         <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
+          <Animated.View style={[styles.modalContent, { opacity: fadeAnim }]}>
+            {alertMessage === "Sucesso!" && (
+              <Image source={require('../../img/check.png')} style={styles.checkImage} />
+            )}
             <Text style={styles.modalText}>{alertMessage}</Text>
-            <TouchableOpacity
-              style={styles.modalButton}
-              onPress={() => {
-                setModalVisible(false);
-                navigation.navigate('home');
-              }}
-            >
-              <Text style={styles.modalButtonText}>OK</Text>
-            </TouchableOpacity>
-          </View>
+          </Animated.View>
         </View>
       </Modal>
     </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffeecf',
     alignItems: 'center',
-    justifyContent: 'center',
+    
   },
+  texto3:{
+    color:'#FF8F7E',
+    fontSize: 22,
+    marginTop:30,
+    marginLeft: 50
+    },
   botao: {
-    backgroundColor: '#C6D3A1',
-    borderRadius: 5,
+    backgroundColor: 'transparent',
+    borderRadius: 17,
     height: 40,
     width: 135,
     padding: 5,
     top: 90,
     left: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#fff'
   },
   botaoTexto: {
     color: '#FF8F7E',
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 17,
-    top: 2,
   },
   input: {
     height: 50,
     width: 346,
-    borderWidth: 3,
-    borderColor: '#C6D3A1',
-    marginTop: 45,
+    borderWidth: 2,
+    borderColor: '#fff',
+    marginTop: 55,
     fontSize: 16,
-    padding: 15,
+    padding: 10,
     borderRadius: 15,
     color: '#FF8F7E',
   },
+  checkImage: {
+    width: 70,
+    height: 70,
+    marginBottom: 10,
+  },
   img: {
-    width: 350,
-    height: 250,
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: 180,
+    height: 180,
+   marginTop: 90,
+   marginLeft:120
   },
   texto: {
     fontSize: 20,
@@ -137,32 +180,22 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
   modalContent: {
     backgroundColor: 'white',
     padding: 20,
     borderRadius: 10,
-    width: 300,
+    width: 200,
     alignItems: 'center',
+    height: 140,
   },
   modalText: {
     fontSize: 18,
     marginBottom: 20,
-  },
-  modalButton: {
-    backgroundColor: '#C6D3A1',
-    borderRadius: 5,
-    padding: 10,
-    width: '100%',
-    alignItems: 'center',
-  },
-  modalButtonText: {
-    color: '#FF8F7E',
-    fontWeight: 'bold',
-    fontSize: 16,
+    color: '#565656',
+    marginTop: 5
+
   },
 });
 

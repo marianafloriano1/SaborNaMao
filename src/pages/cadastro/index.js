@@ -1,34 +1,78 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, TextInput, Text, Pressable, Modal, Alert, Image } from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { View, StyleSheet, TextInput, Text, Pressable, Modal, Animated, Image, Alert } from 'react-native';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getDatabase, ref, set } from 'firebase/database'; // Importando funções para salvar no Firebase Database
 
 const SignupScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState(""); // Mensagem de alerta
   const auth = getAuth();
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   const handleSignup = () => {
+    if (email === "" || password === "") {
+      setAlertMessage("Preencha todos os campos");
+      setModalVisible(true);
+      return;
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log('Usuário cadastrado:', userCredential.user);
-        setModalVisible(true); // Exibir o modal de sucesso
+        
+        // Gerar nome de usuário aleatório
+        const randomName = 'User' + Math.floor(Math.random() * 10000);
+
+        // Salvar o nome gerado no banco de dados
+        const db = getDatabase();
+        set(ref(db, 'users/' + userCredential.user.uid), {
+          username: randomName,
+          email: email
+        });
+
+        setAlertMessage("Cadastrado!");
+        setModalVisible(true);
       })
       .catch((error) => {
         console.error('Erro ao cadastrar:', error.message);
-        Alert.alert('Erro', error.message);
+        setAlertMessage(error.message); // Defina a mensagem de erro
+        setModalVisible(true);
       });
   };
 
-  const handleCloseModal = () => {
-    setModalVisible(false);
-    navigation.navigate('login'); // Navegar para a tela de login
-  };
+  useEffect(() => {
+    if (modalVisible) {
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+
+      const timer = setTimeout(() => {
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }).start(() => {
+          setModalVisible(false);
+          if (alertMessage === "Cadastrado!") {
+            navigation.navigate('login');
+          }
+        });
+      }, 1300);
+
+      return () => clearTimeout(timer);
+    }
+  }, [modalVisible, fadeAnim, navigation, alertMessage]);
 
   return (
     <View style={styles.container}>
-
-      <Image style={styles.img} source={require('../../img/sucesso.png')} />
+     
+      <View>
+        <Image style={styles.img} source={require('../../img/sucesso.png')} />
+      </View>
 
       <View style={styles.inputContainer}>
         <Text style={styles.texto_cima}>Digite Seu Email:</Text>
@@ -59,46 +103,47 @@ const SignupScreen = ({ navigation }) => {
       <Modal
         transparent={true}
         visible={modalVisible}
-        animationType="slide"
+        animationType="none" // Desativar a animação padrão do modal
         onRequestClose={() => setModalVisible(false)}
       >
         <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalText}>Cadastro realizado com sucesso!</Text>
-            <Pressable style={styles.modalButton} onPress={handleCloseModal}>
-              <Text style={styles.modalButtonText}>OK</Text>
-            </Pressable>
-          </View>
+          <Animated.View style={[styles.modalContent, { opacity: fadeAnim }]}>
+            {/* Exibe a imagem de sucesso somente quando a mensagem não é de erro */}
+            {alertMessage === "Cadastrado!" && (
+              <Image source={require('../../img/check.png')} style={styles.checkImage} />
+            )}
+            <Text style={styles.modalText}>{alertMessage}</Text>
+          </Animated.View>
         </View>
       </Modal>
-      
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fae7c4',
+    backgroundColor: '#ffeecf',
     padding: 20,
   },
-  botao:{
-    backgroundColor:'#FF8F7E',
-    borderRadius:5,
+  botao: {
+    backgroundColor: '#FF8F7E',
+    borderRadius: 5,
     height: 40,
     width: 135,
-    padding:5,
-    top:98,
-    left:240,
+    padding: 5,
+    top: 98,
+    left: 240,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   botaoTexto: {
     color: '#C6D3A1',
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 17,
-    top: 3,
-  },
 
+  },
   input: {
     height: 50,
     borderWidth: 2,
@@ -115,7 +160,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 20,
   },
-
   texto_cima: {
     color: '#C6D3A1',
     fontWeight: 'bold',
@@ -135,25 +179,22 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContent: {
-    width: '80%',
     backgroundColor: 'white',
     padding: 20,
     borderRadius: 10,
+    width: 200,
     alignItems: 'center',
+    height: 140,
   },
   modalText: {
     fontSize: 18,
     marginBottom: 20,
+    color: '#565656',
   },
-  modalButton: {
-    backgroundColor: '#FF8F7E',
-    padding: 10,
-    borderRadius: 5,
-  },
-  modalButtonText: {
-    color: '#C6D3A1',
-    fontWeight: 'bold',
-    fontSize: 17,
+  checkImage: {
+    width: 70,
+    height: 70,
+    marginBottom: 10,
   },
 });
 

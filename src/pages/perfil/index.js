@@ -1,96 +1,158 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, Image, Pressable} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Image, Pressable, TextInput, Modal, FlatList, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getAuth, updateProfile, signOut } from 'firebase/auth';
 
-export default function App() {
-   const nav = useNavigation();
-   
+export default function ProfileScreen() {
+  const nav = useNavigation();
+  const auth = getAuth();
+  const user = auth.currentUser;
+
+  const [editing, setEditing] = useState(false);
+  const [username, setUsername] = useState(user?.displayName || 'Nome do Usuário');
+  const [selectedIcon, setSelectedIcon] = useState(require('../../img/perfil.png')); // ícone padrão
+  const [modalVisible, setModalVisible] = useState(false);
+
+  // Lista de ícones
+  const iconList = [
+    { id: '1', source: require('../../img/icon1.png') },
+    { id: '2', source: require('../../img/icon2.png') },
+    { id: '3', source: require('../../img/icon3.png') },
+    { id: '4', source: require('../../img/icon4.png') },
+    { id: '5', source: require('../../img/icon5.png') },
+  ];
+
+  useEffect(() => {
+    const loadSettings = async () => {
+      try {
+        if (user) {
+          const storedUsername = await AsyncStorage.getItem(user.email + '_username');
+          if (storedUsername) setUsername(storedUsername);
+
+          // Gere um ícone aleatório baseado no email
+          const index = Math.abs(emailHashCode(user.email)) % iconList.length;
+          const icon = iconList[index];
+          setSelectedIcon(icon.source);
+
+          // Salvar ícone no AsyncStorage
+          await AsyncStorage.setItem(user.email + '_selectedIconId', icon.id);
+        }
+      } catch (error) {
+        console.error("Failed to load settings", error);
+      }
+    };
+
+    loadSettings();
+  }, [user]);
+
+  const emailHashCode = (email) => {
+    let hash = 0;
+    for (let i = 0; i < email.length; i++) {
+      const char = email.charCodeAt(i);
+      hash = (hash << 5) - hash + char;
+      hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+  };
+
+  const handleEditPress = () => {
+    setEditing(true);
+  };
+
+  const handleSavePress = async () => {
+    setEditing(false);
+    try {
+      if (user) {
+        await updateProfile(user, { displayName: username });
+        await AsyncStorage.setItem(user.email + '_username', username);
+      }
+    } catch (error) {
+      console.error("Failed to save settings", error);
+    }
+  };
+
+  const handleGoToLogin = async () => {
+    try {
+      await signOut(auth);
+      // Remover configurações do AsyncStorage
+      await AsyncStorage.removeItem(user.email + '_username');
+      await AsyncStorage.removeItem(user.email + '_selectedIconId');
+      nav.navigate('login'); // Navegar para a tela de login
+    } catch (error) {
+      console.error("Failed to sign out", error);
+    }
+  };
+
   return (
     <View style={styles.container}>
-     <View style={styles.editarimg}>
-      <Image style={styles.imgperfil} source={require('../../img/perfil.png')}></Image> 
-      <Text style = {styles.textoBase}>Nome do Usúario</Text>
-      
+      <View style={styles.profileInfo}>
+        <Image source={selectedIcon} style={styles.profileIcon} />
+        <TextInput
+          style={styles.usernameInput}
+          value={username}
+          onChangeText={setUsername}
+          editable={editing}
+        />
       </View>
-
-      <View style = {styles.traco2}>
-        <Text style={styles.traco}>___________________________</Text>
-      </View>
-        
-      
-    <View style={styles.editarimagem} >
-    <Pressable onPress={() => nav.navigate('kids')}>
-<Image style={styles.imgheranca} source={require('../../img/heranca.png')} ></Image>
-</Pressable>
-
+      <Pressable onPress={handleEditPress} style={styles.editButton}>
+        <Text style={styles.buttonText}>Editar</Text>
+      </Pressable>
+      {editing && (
+        <Pressable onPress={handleSavePress} style={styles.saveButton}>
+          <Text style={styles.buttonText}>Salvar</Text>
+        </Pressable>
+      )}
+      <Pressable onPress={handleGoToLogin} style={styles.logoutButton}>
+        <Text style={styles.buttonText}>Sair</Text>
+      </Pressable>
     </View>
-
-    <View style={styles.editartexto2}>
-    <Text style={styles.texto2}>Adicionar Herança!</Text>   
-    </View>
-  
-
-
-      </View>
-
-
-      
-    
-    
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E5E8F3',
-    
+    padding: 16,
   },
- 
-textoBase:{
-    color: '#565656',
-    fontSize: 24,
-    marginTop: 50,
-    marginLeft: 22,
-},
-imgperfil: {
-  width: 80,
-  height: 80,
-  marginTop: 30,
-},
-traco: {
-  color: '#6A759B',
-   fontSize: 32,
-   marginTop: 15,
-},
-traco2: {
-  color: '#6A759B',
-   fontSize: 32,
-   marginTop: 15,
-   alignItems: 'center'
-},
-imgheranca:{
-  width: 150,
-  height: 150,
-  marginTop: 50,
-  
-},
-editarimagem:{
-  alignItems: 'center'
-},
-editarimg:{
-  flexDirection: 'row'
-},
-texto2:{
-  color: '#565656',
-  fontSize: 22,
-  marginTop: 15,
-
-},
-editartexto2:{
-alignItems: 'center'
-},
-
+  profileInfo: {
+    alignItems: 'center',
+  },
+  profileIcon: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 16,
+  },
+  usernameInput: {
+    fontSize: 18,
+    textAlign: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    marginBottom: 16,
+  },
+  editButton: {
+    backgroundColor: '#007BFF',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  saveButton: {
+    backgroundColor: '#28A745',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  logoutButton: {
+    backgroundColor: '#DC3545',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 16,
+  },
 });
