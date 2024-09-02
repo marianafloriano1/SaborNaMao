@@ -2,8 +2,8 @@
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -12,8 +12,11 @@
     "@react-native-firebase/analytics": "^20.4.0",
     "@react-native-firebase/app": "^20.4.0",
     "@react-native-firebase/auth": "^20.4.0",
-    "@react-navigation/native": "*",
+    "@react-navigation/drawer": "^6.7.2",
+    "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "*",
+    "@react-navigation/stack": "^6.4.1",
+    "axios": "^1.7.7",
     "body-parser": "^1.20.2",
     "expo": "~51.0.28",
     "expo-status-bar": "~1.12.1",
@@ -22,13 +25,17 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.5",
+    "react-native-gesture-handler": "^2.19.0",
     "react-native-paper": "4.9.2",
+    "react-native-reanimated": "^3.15.1",
     "react-native-safe-area-context": "4.10.5",
-    "react-native-screens": "3.31.1",
+    "react-native-screens": "^3.31.1",
     "react-native-web": "~0.19.10"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true
+  "private": true,
+  "name": "SaborNaMao",
+  "version": "1.0.0"
 }

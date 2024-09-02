@@ -41,7 +41,7 @@ const LoginScreen = ({ navigation }) => {
       const timer = setTimeout(() => {
         Animated.timing(fadeAnim, {
           toValue: 0,
-          duration: 300,
+          duration: 200,
           useNativeDriver: true,
         }).start(() => {
           setModalVisible(false);
@@ -49,7 +49,7 @@ const LoginScreen = ({ navigation }) => {
             navigation.navigate('home');
           }
         });
-      }, 1300);
+      }, 1200);
 
       return () => clearTimeout(timer);
     }
@@ -62,7 +62,7 @@ const LoginScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View>
         <Image style={styles.img} source={require('../../img/logo_teste.png')} />
-        <Text style={styles.texto3}>Bem vindo ao Sabor Na Mão! Faça o login e descubra novas receitas.</Text>
+        <Text style={styles.texto_cima}>Faça o login!</Text>
       </View>
 
       <TextInput
@@ -117,12 +117,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     
   },
-  texto3:{
-    color:'#FF8F7E',
-    fontSize: 22,
-    marginTop:30,
-    marginLeft: 50
-    },
+  texto_cima: {
+    color: '#FF8F7E',
+    fontWeight: 'bold',
+    fontSize: 24,
+    marginTop: 22,
+    marginLeft:30
+  },
   botao: {
     backgroundColor: 'transparent',
     borderRadius: 17,
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
     left: 120,
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
+    borderWidth: 3,
     borderColor: '#fff'
   },
   botaoTexto: {
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     width: 346,
-    borderWidth: 2,
+    borderWidth: 3,
     borderColor: '#fff',
     marginTop: 55,
     fontSize: 16,
@@ -162,7 +163,7 @@ const styles = StyleSheet.create({
     width: 180,
     height: 180,
    marginTop: 90,
-   marginLeft:120
+   marginLeft:10
   },
   texto: {
     fontSize: 20,
@@ -180,7 +181,9 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContent: {
     backgroundColor: 'white',
@@ -194,8 +197,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 20,
     color: '#565656',
-    marginTop: 5
-
+  },
+  checkImage: {
+    width: 70,
+    height: 70,
+    marginBottom: 10,
   },
 });
 

@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyAWP7H2QGzrWc8Kv0J5ZkE6LWxG6T9bcR0",
   authDomain: "sabornamao-87507.firebaseapp.com",
@@ -13,9 +14,7 @@ const firebaseConfig = {
   appId: "1:877144288806:web:210a093781fa8218fd80e7",
   measurementId: "G-2G2R6WDP8P"
 };
-
-
-
+import Heranca from './src/pages/heranca';
 import Login from './src/pages/login';
 import Home from './src/pages/home';
 import Almoco_domingo from './src/pages/almoco_domingo';
@@ -96,19 +95,20 @@ const auth = getAuth(app);
 
 const Stack = createNativeStackNavigator();
 
+
+
+
 export default function App() {
  
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen name="login" component={Login} options={{ headerShown: false }}/>
-
-        <Stack.Screen name="cadastro" component={Cadastro} options={{ headerShown: false }}/>
-
-         <Stack.Screen name="home" component={Home}  options={{ headerShown: false }}/>
-         
-               <Stack.Screen name="perfil" component={Perfil} options={{ headerShown: false }}/>
-
+        <Stack.Navigator>
+          
+          <Stack.Screen name="login" component={Login} options={{ headerShown: false }} />
+          <Stack.Screen name="home" component={Home} options={{ headerShown: false }} />
+          <Stack.Screen name="perfil" component={Perfil} options={{ headerShown: false }} />
+          <Stack.Screen name="cadastro" component={Cadastro} options={{ headerShown: false }} />
+          <Stack.Screen name="heranca" component={Heranca} options={{ headerShown: false }} />
                
 
          <Stack.Screen name="almoco_domingo" component={Almoco_domingo} options={{title:'Almoço de Domingo', headerStyle:{backgroundColor:'#ffe697',},headerTitleStyle:{color:'#dfc265', fontWeight:'bold', fontSize:22}, headerTintColor: '#dfc265'}}/>
@@ -266,10 +266,9 @@ export default function App() {
 
 <Stack.Screen name="sopa" component={Sopa} options={{title:'', headerStyle:{backgroundColor:'#c1dbcf',},headerTitleStyle:{color:'#c1dbcf',fontWeight: 'bold',}}}/>
 
-        
+         
       </Stack.Navigator>
-
-
+     
     </NavigationContainer>
   );
 }

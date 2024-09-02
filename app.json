@@ -18,13 +18,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.marianafloriano.snack1026af2962af4e52be5e4d17cbc582b2"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ecd449c6-2d3f-41e2-a8b4-ee76abd1cf49"
+      }
     }
-    
   }
-  
-
 }

@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+
 import { View, StyleSheet, TextInput, Text, Pressable, Image, TouchableOpacity,ScrollView, ImageBackground} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { FontAwesome } from '@expo/vector-icons';
+import Menu from '../../components/Menu';
+import React, { useState } from 'react';
+
 
 export default function App() {
+  const [menuVisible, setMenuVisible] = useState(false);
   const nav = useNavigation();
 
   return (
@@ -12,20 +17,18 @@ export default function App() {
       style={styles.background}
     >
 
-
+<Menu />
     <ScrollView>
     <View style={styles.container}>
-    
-     <View style={styles.imagemcontainer}>
-     <TouchableOpacity activeOpacity={0.5} onPress={() => nav.navigate('perfil')}>
+    <Menu visible={menuVisible} onClose={() => setMenuVisible(false)} />
 
-     <Image style={styles.imagem} source={require('../../img/perfil.png')}/>
+  <Pressable onPress={() => setMenuVisible(true)} style={styles.menuButton}>
+    <FontAwesome name="bars" size={24} color="#C6D3A1" />
+  </Pressable>
 
-     </TouchableOpacity>
-     </View>
-
-      
-
+    <TouchableOpacity  onPress={() => nav.navigate('perfil')} style={styles.saveButton}>
+                <FontAwesome name="plus" size={24} color="#C6D3A1" />
+              </TouchableOpacity>
 
       <View
         style={{
@@ -227,6 +230,18 @@ const styles = StyleSheet.create({
     marginTop: 60,
     fontWeight: 'bold',
     
+  },
+  saveButton: {
+    position: 'absolute',
+    right: 10,
+    top: 100,
+    zIndex: 1,
+  },
+  menuButton:{
+    right: 10,
+    left:20,
+    top: 90,
+    zIndex: 1,
   },
    texto3: {
     fontSize: 24,

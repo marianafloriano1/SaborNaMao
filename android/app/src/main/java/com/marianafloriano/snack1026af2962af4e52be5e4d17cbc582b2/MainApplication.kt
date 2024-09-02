@@ -1,4 +1,4 @@
-package com.sabornamao
+package com.marianafloriano.snack1026af2962af4e52be5e4d17cbc582b2
 
 import android.app.Application
 import android.content.res.Configuration

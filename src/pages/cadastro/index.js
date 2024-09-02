@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, StyleSheet, TextInput, Text, Pressable, Modal, Animated, Image, Alert } from 'react-native';
+import { View, StyleSheet, TextInput, Text, Pressable, Modal, Animated, Image, Alert, ImageBackground } from 'react-native';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getDatabase, ref, set } from 'firebase/database'; // Importando funções para salvar no Firebase Database
 
@@ -68,17 +68,18 @@ const SignupScreen = ({ navigation }) => {
   }, [modalVisible, fadeAnim, navigation, alertMessage]);
 
   return (
+    <ImageBackground  source={require('../../img/fundo_login.png')} style={styles.container}>
     <View style={styles.container}>
      
       <View>
-        <Image style={styles.img} source={require('../../img/sucesso.png')} />
+        <Image style={styles.img} source={require('../../img/logo_teste.png')} />
       </View>
-
+      <Text style={styles.texto_cima}>Cadastre-se!</Text>
       <View style={styles.inputContainer}>
-        <Text style={styles.texto_cima}>Digite Seu Email:</Text>
+        
         <TextInput
           style={styles.input}
-          placeholder=""
+          placeholder="Crie um email"
           value={email}
           onChangeText={setEmail}
           keyboardType="email-address"
@@ -86,10 +87,10 @@ const SignupScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.inputContainer}>
-        <Text style={styles.texto_cima2}>Crie uma senha:</Text>
+        
         <TextInput
           style={styles.input}
-          placeholder=""
+          placeholder="Crie uma senha"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -117,25 +118,28 @@ const SignupScreen = ({ navigation }) => {
         </View>
       </Modal>
     </View>
+</ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffeecf',
-    padding: 20,
+    alignItems: 'center',
+    
   },
   botao: {
-    backgroundColor: '#FF8F7E',
-    borderRadius: 5,
+    backgroundColor: 'transparent',
+    borderRadius: 17,
     height: 40,
     width: 135,
     padding: 5,
-    top: 98,
-    left: 240,
+    top: 90,
+    left: 120,
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 3,
+    borderColor: '#fff'
   },
   botaoTexto: {
     color: '#C6D3A1',
@@ -146,32 +150,29 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    borderWidth: 2,
-    borderColor: '#FF8F7E',
+    width: 346,
+    borderWidth: 3,
+    borderColor: '#fff',
+    marginTop: 55,
     fontSize: 16,
-    padding: 15,
+    padding: 10,
     borderRadius: 15,
-    color: '#FF8F7E',
-    marginTop: 10,
+    color: '#C6D3A1',
+    fontWeight: 'bold'
   },
   img: {
-    width: 350,
-    height: 250,
-    alignSelf: 'center',
-    marginBottom: 20,
+    width: 180,
+    height: 180,
+   marginTop: 90,
+   marginLeft:10
   },
   texto_cima: {
     color: '#C6D3A1',
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 24,
     marginTop: 22
   },
-  texto_cima2: {
-    color: '#C6D3A1',
-    fontWeight: 'bold',
-    fontSize: 18,
-    marginTop: 22,
-  },
+  
   modalContainer: {
     flex: 1,
     justifyContent: 'center',

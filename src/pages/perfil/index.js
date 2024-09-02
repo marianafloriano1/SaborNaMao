@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, Pressable, TextInput, Modal, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Pressable, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getAuth, updateProfile, signOut } from 'firebase/auth';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function ProfileScreen() {
   const nav = useNavigation();
@@ -10,9 +11,8 @@ export default function ProfileScreen() {
   const user = auth.currentUser;
 
   const [editing, setEditing] = useState(false);
-  const [username, setUsername] = useState(user?.displayName || 'Nome do Usuário');
+  const [username, setUsername] = useState(user?.displayName || 'Altere seu nome');
   const [selectedIcon, setSelectedIcon] = useState(require('../../img/perfil.png')); // ícone padrão
-  const [modalVisible, setModalVisible] = useState(false);
 
   // Lista de ícones
   const iconList = [
@@ -85,28 +85,36 @@ export default function ProfileScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.profileInfo}>
-        <Image source={selectedIcon} style={styles.profileIcon} />
-        <TextInput
-          style={styles.usernameInput}
-          value={username}
-          onChangeText={setUsername}
-          editable={editing}
-        />
-      </View>
-      <Pressable onPress={handleEditPress} style={styles.editButton}>
-        <Text style={styles.buttonText}>Editar</Text>
-      </Pressable>
-      {editing && (
-        <Pressable onPress={handleSavePress} style={styles.saveButton}>
-          <Text style={styles.buttonText}>Salvar</Text>
+    <ImageBackground source={require('../../img/fundo_perfil.png')} style={styles.container}>
+      <View style={styles.container}>
+        <View style={styles.profileInfo}>
+          <Image source={selectedIcon} style={styles.profileIcon} />
+          <View style={styles.usernameContainer}>
+            <TextInput
+              style={styles.usernameInput}
+              value={username}
+              onChangeText={setUsername}
+              editable={editing}
+            />
+            {!editing ? (
+              <TouchableOpacity onPress={handleEditPress} style={styles.editButton}>
+                <FontAwesome name="edit" size={24} color="#FF8F7E" />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={handleSavePress} style={styles.saveButton}>
+                <FontAwesome name="save" size={24} color="#C6D3A1" />
+              </TouchableOpacity>
+            )}
+          </View>
+        </View>
+        <Pressable onPress={handleGoToLogin} style={styles.logoutButton}>
+          <Text style={styles.buttonText}>Sair</Text>
         </Pressable>
-      )}
-      <Pressable onPress={handleGoToLogin} style={styles.logoutButton}>
-        <Text style={styles.buttonText}>Sair</Text>
-      </Pressable>
-    </View>
+        <TouchableOpacity  onPress={() => nav.navigate('heranca')} style={styles.saveButton}>
+                <FontAwesome name="plus" size={24} color="#C6D3A1" />
+              </TouchableOpacity>
+      </View>
+    </ImageBackground>
   );
 }
 
@@ -119,37 +127,43 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   profileIcon: {
-    width: 100,
-    height: 100,
+    width: 180,
+    height: 180,
     borderRadius: 50,
     marginBottom: 16,
+    marginTop:130,
+    
+  },
+  usernameContainer: {
+    position: 'relative',
+    width: '100%',
+    alignItems: 'center',
   },
   usernameInput: {
     fontSize: 18,
     textAlign: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
     marginBottom: 16,
+    marginTop: 20,
+    
   },
   editButton: {
-    backgroundColor: '#007BFF',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-    marginBottom: 8,
+    position: 'absolute',
+    right: 90,
+    top: 20,
+    zIndex: 1,
   },
   saveButton: {
-    backgroundColor: '#28A745',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-    marginBottom: 8,
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    zIndex: 1,
   },
   logoutButton: {
     backgroundColor: '#DC3545',
     padding: 10,
     borderRadius: 5,
     alignItems: 'center',
+    marginTop: 20,
   },
   buttonText: {
     color: '#FFF',
