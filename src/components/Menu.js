@@ -12,27 +12,27 @@ const Menu = ({ visible, onClose }) => {
   return (
     <View style={styles.sidebar}>
       <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-        <FontAwesome name="times" size={24} color="#C6D3A1" />
+        <FontAwesome name="arrow-circle-left" size={28} color="#FF8F7E" />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.sidebarItem}
         onPress={() => navigation.navigate('home')}
       >
-        <FontAwesome name="home" size={24} color="#C6D3A1" />
+        <FontAwesome name="home" size={24} color="#FF8F7E" />
         <Text style={styles.sidebarText}>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.sidebarItem}
         onPress={() => navigation.navigate('perfil')}
       >
-        <FontAwesome name="user" size={24} color="#C6D3A1" />
+        <FontAwesome name="user" size={24} color="#FF8F7E" />
         <Text style={styles.sidebarText}>Perfil</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.sidebarItem}
         onPress={() => navigation.navigate('login')} 
       >
-        <FontAwesome name="sign-out" size={24} color="#C6D3A1" />
+        <FontAwesome name="sign-out" size={24} color="#FF8F7E" />
         <Text style={styles.sidebarText}>Sair</Text>
       </TouchableOpacity>
     </View>
@@ -44,25 +44,28 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: 250,
+    width: 150,
     height: '100%',
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     padding: 20,
     zIndex: 10,
+    borderRadius: 25
   },
   closeButton: {
     alignItems: 'flex-end',
     marginBottom: 20,
-    marginTop:90,
+    marginTop:70,
+    marginLeft: 80,
+    
   },
   sidebarItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
+    marginTop:100
   },
   sidebarText: {
     color: '#565656',
-    fontSize: 18,
+    fontSize: 16,
     marginLeft: 10,
   },
 });

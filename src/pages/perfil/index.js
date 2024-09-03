@@ -21,6 +21,13 @@ export default function ProfileScreen() {
     { id: '3', source: require('../../img/icon3.png') },
     { id: '4', source: require('../../img/icon4.png') },
     { id: '5', source: require('../../img/icon5.png') },
+    { id: '6', source: require('../../img/icon6.png') },
+    { id: '7', source: require('../../img/icon7.png') },
+    { id: '8', source: require('../../img/icon8.png') },
+    { id: '9', source: require('../../img/icon9.png') },
+    { id: '10', source: require('../../img/icon10.png') },
+    { id: '11', source: require('../../img/icon11.png') },
+    { id: '12', source: require('../../img/icon12.png') },
   ];
 
   useEffect(() => {
@@ -122,40 +129,44 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    position: 'static'
   },
   profileInfo: {
     alignItems: 'center',
+    position: 'static'
   },
   profileIcon: {
-    width: 180,
-    height: 180,
+    width: 170,
+    height: 170,
     borderRadius: 50,
     marginBottom: 16,
-    marginTop:130,
+    marginTop:110,
+    position: 'static'
     
   },
   usernameContainer: {
     position: 'relative',
     width: '100%',
     alignItems: 'center',
+    position: 'static'
   },
   usernameInput: {
     fontSize: 18,
     textAlign: 'center',
     marginBottom: 16,
-    marginTop: 20,
-    
+    marginTop: 50,
+    position: 'static'
   },
   editButton: {
     position: 'absolute',
-    right: 90,
-    top: 20,
+    right: 70,
+    top: 50,
     zIndex: 1,
   },
   saveButton: {
     position: 'absolute',
-    right: 10,
-    top: 10,
+    right: 70,
+    top: 50,
     zIndex: 1,
   },
   logoutButton: {

@@ -169,10 +169,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#FF8F7E',
     fontWeight: 'bold',
-    marginTop: 20,
+    marginTop: 30,
   },
   texto1: {
-    marginTop: 20,
+    marginTop: 30,
     fontSize: 20,
     color: '#FF8F7E',
   },

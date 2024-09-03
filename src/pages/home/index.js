@@ -23,12 +23,8 @@ export default function App() {
     <Menu visible={menuVisible} onClose={() => setMenuVisible(false)} />
 
   <Pressable onPress={() => setMenuVisible(true)} style={styles.menuButton}>
-    <FontAwesome name="bars" size={24} color="#C6D3A1" />
+    <FontAwesome name="bars" size={34} color="#FF8F7E" />
   </Pressable>
-
-    <TouchableOpacity  onPress={() => nav.navigate('perfil')} style={styles.saveButton}>
-                <FontAwesome name="plus" size={24} color="#C6D3A1" />
-              </TouchableOpacity>
 
       <View
         style={{
@@ -239,8 +235,8 @@ const styles = StyleSheet.create({
   },
   menuButton:{
     right: 10,
-    left:20,
-    top: 90,
+    left:30,
+    top: 80,
     zIndex: 1,
   },
    texto3: {

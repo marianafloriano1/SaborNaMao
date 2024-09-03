@@ -111,7 +111,7 @@ export default function App() {
           <Stack.Screen name="heranca" component={Heranca} options={{ headerShown: false }} />
                
 
-         <Stack.Screen name="almoco_domingo" component={Almoco_domingo} options={{title:'Almoço de Domingo', headerStyle:{backgroundColor:'#ffe697',},headerTitleStyle:{color:'#dfc265', fontWeight:'bold', fontSize:22}, headerTintColor: '#dfc265'}}/>
+         <Stack.Screen name="almoco_domingo" component={Almoco_domingo} options={{ headerShown: false }}/>
 
 <Stack.Screen name="feijao" component={Feijao} options={{ headerStyle:{backgroundColor:'#ffe8a0',},headerTitleStyle:{color:'#ffe8a0',fontWeight: 'bold',}}}/>
 
@@ -127,7 +127,7 @@ export default function App() {
 
 
 
-         <Stack.Screen name="sucos" component={Sucos} options={{title:'Sucos Rápidos e Fáceis', headerStyle:{backgroundColor:'#ffbb8f',},headerTitleStyle:{color:'#d6705d', fontWeight:'bold', fontSize:24}, headerTintColor: '#d6705d'}}/>
+         <Stack.Screen name="sucos" component={Sucos} options={{ headerShown: false }}/>
 
 <Stack.Screen name="limao" component={Limao} options={{title:'', headerStyle:{backgroundColor:'#ffbb8f',},headerTitleStyle:{color:'#d6705d',fontWeight: 'bold',}, headerTintColor: '#d6705d'}}/>
 
@@ -143,7 +143,7 @@ export default function App() {
 
 
 
-         <Stack.Screen name="vegano" component={Vegano} options={{title:'Receitas Veganas Fáceis', headerStyle:{backgroundColor:'#b5b1cb',},headerTitleStyle:{color:'#6E789C', fontWeight:'bold', fontSize:24}, headerTintColor: '#6E789C'}}/>
+         <Stack.Screen name="vegano" component={Vegano} options={{ headerShown: false }}/>
 <Stack.Screen name="falafel" component={Falafel} options={{title:'', headerStyle:{backgroundColor:'#bbb8cd',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#807b9f'}}/>
 
 <Stack.Screen name="almodegas" component={Almodegas} options={{title:'', headerStyle:{backgroundColor:'#bbb8cd',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#807b9f'}}/>
@@ -158,7 +158,7 @@ export default function App() {
 
 
 
-         <Stack.Screen name="ceia_natal" component={Ceia_natal} options={{ title:'Receitas Natalinas', headerStyle:{backgroundColor:'#ffc68f',},headerTitleStyle:{color:'#e48a55', fontWeight:'bold', fontSize:22}, headerTintColor: '#e48a55'}}/>
+         <Stack.Screen name="ceia_natal" component={Ceia_natal} options={{ headerShown: false }}/>
 
           <Stack.Screen name="peru" component={Peru} options={{ headerStyle:{backgroundColor:'#ffcb9a',},headerTitleStyle:{color:'#ffcb9a',fontWeight: 'bold',}}}/>
 
@@ -174,7 +174,7 @@ export default function App() {
 
 
 
-         <Stack.Screen name="festa_junina" component={Festa_junina} options={{ title:'Receitas De Festa Junina', headerStyle:{backgroundColor:'#d68f9f',},headerTitleStyle:{color:'#b46375', fontWeight:'bold', fontSize:22}, headerTintColor: '#b46375'}}/>
+         <Stack.Screen name="festa_junina" component={Festa_junina} options={{ headerShown: false }}/>
 
 <Stack.Screen name="pamonha" component={Pamonha} options={{ headerStyle:{backgroundColor:'#d698a6',},headerTitleStyle:{color:'#d698a6',fontWeight: 'bold',}}}/>
 
@@ -189,7 +189,7 @@ export default function App() {
 <Stack.Screen name="maca_amor" component={Maca_amor} options={{ headerStyle:{backgroundColor:'#d698a6',},headerTitleStyle:{color:'#d698a6',fontWeight: 'bold',}}}/>
 
 
-         <Stack.Screen name="kids" component={Kids} options={{title:'Receitas Para Crianças', headerStyle:{backgroundColor:'#bfd8a7',},headerTitleStyle:{color:'#95ad7b', fontWeight:'bold', fontSize:22}, headerTintColor: '#95ad7b'}} />
+         <Stack.Screen name="kids" component={Kids} options={{ headerShown: false }} />
          
           <Stack.Screen name="bolochoco" component={Bolochoco} options={{ headerStyle:{backgroundColor:'#c6dbb2',},headerTitleStyle:{color:'#c6dbb2',fontWeight: 'bold',}}}/>
 
@@ -205,7 +205,7 @@ export default function App() {
 
 
 
-         <Stack.Screen name="morando_sozinho" component={Morando_sozinho} options={{title:'Receitas Para Uma Pessoa', headerStyle:{backgroundColor:'#a7bfc8',},headerTitleStyle:{color:'#6E789C', fontWeight:'bold', fontSize:24}, headerTintColor: '#6E789C'}}/>
+         <Stack.Screen name="morando_sozinho" component={Morando_sozinho} options={{ headerShown: false }}/>
          
  <Stack.Screen name="arroz" component={Arroz} options={{ headerStyle:{backgroundColor:'#B7C7CD',},headerTitleStyle:{color:'#B7C7CD',fontWeight: 'bold',}}}/>
 
@@ -220,7 +220,7 @@ export default function App() {
          <Stack.Screen name="panqueca" component={Panqueca} options={{ headerStyle:{backgroundColor:'#B7C7CD',},headerTitleStyle:{color:'#B7C7CD',fontWeight: 'bold',}}}/>
 
 
-  <Stack.Screen name="noite_garotas" component={Noite_garotas} options={{title:'Comidas de Festas', headerStyle:{backgroundColor:'#FBCBC4',},headerTitleStyle:{color:'#FF8F7E',fontWeight: 'bold', fontSize:24}, headerTintColor: '#FF8F7E'}}/>
+  <Stack.Screen name="noite_garotas" component={Noite_garotas} options={{ headerShown: false }}/>
 
     <Stack.Screen name="cookie" component={Cookie} options={{title:'Cookies De Chocolate', headerStyle:{backgroundColor:'#FBCBC4',},headerTitleStyle:{color:'#FBCBC4',fontWeight: 'bold',}}}/>
 
@@ -235,7 +235,7 @@ export default function App() {
          <Stack.Screen name="hotdog" component={Hotdog} options={{title:'Hotdog', headerStyle:{backgroundColor:'#FBCBC4',},headerTitleStyle:{color:'#FBCBC4',fontWeight: 'bold',}}}/>
 
 
-<Stack.Screen name="vegetariano" component={Vegetariano} options={{title:'Receitas Vegetarianas', headerStyle:{backgroundColor:'#b59fc8',},headerTitleStyle:{color:'#7d6094', fontWeight:'bold', fontSize:24}, headerTintColor: '#7d6094'}}/>
+<Stack.Screen name="vegetariano" component={Vegetariano} options={{ headerShown: false }}/>
 
 <Stack.Screen name="quiche" component={Quiche} options={{title:'', headerStyle:{backgroundColor:'#c1b2cd',},headerTitleStyle:{color:'#c1b2cd',fontWeight: 'bold',}}}/>
 
@@ -252,7 +252,7 @@ export default function App() {
 
 
 
-<Stack.Screen name="mamaes" component={Mamaes} options={{title:'Receitas Para Bebês', headerStyle:{backgroundColor:'#b7d4c7',},headerTitleStyle:{color:'#609f84', fontWeight:'bold', fontSize:24}, headerTintColor: '#609f84'}}/>
+<Stack.Screen name="mamaes" component={Mamaes} options={{ headerShown: false }}/>
 
 <Stack.Screen name="macarrao_bebe" component={Macarrao_bebe} options={{title:'', headerStyle:{backgroundColor:'#c1dbcf',},headerTitleStyle:{color:'#c1dbcf',fontWeight: 'bold',}}}/>
 
