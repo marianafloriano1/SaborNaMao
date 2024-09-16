@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     color: '#FF8F7E',
     fontWeight: 'bold',
     fontSize: 24,
-    marginTop: 22,
-    marginLeft:30
+    marginLeft:90,
+    marginBottom: 10
   },
   botao: {
     backgroundColor: 'transparent',
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     width: 346,
     borderWidth: 3,
     borderColor: '#fff',
-    marginTop: 55,
+    marginTop: 35,
     fontSize: 16,
     padding: 10,
     borderRadius: 15,
@@ -160,9 +160,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   img: {
-    width: 180,
-    height: 180,
-   marginTop: 90,
+    width: 300,
+    height: 300,
+   marginTop: 70,
    marginLeft:10
   },
   texto: {

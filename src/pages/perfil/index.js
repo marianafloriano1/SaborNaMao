@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Pressable, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Pressable, ImageBackground, Alert, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getAuth, updateProfile, signOut } from 'firebase/auth';
+import { getAuth, updateProfile } from 'firebase/auth';
 import { FontAwesome } from '@expo/vector-icons';
+import Menu from '../../components/Menu';
 
 export default function ProfileScreen() {
   const nav = useNavigation();
   const auth = getAuth();
   const user = auth.currentUser;
-
+  const [menuVisible, setMenuVisible] = useState(false);
   const [editing, setEditing] = useState(false);
   const [username, setUsername] = useState(user?.displayName || 'Altere seu nome');
-  const [selectedIcon, setSelectedIcon] = useState(require('../../img/perfil.png')); // ícone padrão
+  const [selectedIcon, setSelectedIcon] = useState(require('../../img/perfil.png'));
+  const [recipes, setRecipes] = useState([]);
 
-  // Lista de ícones
   const iconList = [
     { id: '1', source: require('../../img/icon1.png') },
     { id: '2', source: require('../../img/icon2.png') },
@@ -37,13 +38,20 @@ export default function ProfileScreen() {
           const storedUsername = await AsyncStorage.getItem(user.email + '_username');
           if (storedUsername) setUsername(storedUsername);
 
-          // Gere um ícone aleatório baseado no email
-          const index = Math.abs(emailHashCode(user.email)) % iconList.length;
-          const icon = iconList[index];
-          setSelectedIcon(icon.source);
+          const storedIconId = await AsyncStorage.getItem(user.email + '_selectedIconId');
+          if (storedIconId) {
+            const icon = iconList.find((icon) => icon.id === storedIconId);
+            if (icon) setSelectedIcon(icon.source);
+          } else {
+            const index = Math.abs(emailHashCode(user.email)) % iconList.length;
+            const icon = iconList[index];
+            setSelectedIcon(icon.source);
+            await AsyncStorage.setItem(user.email + '_selectedIconId', icon.id);
+          }
 
-          // Salvar ícone no AsyncStorage
-          await AsyncStorage.setItem(user.email + '_selectedIconId', icon.id);
+          // Load all recipes
+          const storedRecipes = await AsyncStorage.getItem('recipes');
+          if (storedRecipes) setRecipes(JSON.parse(storedRecipes));
         }
       } catch (error) {
         console.error("Failed to load settings", error);
@@ -58,7 +66,7 @@ export default function ProfileScreen() {
     for (let i = 0; i < email.length; i++) {
       const char = email.charCodeAt(i);
       hash = (hash << 5) - hash + char;
-      hash |= 0; // Convert to 32bit integer
+      hash |= 0;
     }
     return hash;
   };
@@ -79,48 +87,52 @@ export default function ProfileScreen() {
     }
   };
 
-  const handleGoToLogin = async () => {
-    try {
-      await signOut(auth);
-      // Remover configurações do AsyncStorage
-      await AsyncStorage.removeItem(user.email + '_username');
-      await AsyncStorage.removeItem(user.email + '_selectedIconId');
-      nav.navigate('login'); // Navegar para a tela de login
-    } catch (error) {
-      console.error("Failed to sign out", error);
-    }
+  const handleImagePress = (recipe) => {
+    Alert.alert('Informações da Receita', `Nome da Receita: ${recipe.recipeName}\nIngredientes: ${recipe.ingredients}\nInstruções: ${recipe.instructions}`);
   };
 
   return (
     <ImageBackground source={require('../../img/fundo_perfil.png')} style={styles.container}>
-      <View style={styles.container}>
-        <View style={styles.profileInfo}>
-          <Image source={selectedIcon} style={styles.profileIcon} />
-          <View style={styles.usernameContainer}>
-            <TextInput
-              style={styles.usernameInput}
-              value={username}
-              onChangeText={setUsername}
-              editable={editing}
-            />
-            {!editing ? (
-              <TouchableOpacity onPress={handleEditPress} style={styles.editButton}>
-                <FontAwesome name="edit" size={24} color="#FF8F7E" />
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity onPress={handleSavePress} style={styles.saveButton}>
-                <FontAwesome name="save" size={24} color="#C6D3A1" />
-              </TouchableOpacity>
-            )}
-          </View>
+      <Menu visible={menuVisible} onClose={() => setMenuVisible(false)} />
+      <Pressable onPress={() => setMenuVisible(true)} style={styles.menuButton}>
+        <FontAwesome name="bars" size={34} color="#FF8F7E" />
+      </Pressable>
+      <View style={styles.profileInfo}>
+        <Image source={selectedIcon} style={styles.profileIcon} />
+        <View style={styles.usernameContainer}>
+          <TextInput
+            style={styles.usernameInput}
+            value={username}
+            onChangeText={setUsername}
+            editable={editing}
+          />
+          {!editing ? (
+            <TouchableOpacity onPress={handleEditPress} style={styles.editButton}>
+              <FontAwesome name="edit" size={24} color="#FF8F7E" />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={handleSavePress} style={styles.saveButton}>
+              <FontAwesome name="save" size={24} color="#C6D3A1" />
+            </TouchableOpacity>
+          )}
         </View>
-        <Pressable onPress={handleGoToLogin} style={styles.logoutButton}>
-          <Text style={styles.buttonText}>Sair</Text>
-        </Pressable>
-        <TouchableOpacity  onPress={() => nav.navigate('heranca')} style={styles.saveButton}>
-                <FontAwesome name="plus" size={24} color="#C6D3A1" />
-              </TouchableOpacity>
+        <ScrollView style={styles.scrollContainer}>
+          {recipes.map((recipe, index) => (
+            <View key={index} style={styles.recipeContainer}>
+              {recipe.photoUri && (
+                <TouchableOpacity onPress={() => handleImagePress(recipe)}>
+                  <Image source={{ uri: recipe.photoUri }} style={styles.savedImage} />
+                </TouchableOpacity>
+              )}
+              <Text style={styles.recipeText}>{recipe.recipeName || 'Não definido'}</Text>
+
+            </View>
+          ))}
+        </ScrollView>
       </View>
+      <TouchableOpacity onPress={() => nav.navigate('heranca')} style={styles.addButton}>
+        <FontAwesome name="plus" size={24} color="#C6D3A1" />
+      </TouchableOpacity>
     </ImageBackground>
   );
 }
@@ -128,56 +140,70 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
-    position: 'static'
   },
   profileInfo: {
     alignItems: 'center',
-    position: 'static'
+    marginTop: 110,
   },
   profileIcon: {
     width: 170,
     height: 170,
-    borderRadius: 50,
-    marginBottom: 16,
-    marginTop:110,
-    position: 'static'
-    
+    borderRadius: 90,
+    marginBottom: 40,
+    borderWidth: 4,
+    marginTop: 60,
+    borderColor: '#FF8F7E',
+    borderStyle: 'dotted',
   },
   usernameContainer: {
-    position: 'relative',
     width: '100%',
     alignItems: 'center',
-    position: 'static'
   },
   usernameInput: {
     fontSize: 18,
     textAlign: 'center',
-    marginBottom: 16,
-    marginTop: 50,
-    position: 'static'
+    marginBottom: 4,
   },
   editButton: {
     position: 'absolute',
-    right: 70,
-    top: 50,
+    right: 110,
+    top: 2,
     zIndex: 1,
   },
   saveButton: {
     position: 'absolute',
-    right: 70,
-    top: 50,
+    right: 110,
+    top: 2,
     zIndex: 1,
   },
-  logoutButton: {
-    backgroundColor: '#DC3545',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
+  menuButton: {
+    position: 'absolute',
+    left: 30,
+    top: 80,
+    zIndex: 1,
+  },
+  addButton: {
+    position: 'absolute',
+    right: 30,
+    bottom: 30,
+    zIndex: 1,
+  },
+  savedImage: {
+    width: 150,
+    height: 150,
+    borderRadius: 10,
     marginTop: 20,
   },
-  buttonText: {
-    color: '#FFF',
+  recipeContainer: {
+    marginBottom: 20,
+    alignItems: 'center',
+  },
+  recipeText: {
     fontSize: 16,
+    marginBottom: 5,
+    textAlign: 'center',
+  },
+  scrollContainer: {
+    width: '100%',
   },
 });

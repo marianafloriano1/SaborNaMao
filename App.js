@@ -113,158 +113,158 @@ export default function App() {
 
          <Stack.Screen name="almoco_domingo" component={Almoco_domingo} options={{ headerShown: false }}/>
 
-<Stack.Screen name="feijao" component={Feijao} options={{ headerStyle:{backgroundColor:'#ffe8a0',},headerTitleStyle:{color:'#ffe8a0',fontWeight: 'bold',}}}/>
+<Stack.Screen name="feijao" component={Feijao} options={{ headerShown: false }}/>
 
-<Stack.Screen name="paella" component={Paella} options={{ headerStyle:{backgroundColor:'#ffe8a0',},headerTitleStyle:{color:'#ffe8a0',fontWeight: 'bold',}}}/>
+<Stack.Screen name="paella" component={Paella} options={{ headerShown: false }}/>
 
-<Stack.Screen name="churrasco" component={Churrasco} options={{ headerStyle:{backgroundColor:'#ffe8a0',},headerTitleStyle:{color:'#ffe8a0',fontWeight: 'bold',}}}/>
+<Stack.Screen name="churrasco" component={Churrasco} options={{ headerShown: false }}/>
 
-<Stack.Screen name="frango" component={Frango} options={{ headerStyle:{backgroundColor:'#ffe8a0',},headerTitleStyle:{color:'#ffe8a0',fontWeight: 'bold',}}}/>
+<Stack.Screen name="frango" component={Frango} options={{ headerShown: false }}/>
 
-<Stack.Screen name="escondidinho" component={Escondidinho} options={{ headerStyle:{backgroundColor:'#ffe8a0',},headerTitleStyle:{color:'#ffe8a0',fontWeight: 'bold',}}}/>
+<Stack.Screen name="escondidinho" component={Escondidinho} options={{ headerShown: false }}/>
 
-<Stack.Screen name="torta" component={Torta} options={{ headerStyle:{backgroundColor:'#ffe8a0',},headerTitleStyle:{color:'#ffe8a0',fontWeight: 'bold',}}}/>
+<Stack.Screen name="torta" component={Torta} options={{ headerShown: false }}/>
 
 
 
          <Stack.Screen name="sucos" component={Sucos} options={{ headerShown: false }}/>
 
-<Stack.Screen name="limao" component={Limao} options={{title:'', headerStyle:{backgroundColor:'#ffbb8f',},headerTitleStyle:{color:'#d6705d',fontWeight: 'bold',}, headerTintColor: '#d6705d'}}/>
+<Stack.Screen name="limao" component={Limao} options={{ headerShown: false }}/>
 
-<Stack.Screen name="melancia" component={Melancia} options={{title:'', headerStyle:{backgroundColor:'#ffbb8f',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#d6705d'}}/>
+<Stack.Screen name="melancia" component={Melancia} options={{ headerShown: false }}/>
 
-<Stack.Screen name="morango" component={Morango} options={{title:'', headerStyle:{backgroundColor:'#ffbb8f',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#d6705d'}}/>
+<Stack.Screen name="morango" component={Morango} options={{ headerShown: false }}/>
 
-<Stack.Screen name="cenoura" component={Cenoura} options={{title:'', headerStyle:{backgroundColor:'#ffbb8f',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#d6705d'}}/>
+<Stack.Screen name="cenoura" component={Cenoura} options={{ headerShown: false }}/>
 
-<Stack.Screen name="verde" component={Verde} options={{title:'', headerStyle:{backgroundColor:'#ffbb8f',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#d6705d'}}/>
+<Stack.Screen name="verde" component={Verde} options={{ headerShown: false }}/>
 
-<Stack.Screen name="abacaxi" component={Abacaxi} options={{title:'', headerStyle:{backgroundColor:'#ffbb8f',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#d6705d'}}/>
+<Stack.Screen name="abacaxi" component={Abacaxi} options={{ headerShown: false }}/>
 
 
 
          <Stack.Screen name="vegano" component={Vegano} options={{ headerShown: false }}/>
-<Stack.Screen name="falafel" component={Falafel} options={{title:'', headerStyle:{backgroundColor:'#bbb8cd',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#807b9f'}}/>
+<Stack.Screen name="falafel" component={Falafel} options={{ headerShown: false }}/>
 
-<Stack.Screen name="almodegas" component={Almodegas} options={{title:'', headerStyle:{backgroundColor:'#bbb8cd',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#807b9f'}}/>
+<Stack.Screen name="almodegas" component={Almodegas} options={{ headerShown: false }}/>
 
-<Stack.Screen name="bombom" component={BomBom} options={{title:'', headerStyle:{backgroundColor:'#bbb8cd',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#807b9f'}}/>
+<Stack.Screen name="bombom" component={BomBom} options={{ headerShown: false }}/>
 
-<Stack.Screen name="nhoque" component={Nhoque} options={{title:'', headerStyle:{backgroundColor:'#bbb8cd',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#807b9f'}}/>
+<Stack.Screen name="nhoque" component={Nhoque} options={{ headerShown: false }}/>
 
-<Stack.Screen name="pao_queijo" component={Pao_Queijo} options={{title:'', headerStyle:{backgroundColor:'#bbb8cd',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#807b9f'}}/>
+<Stack.Screen name="pao_queijo" component={Pao_Queijo} options={{ headerShown: false }}/>
 
-<Stack.Screen name="cuscuz" component={Cuscuz} options={{title:'', headerStyle:{backgroundColor:'#bbb8cd',},headerTitleStyle:{color:'#807b9f',fontWeight: 'bold',}, headerTintColor: '#807b9f'}}/>
+<Stack.Screen name="cuscuz" component={Cuscuz} options={{ headerShown: false }}/>
 
 
 
          <Stack.Screen name="ceia_natal" component={Ceia_natal} options={{ headerShown: false }}/>
 
-          <Stack.Screen name="peru" component={Peru} options={{ headerStyle:{backgroundColor:'#ffcb9a',},headerTitleStyle:{color:'#ffcb9a',fontWeight: 'bold',}}}/>
+          <Stack.Screen name="peru" component={Peru}options={{ headerShown: false }}/>
 
-           <Stack.Screen name="salada" component={Salada} options={{ headerStyle:{backgroundColor:'#ffcb9a',},headerTitleStyle:{color:'#ffcb9a',fontWeight: 'bold',}}}/>
+           <Stack.Screen name="salada" component={Salada} options={{ headerShown: false }}/>
 
-            <Stack.Screen name="salpicao" component={Salpicao} options={{ headerStyle:{backgroundColor:'#ffcb9a',},headerTitleStyle:{color:'#ffcb9a',fontWeight: 'bold',}}}/>
+            <Stack.Screen name="salpicao" component={Salpicao} options={{ headerShown: false }}/>
 
-             <Stack.Screen name="arroz_natal" component={Arroz_Natal} options={{ headerStyle:{backgroundColor:'#ffcb9a',},headerTitleStyle:{color:'#ffcb9a',fontWeight: 'bold',}}}/>
+             <Stack.Screen name="arroz_natal" component={Arroz_Natal} options={{ headerShown: false }}/>
 
-              <Stack.Screen name="bolinho_arroz" component={Bolinho_Arroz} options={{ headerStyle:{backgroundColor:'#ffcb9a',},headerTitleStyle:{color:'#ffcb9a',fontWeight: 'bold',}}}/>
+              <Stack.Screen name="bolinho_arroz" component={Bolinho_Arroz} options={{ headerShown: false }}/>
 
-               <Stack.Screen name="farofa" component={Farofa} options={{ headerStyle:{backgroundColor:'#ffcb9a',},headerTitleStyle:{color:'#ffcb9a',fontWeight: 'bold',}}}/>
+               <Stack.Screen name="farofa" component={Farofa} options={{ headerShown: false }}/>
 
 
 
          <Stack.Screen name="festa_junina" component={Festa_junina} options={{ headerShown: false }}/>
 
-<Stack.Screen name="pamonha" component={Pamonha} options={{ headerStyle:{backgroundColor:'#d698a6',},headerTitleStyle:{color:'#d698a6',fontWeight: 'bold',}}}/>
+<Stack.Screen name="pamonha" component={Pamonha} options={{ headerShown: false }}/>
 
-<Stack.Screen name="pacoca" component={Pacoca} options={{ headerStyle:{backgroundColor:'#d698a6',},headerTitleStyle:{color:'#d698a6',fontWeight: 'bold',}}}/>
+<Stack.Screen name="pacoca" component={Pacoca} options={{ headerShown: false }}/>
 
-<Stack.Screen name="milho" component={Milho} options={{ headerStyle:{backgroundColor:'#d698a6',},headerTitleStyle:{color:'#d698a6',fontWeight: 'bold',}}}/>
+<Stack.Screen name="milho" component={Milho} options={{ headerShown: false }}/>
 
-<Stack.Screen name="quentao" component={Quentao} options={{ headerStyle:{backgroundColor:'#d698a6',},headerTitleStyle:{color:'#d698a6',fontWeight: 'bold',}}}/>
+<Stack.Screen name="quentao" component={Quentao} options={{ headerShown: false }}/>
 
-<Stack.Screen name="bolo_fuba" component={Bolo_fuba} options={{ headerStyle:{backgroundColor:'#d698a6',},headerTitleStyle:{color:'#d698a6',fontWeight: 'bold',}}}/>
+<Stack.Screen name="bolo_fuba" component={Bolo_fuba} options={{ headerShown: false }}/>
 
-<Stack.Screen name="maca_amor" component={Maca_amor} options={{ headerStyle:{backgroundColor:'#d698a6',},headerTitleStyle:{color:'#d698a6',fontWeight: 'bold',}}}/>
+<Stack.Screen name="maca_amor" component={Maca_amor} options={{ headerShown: false }}/>
 
 
          <Stack.Screen name="kids" component={Kids} options={{ headerShown: false }} />
          
-          <Stack.Screen name="bolochoco" component={Bolochoco} options={{ headerStyle:{backgroundColor:'#c6dbb2',},headerTitleStyle:{color:'#c6dbb2',fontWeight: 'bold',}}}/>
+          <Stack.Screen name="bolochoco" component={Bolochoco} options={{ headerShown: false }}/>
 
-          <Stack.Screen name="picole" component={Picole} options={{ headerStyle:{backgroundColor:'#c6dbb2',},headerTitleStyle:{color:'#c6dbb2',fontWeight: 'bold',}}}/>
+          <Stack.Screen name="picole" component={Picole} options={{ headerShown: false }}/>
 
-          <Stack.Screen name="raspadinha" component={Raspadinha} options={{ headerStyle:{backgroundColor:'#c6dbb2',},headerTitleStyle:{color:'#c6dbb2',fontWeight: 'bold',}}}/>
+          <Stack.Screen name="raspadinha" component={Raspadinha} options={{ headerShown: false }}/>
 
-          <Stack.Screen name="pave" component={Pave} options={{ headerStyle:{backgroundColor:'#c6dbb2',},headerTitleStyle:{color:'#c6dbb2',fontWeight: 'bold',}}}/>
+          <Stack.Screen name="pave" component={Pave} options={{ headerShown: false }}/>
 
-          <Stack.Screen name="danone" component={Danone} options={{ headerStyle:{backgroundColor:'#c6dbb2',},headerTitleStyle:{color:'#c6dbb2',fontWeight: 'bold',}}}/>
+          <Stack.Screen name="danone" component={Danone} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="brigadeiro" component={Brigadeiro} options={{ headerStyle:{backgroundColor:'#c6dbb2',},headerTitleStyle:{color:'#c6dbb2',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="brigadeiro" component={Brigadeiro} options={{ headerShown: false }}/>
 
 
 
          <Stack.Screen name="morando_sozinho" component={Morando_sozinho} options={{ headerShown: false }}/>
          
- <Stack.Screen name="arroz" component={Arroz} options={{ headerStyle:{backgroundColor:'#B7C7CD',},headerTitleStyle:{color:'#B7C7CD',fontWeight: 'bold',}}}/>
+ <Stack.Screen name="arroz" component={Arroz} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="coxinha" component={Coxinha} options={{ headerStyle:{backgroundColor:'#B7C7CD',},headerTitleStyle:{color:'#B7C7CD',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="coxinha" component={Coxinha} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="macarrao" component={Macarrao} options={{ headerStyle:{backgroundColor:'#B7C7CD',},headerTitleStyle:{color:'#B7C7CD',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="macarrao" component={Macarrao} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="pudim" component={Pudim} options={{ headerStyle:{backgroundColor:'#B7C7CD',},headerTitleStyle:{color:'#B7C7CD',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="pudim" component={Pudim} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="empadao" component={Empadao} options={{ headerStyle:{backgroundColor:'#B7C7CD',},headerTitleStyle:{color:'#B7C7CD',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="empadao" component={Empadao} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="panqueca" component={Panqueca} options={{ headerStyle:{backgroundColor:'#B7C7CD',},headerTitleStyle:{color:'#B7C7CD',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="panqueca" component={Panqueca} options={{ headerShown: false }}/>
 
 
   <Stack.Screen name="noite_garotas" component={Noite_garotas} options={{ headerShown: false }}/>
 
-    <Stack.Screen name="cookie" component={Cookie} options={{title:'Cookies De Chocolate', headerStyle:{backgroundColor:'#FBCBC4',},headerTitleStyle:{color:'#FBCBC4',fontWeight: 'bold',}}}/>
+    <Stack.Screen name="cookie" component={Cookie} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="pipoca" component={Pipoca} options={{title:'', headerStyle:{backgroundColor:'#FBCBC4',}}}/>
+         <Stack.Screen name="pipoca" component={Pipoca} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="cupcake" component={Cupcake} options={{title:'Cupcake', headerStyle:{backgroundColor:'#FBCBC4',},headerTitleStyle:{color:'#FBCBC4',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="cupcake" component={Cupcake} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="pizza" component={Pizza} options={{title:'', headerStyle:{backgroundColor:'#FBCBC4',},headerTitleStyle:{color:'#FF8F7E',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="pizza" component={Pizza} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="batata" component={Batata} options={{title:'Batata Frita', headerStyle:{backgroundColor:'#FBCBC4',},headerTitleStyle:{color:'#FBCBC4',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="batata" component={Batata} options={{ headerShown: false }}/>
 
-         <Stack.Screen name="hotdog" component={Hotdog} options={{title:'Hotdog', headerStyle:{backgroundColor:'#FBCBC4',},headerTitleStyle:{color:'#FBCBC4',fontWeight: 'bold',}}}/>
+         <Stack.Screen name="hotdog" component={Hotdog} options={{ headerShown: false }} />
 
 
 <Stack.Screen name="vegetariano" component={Vegetariano} options={{ headerShown: false }}/>
 
-<Stack.Screen name="quiche" component={Quiche} options={{title:'', headerStyle:{backgroundColor:'#c1b2cd',},headerTitleStyle:{color:'#c1b2cd',fontWeight: 'bold',}}}/>
+<Stack.Screen name="quiche" component={Quiche} options={{ headerShown: false }}/>
 
-<Stack.Screen name="lasanha" component={Lasanha} options={{title:'', headerStyle:{backgroundColor:'#c1b2cd',},headerTitleStyle:{color:'#c1b2cd',fontWeight: 'bold',}}}/>
+<Stack.Screen name="lasanha" component={Lasanha} options={{ headerShown: false }}/>
 
-<Stack.Screen name="burguer" component={Burguer} options={{title:'', headerStyle:{backgroundColor:'#c1b2cd',},headerTitleStyle:{color:'#c1b2cd',fontWeight: 'bold',}}}/>
+<Stack.Screen name="burguer" component={Burguer} options={{ headerShown: false }}/>
 
-<Stack.Screen name="pasta" component={Pasta} options={{title:'', headerStyle:{backgroundColor:'#c1b2cd',},headerTitleStyle:{color:'#c1b2cd',fontWeight: 'bold',}}}/>
+<Stack.Screen name="pasta" component={Pasta} options={{ headerShown: false }}/>
 
-<Stack.Screen name="queijo" component={Queijo} options={{title:'', headerStyle:{backgroundColor:'#c1b2cd',},headerTitleStyle:{color:'#c1b2cd',fontWeight: 'bold',}}}/>
+<Stack.Screen name="queijo" component={Queijo} options={{ headerShown: false }}/>
 
-<Stack.Screen name="torta2" component={Torta2} options={{title:'', headerStyle:{backgroundColor:'#c1b2cd',},headerTitleStyle:{color:'#c1b2cd',fontWeight: 'bold',}}}/>
+<Stack.Screen name="torta2" component={Torta2} options={{ headerShown: false }}/>
 
 
 
 
 <Stack.Screen name="mamaes" component={Mamaes} options={{ headerShown: false }}/>
 
-<Stack.Screen name="macarrao_bebe" component={Macarrao_bebe} options={{title:'', headerStyle:{backgroundColor:'#c1dbcf',},headerTitleStyle:{color:'#c1dbcf',fontWeight: 'bold',}}}/>
+<Stack.Screen name="macarrao_bebe" component={Macarrao_bebe} options={{ headerShown: false }}/>
 
-<Stack.Screen name="panqueca_banana" component={Panqueca_banana} options={{title:'', headerStyle:{backgroundColor:'#c1dbcf',},headerTitleStyle:{color:'#c1dbcf',fontWeight: 'bold',}}}/>
+<Stack.Screen name="panqueca_banana" component={Panqueca_banana} options={{ headerShown: false }}/>
 
-<Stack.Screen name="panqueca_maca" component={Panqueca_maca} options={{title:'', headerStyle:{backgroundColor:'#c1dbcf',},headerTitleStyle:{color:'#c1dbcf',fontWeight: 'bold',}}}/>
+<Stack.Screen name="panqueca_maca" component={Panqueca_maca} options={{ headerShown: false }}/>
 
-<Stack.Screen name="pao" component={Pao} options={{title:'', headerStyle:{backgroundColor:'#c1dbcf',},headerTitleStyle:{color:'#c1dbcf',fontWeight: 'bold',}}}/>
+<Stack.Screen name="pao" component={Pao} options={{ headerShown: false }}/>
 
-<Stack.Screen name="papinha" component={Papinha} options={{title:'', headerStyle:{backgroundColor:'#c1dbcf',},headerTitleStyle:{color:'#c1dbcf',fontWeight: 'bold',}}}/>
+<Stack.Screen name="papinha" component={Papinha} options={{ headerShown: false }}/>
 
-<Stack.Screen name="sopa" component={Sopa} options={{title:'', headerStyle:{backgroundColor:'#c1dbcf',},headerTitleStyle:{color:'#c1dbcf',fontWeight: 'bold',}}}/>
+<Stack.Screen name="sopa" component={Sopa} options={{ headerShown: false }}/>
 
          
       </Stack.Navigator>

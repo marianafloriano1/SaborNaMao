@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     width: 346,
     borderWidth: 3,
     borderColor: '#fff',
-    marginTop: 55,
+    marginTop: 35,
     fontSize: 16,
     padding: 10,
     borderRadius: 15,
@@ -161,16 +161,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   img: {
-    width: 180,
-    height: 180,
-   marginTop: 90,
+    width: 300,
+    height: 300,
+   marginTop: 70,
    marginLeft:10
   },
   texto_cima: {
     color: '#C6D3A1',
     fontWeight: 'bold',
     fontSize: 24,
-    marginTop: 22
+    marginLeft:20,
+    marginBottom: 10
   },
   
   modalContainer: {

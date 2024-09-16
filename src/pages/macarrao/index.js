@@ -1,12 +1,21 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 export default function App() {
+  const nav = useNavigation();
   return (
     <View style={styles.container}>
      <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/macarrao.png')} />
+        
+      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
+  <FontAwesome name="arrow-circle-left" size={28} color="#6E789C" />
+</TouchableOpacity>
+
         <Text style={styles.paragraph}>
           Macarrão à Bolonhesa
         </Text>
@@ -58,7 +67,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#b8c7cc',
+    backgroundColor: '#fdede9',
     paddingHorizontal: 20,
     paddingTop: 40,
   },
@@ -71,7 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: '#6E789C',
-    marginLeft: 10,
+    marginLeft: 30,
     flex: 1,
     
   },

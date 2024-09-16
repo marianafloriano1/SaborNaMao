@@ -1,12 +1,20 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 export default function App() {
+  const nav = useNavigation();
   return (
     <View style={styles.container}>
      <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/panqueca.png')} />
+        
+      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
+  <FontAwesome name="arrow-circle-left" size={28} color="#6E789C" />
+</TouchableOpacity>
         <Text style={styles.paragraph}>
           Panqueca Americana
         </Text>
@@ -44,7 +52,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#b8c7cc',
+    backgroundColor: '#fdede9',
     paddingHorizontal: 20,
     paddingTop: 40,
   },

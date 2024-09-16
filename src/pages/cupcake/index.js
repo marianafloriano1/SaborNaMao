@@ -1,12 +1,26 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
+  const nav = useNavigation();
   return (
     <View style={styles.container}>
-     <ScrollView showsVerticalScrollIndicator={false}>
+   
+
+      
+
+     
+      <ScrollView showsVerticalScrollIndicator={false}> 
+      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
+        <FontAwesome name="arrow-circle-left" size={28} color="#ff8f7e" />
+      </TouchableOpacity>
+
+      
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/cupcake.png')} />
+
         <Text style={styles.paragraph}>
           Cupcake de Morango
         </Text>
@@ -40,8 +54,10 @@ export default function App() {
       <Text style={styles.topicos}>6. Adicione o leite condensado em fio até obter um creme fofo.</Text>
       <Text style={styles.topicos}>7. Acrescente o achocolatado sabor morango e bata muito bem.</Text>
       <Text style={styles.topicos}>8. Coloque no saco de confeiteiro e decore os cupcakes.</Text> 
-      <Text style={styles.topicos}>9. Se preferir jogue por cima da cobertura M&M's ou confetes, as crianças adoram.</Text>
+     <Text style={styles.topicos}>9. Se preferir jogue por cima da cobertura M&M's ou confetes, as crianças adoram.</Text>
+
      </ScrollView>
+     
      </View>
   );
 }
@@ -49,9 +65,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fdd7d1',
-    paddingHorizontal: 20,
-    paddingTop: 40,
+    backgroundColor: '#fdede9', 
   },
   row: {
     flexDirection: 'row',
@@ -59,23 +73,29 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   paragraph: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: 'bold',
     color: '#ff8f7e',
-    marginLeft: 10,
-    
+    marginLeft: 40,
+    marginTop: 105,
+    marginBottom: 40
   },
-  img: {
-    width: 90,
-    height: 90,
-    marginRight: 20,
+
+  seta: {
+    position: 'absolute',
+    right: 30,
+    top: 105,
+    zIndex: 1,
+    left: 5
   },
+
   sectionTitle: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
     color: '#ff8f7e',
     marginTop: 10,
+    marginLeft:20
   },
   ingredientsList: {
     marginBottom: 20,
@@ -84,5 +104,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 8,
     lineHeight: 22,
+    marginLeft: 10
   },
 });
