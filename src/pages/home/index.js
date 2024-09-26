@@ -9,22 +9,80 @@ import React, { useState } from 'react';
 export default function App() {
   const [menuVisible, setMenuVisible] = useState(false);
   const nav = useNavigation();
+  const handlePress = (buttonNumber) => {
+    console.log(`Botão ${buttonNumber} pressionado!`);
+  };
 
   return (
     
-<ImageBackground 
-      source={require('../../img/fundo.png')} 
-      style={styles.background}
-    >
 
-<Menu />
-    <ScrollView>
+
+    
     <View style={styles.container}>
+      <ScrollView>
+        
+
+        
     <Menu visible={menuVisible} onClose={() => setMenuVisible(false)} />
 
   <Pressable onPress={() => setMenuVisible(true)} style={styles.menuButton}>
     <FontAwesome name="bars" size={34} color="#FF8F7E" />
+  
+    <View style={styles.row}>
+        <Text style={styles.text}>Sabor na Mão</Text>
+        <Image style={styles.img} source={require('../../img/lll.PNG')} />
+      </View>
   </Pressable>
+  
+      
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.button} onPress={() => handlePress(1)}>
+          <Image style={styles.buttonImage} source={require('../../img/Natal.png')} />
+            <Text style={styles.texto}>Natal</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => handlePress(2)}>
+          <Image style={styles.buttonImage} source={require('../../img/Pascoa.png')} />
+          <Text style={styles.texto}>Páscoa</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => handlePress(3)}>
+          <Image style={styles.buttonImage} source={require('../../img/arrai.PNG')} />
+          <Text style={styles.texto}>Arraiá</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.buttonRow1}>
+          <TouchableOpacity style={styles.button1} onPress={() => handlePress(num)}>
+            <View style={styles.buttonSplit}>
+              <View style={styles.leftSide} />
+              <View style={styles.rightSide} />
+              <Image style={styles.buttonImage1} source={require('../../img/suco.png')} />
+              <Text style={styles.texto1}>Sucos</Text>
+            </View>
+          </TouchableOpacity>
+            <TouchableOpacity style={styles.button1} onPress={() => handlePress(num)}>
+            <View style={styles.buttonSplit}>
+              <View style={styles.leftSide} />
+              <View style={styles.rightSide} />
+              <Image style={styles.buttonImage1} source={require('../../img/kids.PNG')} />
+              <Text style={styles.texto1}>Kids</Text>
+            </View>
+          </TouchableOpacity>
+            <TouchableOpacity style={styles.button1} onPress={() => handlePress(num)}>
+            <View style={styles.buttonSplit}>
+              <View style={styles.leftSide} />
+              <View style={styles.rightSide} />
+              <Image style={styles.buttonImage1} source={require('../../img/dieta.png')} />
+              <Text style={styles.texto1}>Dieta</Text>
+            </View>
+          </TouchableOpacity>
+            <TouchableOpacity style={styles.button1} onPress={() => handlePress(num)}>
+            <View style={styles.buttonSplit}>
+              <View style={styles.leftSide} />
+              <View style={styles.rightSide} />
+              <Image style={styles.buttonImage1} source={require('../../img/restricoes.png')} />
+              <Text style={styles.texto1}>Restrições</Text>
+            </View>
+          </TouchableOpacity>
+      </View>
 
       <View
         style={{
@@ -200,23 +258,20 @@ export default function App() {
 
 
 
-
+</ScrollView>
     </View>
-    </ScrollView>
-</ImageBackground>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
+    justifyContent: 'flex-start',
+    backgroundColor: '#fcede8',
+    padding: 40,
   },
-  imagem:{
-    width: 45,
-    height: 45,
-    marginTop: 40,
-  },
+
   
   texto2: {
     fontSize: 24,
@@ -227,16 +282,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     
   },
-  saveButton: {
-    position: 'absolute',
-    right: 10,
-    top: 100,
-    zIndex: 1,
-  },
+
   menuButton:{
-    right: 10,
-    left:30,
-    top: 80,
+    top: 20,
     zIndex: 1,
   },
    texto3: {
@@ -269,10 +317,85 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     marginLeft: 17,
   },
-  imagemcontainer: {
-    position: 'absolute',
-    marginLeft: 350,
+  row: {
+    justifyContent: 'flex-center',
+    alignItems: 'flex-center',
+  
+  },
+  text: {
+    textAlign: 'start',
+    fontSize: 17,
+  },
+  img: {
+    width: 305,
     marginTop: 10,
-
+    height: 150,
+    right:9,
+  },
+  //primeira fileira
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#fff5f0',
+    width: 85,
+    height: 100,
+    borderRadius: 8,
+  },
+  buttonImage: {
+    width: 70,
+    height: 70,
+  },
+texto:{
+  textAlign: 'center',
+  marginTop: 5,
+    fontSize: 15,
+},
+  //Segunda Fileira
+  buttonRow1: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+   
+  },
+  button1: {
+    width: 60,
+    height: 70,
+    borderRadius: 8,
+    overflow: 'hidden',
+    flexDirection: 'row',
+  },
+  buttonSplit: {
+    flex: 1,
+    flexDirection: 'column',
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+  },
+  leftSide: {
+    flex: 3,
+    backgroundColor: '#ffd6c8', 
+    
+  },
+  rightSide: {
+    flex: 1,
+    backgroundColor: '', 
+  },
+  buttonImage1: {
+    width: 40,
+    height: 40,
+    position: 'absolute',
+    top: '49%',
+    left: '60%',
+    
+    transform: [{ translateX: -25 }, { translateY: -25 }], // Centraliza a imagem
+  },
+  texto1:{
+    textAlign: 'center',
+  marginTop: 5,
+    fontSize: 12,
   },
 });
