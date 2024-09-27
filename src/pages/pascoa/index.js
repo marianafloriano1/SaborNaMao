@@ -8,12 +8,13 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
-        <FontAwesome name="arrow-circle-left" size={28} color="#FF8F7E" />
-      </TouchableOpacity>
+      
 
        <ScrollView contentContainerStyle={styles.scroll}>
-<Text style={styles.texto2}>Aperitivos para Festas</Text>       
+       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
+        <FontAwesome name="arrow-circle-left" size={28} color="#c780c5" />
+      </TouchableOpacity>
+<Text style={styles.texto2}>Receitas de Pascoa</Text>       
 <View style={styles.quadrado}>
 
 <View
@@ -31,13 +32,13 @@ export default function App() {
             height: 150,
             backgroundColor: 'transparent',
             borderRadius: 25,
-            borderColor:'#FF8F7E',
+            borderColor:'#c780c5',
             borderWidth:4,
-          }} onPress={() => nav.navigate('cookie')}>  
+          }} onPress={() => nav.navigate('bacalhau')}>  
           <View style={styles.teste}>
-          <Image style={styles.img} source={require('../../img/cookies.png')}/> 
+          <Image style={styles.img} source={require('../../img/peixe.png')}/> 
          </View>
-         <Text style={styles.texto}>Cookies de Chocolate</Text>
+         <Text style={styles.texto}>Bacalhau</Text>
         </Pressable>
 
         <Pressable
@@ -46,13 +47,13 @@ export default function App() {
             height: 150,
             backgroundColor: 'transparent',
             borderRadius: 25,
-            borderColor:'#FF8F7E',
+            borderColor:'#c780c5',
             borderWidth:4,
-          }} onPress={() => nav.navigate('pipoca')}>
+          }} onPress={() => nav.navigate('ovo_choco')}>
           <View style={styles.teste}>
-          <Image style={styles.img} source={require('../../img/pipoca.png')}/>
+          <Image style={styles.img} source={require('../../img/ovo.png')}/>
           </View>
-           <Text style={styles.texto}>Pipoca Salgada</Text>
+           <Text style={styles.texto}>Ovo de Chocolate</Text>
         </Pressable>
          </View>
 
@@ -71,13 +72,13 @@ export default function App() {
             height: 150,
             backgroundColor: 'transparent',
             borderRadius: 25,
-           borderColor:'#FF8F7E',
+           borderColor:'#c780c5',
             borderWidth:4,
-          }} onPress={() => nav.navigate('cupcake')}>
+          }} onPress={() => nav.navigate('bobo')}>
             <View style={styles.teste}>
-           <Image style={styles.img} source={require('../../img/cupcake.png')}/>
+           <Image style={styles.img} source={require('../../img/camarao.png')}/>
            </View>
-          <Text style={styles.texto}>Cupcake de Morango</Text>
+          <Text style={styles.texto}>Bobó de Camarão</Text>
         </Pressable>
 
         <Pressable
@@ -86,13 +87,13 @@ export default function App() {
             height: 150,
             backgroundColor: 'transparent',
             borderRadius: 25,
-            borderColor:'#FF8F7E',
+            borderColor:'#c780c5',
             borderWidth:4,
-          }} onPress={() => nav.navigate('pizza')}>
+          }} onPress={() => nav.navigate('coelho_choco')}>
             <View style={styles.teste}>
-           <Image style={styles.img} source={require('../../img/pizza.png')}/>
+           <Image style={styles.img} source={require('../../img/coelhinho.png')}/>
            </View>
-         <Text style={styles.texto}>Pizza Portuguesa</Text>
+         <Text style={styles.texto}>Coelho de Chocolate</Text>
         </Pressable>
       </View>
 
@@ -109,14 +110,14 @@ export default function App() {
             height: 150,
             backgroundColor: 'transparent',
             borderRadius: 25,
-            borderColor:'#FF8F7E',
+            borderColor:'#c780c5',
             borderWidth:4,
           }}
-          onPress={() => nav.navigate('batata')}>
+          onPress={() => nav.navigate('peixe')}>
             <View style={styles.teste}>
-           <Image style={styles.img} source={require('../../img/batatas.png')}/>
+           <Image style={styles.img} source={require('../../img/peixe.png')}/>
            </View>
-         <Text style={styles.texto}>Batata Frita</Text>
+         <Text style={styles.texto}>Peixe Grelhado</Text>
         </Pressable>
 
         <Pressable
@@ -125,14 +126,14 @@ export default function App() {
             height: 150,
             backgroundColor: 'transparent',
             borderRadius: 25,
-            borderColor:'#FF8F7E',
+            borderColor:'#c780c5',
             borderWidth:4,
           }}
-          onPress={() => nav.navigate('hotdog')}>
+          onPress={() => nav.navigate('cuscuz2')}>
            <View style={styles.teste}>
-           <Image style={styles.img} source={require('../../img/hotdog.png')}/>
+           <Image style={styles.img} source={require('../../img/pudim2.png')}/>
            </View>
-         <Text style={styles.texto}>Cachorro Quente</Text>
+         <Text style={styles.texto}>Cuscuz</Text>
         </Pressable>
       </View>
 
@@ -146,7 +147,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: '#fdd7d1',
+    backgroundColor: '#e0b9df',
   },
   scroll: {
     flexGrow: 1,
@@ -156,11 +157,11 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontSize:15,
     fontWeight:'bold',
-    marginTop:15,
+    marginTop:10,
     color: '#565656',
   },
   texto2:{
-    color: '#FF8F7E',
+    color: '#c780c5',
     fontSize: 28,
     textAlign: 'center',
     justifyContent: 'flex-start',

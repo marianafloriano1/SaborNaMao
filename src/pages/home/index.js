@@ -28,37 +28,39 @@ export default function App() {
   <Pressable onPress={() => setMenuVisible(true)} style={styles.menuButton}>
     <FontAwesome name="bars" size={34} color="#FF8F7E" />
   
-    <View style={styles.row}>
+    
+  </Pressable>
+
+  <View style={styles.fundo}>
+  <View style={styles.row}>
         <Text style={styles.text}>Sabor na Mão</Text>
         <Image style={styles.img} source={require('../../img/lll.PNG')} />
-      </View>
-  </Pressable>
-  
+        </View>
       
       <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.button} onPress={() => handlePress(1)}>
+        <TouchableOpacity style={styles.button} onPress={() => {nav.navigate('ceia_natal')}}>
           <Image style={styles.buttonImage} source={require('../../img/Natal.png')} />
             <Text style={styles.texto}>Natal</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => handlePress(2)}>
+        <TouchableOpacity style={styles.button} onPress={() => {nav.navigate('pascoa')}}>
           <Image style={styles.buttonImage} source={require('../../img/Pascoa.png')} />
           <Text style={styles.texto}>Páscoa</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => handlePress(3)}>
+        <TouchableOpacity style={styles.button} onPress={() => {nav.navigate('festa_junina')}}>
           <Image style={styles.buttonImage} source={require('../../img/arrai.PNG')} />
           <Text style={styles.texto}>Arraiá</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.buttonRow1}>
-          <TouchableOpacity style={styles.button1} onPress={() => handlePress(num)}>
+          <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('sucos');}}>
             <View style={styles.buttonSplit}>
               <View style={styles.leftSide} />
               <View style={styles.rightSide} />
-              <Image style={styles.buttonImage1} source={require('../../img/suco.png')} />
+              <Image style={styles.buttonImage1} source={require('../../img/suco.png')}  />
               <Text style={styles.texto1}>Sucos</Text>
             </View>
           </TouchableOpacity>
-            <TouchableOpacity style={styles.button1} onPress={() => handlePress(num)}>
+            <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('kids');}}>
             <View style={styles.buttonSplit}>
               <View style={styles.leftSide} />
               <View style={styles.rightSide} />
@@ -82,144 +84,99 @@ export default function App() {
               <Text style={styles.texto1}>Restrições</Text>
             </View>
           </TouchableOpacity>
+          
       </View>
+  </View>
+  
+
+  <View
+  style={{
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 10,
+    marginLeft: 10
+  }}>
+  
+  <View style={{ alignItems: 'center' }}>
+    <Pressable
+      style={{
+        width: 140,
+        height: 140,
+        backgroundColor: 'rgba(255, 143, 126, 0.6)',
+        borderRadius: 25,
+        marginBottom: 10,
+      }}
+      onPress={() => nav.navigate('noite_garotas')}>
+      <Image style={styles.img2} source={require('../../img/pipoca.png')} />
+    </Pressable>
+    <Text style={styles.texto}>Receitas para Petiscar</Text> 
+    <Text style={styles.subtitulo}>Pipoca Salgada</Text>
+  </View>
+
+  <View style={{ alignItems: 'center' }}>
+    <Pressable
+      style={{
+        width: 140,
+        height: 140,
+        backgroundColor: 'rgba(110, 120, 156, 0.6)',
+        borderRadius: 25,
+        marginBottom: 10, 
+      }}
+      onPress={() => nav.navigate('morando_sozinho')}>
+        <Image style={styles.img3} source={require('../../img/arroz.png')} />
+     
+    </Pressable> 
+    <Text style={styles.texto}> Receitas para uma só pessoa</Text>
+    <Text style={styles.subtitulo}>Arroz de Forno</Text>
+  </View>
+</View>
+
 
       <View
         style={{
           flex: 1,
           flexDirection: 'row',
           justifyContent: 'space-evenly',
-          marginTop: 140,
-          
+          marginLeft: 10
         }}>
-          
+          <View style={{ alignItems: 'center' }}>
           <Pressable
           style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#FF8F7E',
-            marginRight:20,
-            borderRadius: 25,
-            marginBottom:20,
-            
-           
-          }}
-          onPress={() => nav.navigate('noite_garotas')}>
-          <Text style={styles.texto}>Noite De Snacks</Text>
-        </Pressable>
-          
-        
-
-        <Pressable
-          style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#657AB6',
-            borderRadius: 25,
-           
-          }}
-          onPress={() => nav.navigate('morando_sozinho')}>
-          <Text style={styles.texto}>Morando Sozinho</Text>
-        </Pressable>
-      </View>
-
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-        }}>
-        <Pressable
-          style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#F1C744',
+            width: 140,
+            height: 140,
+            backgroundColor: 'rgba(241, 199, 68, 0.6)',
             borderRadius: 25,
             marginRight:20,
             marginBottom:20
           }}
           onPress={() => nav.navigate('almoco_domingo')}>
-          <Text style={styles.texto}>Almoço De Domingo</Text>
-        </Pressable>
-
-        <Pressable
-          style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#A4BE89',
-            borderRadius: 25,
-           
-          }}
-          onPress={() => nav.navigate('kids')}>
-          <Text style={styles.texto2}>Kids</Text>
-        </Pressable>
-      </View>
-
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-        }}>
-        <Pressable
-          style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#EB7732',
-            borderRadius: 25,
-            marginRight:20,
-            marginBottom:20,
-          }}
-          onPress={() => nav.navigate('ceia_natal')}>
-          <Text style={styles.texto2}>Ceia De Natal</Text>
-        </Pressable>
-
-        <Pressable
-          style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#C13050',
-            borderRadius: 25,
-       
-          }}
-          onPress={() => nav.navigate('festa_junina')}>
-          <Text style={styles.texto2}>Festa Junina</Text>
-        </Pressable>
-      </View>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          alignItems:'center',
-          textAlign:'center',
+            <Image style={styles.img5} source={require('../../img/frango-assado.png')} />
           
-        }}>
-        <Pressable
+        </Pressable>
+        <Text style={styles.texto}>Almoço De Domingo</Text>
+        <Text style={styles.subtitulo}>Frango Assado</Text>
+  </View>
+
+  <View style={{ alignItems: 'center' }}>
+  <Pressable
           style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#766daa',
+            width: 140,
+            height: 140,
+            backgroundColor: 'rgba(118, 109, 170, 0.6)',
             borderRadius: 25,
             marginRight:20,
             marginBottom:20,
           }}
           onPress={() => nav.navigate('vegano')}>
-          <Text style={styles.texto3}>Receitas Veganas</Text>
+            <Image style={styles.img4} source={require('../../img/pao_de_queijo.png')} />
         </Pressable>
-
-        <Pressable
-          style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#f04f30',
-            borderRadius: 25,
-            marginBottom:20,
-          }}
-          onPress={() => nav.navigate('sucos')}>
-          <Text style={styles.texto2}>Sucos</Text>
-        </Pressable>
+        <Text style={styles.texto}>Receitas Veganas</Text>
+        <Text style={styles.subtitulo}>Pão de Queijo</Text>
+  </View>
       </View>
+
+     
 
       <View
         style={{
@@ -228,32 +185,41 @@ export default function App() {
           justifyContent: 'space-evenly',
           alignItems:'center',
           textAlign:'center',
+  
           
         }}>
-        <Pressable
+          <View style={{ alignItems: 'center' }}>
+          <Pressable
           style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#a2cdba',
+            width: 140,
+            height: 140,
+            backgroundColor: 'rgba(162, 205, 186, 0.6)',
             borderRadius: 25,
             marginRight:20,
             marginBottom:10,
           }}
           onPress={() => nav.navigate('mamaes')}>
-          <Text style={styles.texto}>Receitas Para Mamães</Text>
+          <Image style={styles.img6} source={require('../../img/papinha.png')} />
         </Pressable>
+        <Text style={styles.texto}>Receitas Para Mamães</Text>
+        <Text style={styles.subtitulo}>Papinha</Text>
+  </View>
 
-        <Pressable
+  <View style={{ alignItems: 'center' }}>
+  <Pressable
           style={{
-            width: 155,
-            height: 155,
-            backgroundColor: '#9f87b4',
+            width: 140,
+            height: 140,
+            backgroundColor: 'rgba(159, 135, 180, 0.6)',
             borderRadius: 25,
             marginBottom:10,
           }}
           onPress={() => nav.navigate('vegetariano')}>
-          <Text style={styles.texto}>Receitas Vegetarianas</Text>
+          <Image style={styles.img7} source={require('../../img/burger.png')} />
         </Pressable>
+        <Text style={styles.texto}>Receitas Vegetarianas</Text>
+        <Text style={styles.subtitulo}>Hambúrguer</Text>
+  </View>
       </View>
 
 
@@ -269,41 +235,59 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     backgroundColor: '#fcede8',
-    padding: 40,
+   
   },
-
-  
-  texto2: {
-    fontSize: 24,
-    color: 'white',
-    textAlign: 'center',
-    justifyContent: 'center',
-    marginTop: 60,
-    fontWeight: 'bold',
-    
-  },
+fundo:{
+  padding:40
+},
+img2:{
+  width: 100,
+  height:100, 
+  marginLeft:20,
+  marginTop:40
+},
+img3:{
+  width: 100,
+  height:100, 
+  marginLeft:20,
+  marginTop: 45
+},
+img4:{
+  width: 100,
+  height:100, 
+  marginLeft:20,
+  marginTop: 55
+},
+img5:{
+  width: 100,
+  height:100, 
+  marginLeft:20,
+  marginTop: 50
+},
+img6:{
+  width: 100,
+  height:100, 
+  marginLeft:20,
+  marginTop: 43
+},
+img7:{
+  width: 100,
+  height:100, 
+  marginLeft:20,
+  marginTop: 53
+},
 
   menuButton:{
-    top: 20,
+    top: 30,
     zIndex: 1,
+    left: 30
   },
-   texto3: {
-    fontSize: 24,
-    color: 'white',
+
+  subtitulo: {
     textAlign: 'center',
-    justifyContent: 'center',
-    marginTop: 50,
-    fontWeight: 'bold',
-  },
-  texto: {
-    fontSize: 24,
-    color: 'white',
-    textAlign: 'center',
-    justifyContent: 'center',
-    marginTop: 50,
-    fontWeight: 'bold',
-    
-    
+    marginTop: 5,
+      fontSize: 13,
+      marginBottom: 15
   },
   input: {
     borderColor: '#6a759b',
@@ -323,14 +307,19 @@ const styles = StyleSheet.create({
   
   },
   text: {
-    textAlign: 'start',
-    fontSize: 17,
+    textAlign: 'center',
+    fontSize: 25,
+    color: '#FF8F7E',
+    justifyContent: 'start',
+    fontWeight: 'bold',
+    marginTop: -45
+
   },
   img: {
-    width: 305,
-    marginTop: 10,
-    height: 150,
-    right:9,
+    width: 335,
+    marginTop: 30,
+    height: 180,
+    left:5,
   },
   //primeira fileira
   buttonRow: {

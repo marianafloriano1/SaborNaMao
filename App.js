@@ -89,6 +89,13 @@ import Pao from './src/pages/pao';
 import Panqueca_maca from './src/pages/panqueca_maca';
 import Panqueca_banana from './src/pages/panqueca_banana';
 import Macarrao_bebe from './src/pages/macarrao_bebe';
+import Pascoa from './src/pages/pascoa';
+import Bacalhau from './src/pages/bacalhau';
+import Peixe from './src/pages/peixe';
+import Bobo from './src/pages/bobo';
+import Coelho_choco from './src/pages/coelho_choco';
+import Ovo_choco from './src/pages/ovo_choco';
+import Cuscuz2 from './src/pages/cuscuz2';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -266,7 +273,21 @@ export default function App() {
 
 <Stack.Screen name="sopa" component={Sopa} options={{ headerShown: false }}/>
 
+
+
+<Stack.Screen name="pascoa" component={Pascoa} options={{ headerShown: false }}/>
+
+<Stack.Screen name="peixe" component={Peixe} options={{ headerShown: false }}/>
+
+<Stack.Screen name="bacalhau" component={Bacalhau} options={{ headerShown: false }}/>
+
+<Stack.Screen name="ovo_choco" component={Ovo_choco} options={{ headerShown: false }}/>
+
+<Stack.Screen name="coelho_choco" component={Coelho_choco} options={{ headerShown: false }}/>
+
+<Stack.Screen name="cuscuz2" component={Cuscuz2} options={{ headerShown: false }}/>
          
+<Stack.Screen name="bobo" component={Bobo} options={{ headerShown: false }}/>
       </Stack.Navigator>
      
     </NavigationContainer>

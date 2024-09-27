@@ -183,9 +183,10 @@ const styles = StyleSheet.create({
   },
   seta: {
     position: 'fixed',
-    top: 35,
+    right: 10,
+    top: 60,
     zIndex: 1,
-    left: 25
+    left: 20
   },
   texto2:{
     color: '#dfc265',

@@ -192,10 +192,11 @@ const styles = StyleSheet.create({
 
   },
   seta: {
-    right: 20,
-    top: 75,
+    position: 'fixed',
+    right: 10,
+    top: 60,
     zIndex: 1,
-    left: 14
+    left: 20
   },
   
 });

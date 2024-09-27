@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: 150,
+    width: 190,
     height: '100%',
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     padding: 20,
@@ -54,14 +54,14 @@ const styles = StyleSheet.create({
   closeButton: {
     alignItems: 'flex-end',
     marginBottom: 20,
-    marginTop:70,
-    marginLeft: 80,
+    marginTop:50,
+    marginLeft: 167,
     
   },
   sidebarItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop:100
+    marginTop:80
   },
   sidebarText: {
     color: '#565656',

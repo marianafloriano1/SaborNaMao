@@ -195,10 +195,9 @@ const styles = StyleSheet.create({
   seta: {
     position: 'fixed',
     right: 10,
-    top: 75,
+    top: 60,
     zIndex: 1,
     left: 20
   },
-  
   
 });
