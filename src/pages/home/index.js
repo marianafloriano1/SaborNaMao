@@ -60,7 +60,7 @@ export default function App() {
               <Text style={styles.texto1}>Sucos</Text>
             </View>
           </TouchableOpacity>
-            <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('kids');}}>
+            <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('kids2');}}>
             <View style={styles.buttonSplit}>
               <View style={styles.leftSide} />
               <View style={styles.rightSide} />
@@ -222,7 +222,49 @@ export default function App() {
   </View>
       </View>
 
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          alignItems:'center',
+          textAlign:'center',
+  
+          
+        }}>
+          <View style={{ alignItems: 'center' }}>
+          <Pressable
+          style={{
+            width: 140,
+            height: 140,
+            backgroundColor: 'rgba(162, 205, 186, 0.6)',
+            borderRadius: 25,
+            marginRight:20,
+            marginBottom:10,
+          }}
+          onPress={() => nav.navigate('aniversario')}>
+          <Image style={styles.img6} source={require('../../img/bolo2.png')} />
+        </Pressable>
+        <Text style={styles.texto}>Receitas De Aniversário</Text>
+        <Text style={styles.subtitulo}>Bolo de Aniversário</Text>
+  </View>
 
+  <View style={{ alignItems: 'center' }}>
+  <Pressable
+          style={{
+            width: 140,
+            height: 140,
+            backgroundColor: 'rgba(159, 135, 180, 0.6)',
+            borderRadius: 25,
+            marginBottom:10,
+          }}
+          onPress={() => nav.navigate('vegetariano')}>
+          <Image style={styles.img7} source={require('../../img/burger.png')} />
+        </Pressable>
+        <Text style={styles.texto}>Receitas Vegetarianas</Text>
+        <Text style={styles.subtitulo}>Hambúrguer</Text>
+  </View>
+      </View>
 
 </ScrollView>
     </View>

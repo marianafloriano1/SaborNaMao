@@ -21,6 +21,7 @@ import Almoco_domingo from './src/pages/almoco_domingo';
 import Ceia_natal from './src/pages/ceia_natal';
 import Festa_junina from './src/pages/festa_junina';
 import Kids from './src/pages/kids';
+import Kids2 from './src/pages/kids2';
 import Morando_sozinho from './src/pages/morando_sozinho';
 import Noite_garotas from './src/pages/noite_garotas';
 import Cookie from './src/pages/cookie';
@@ -96,6 +97,13 @@ import Bobo from './src/pages/bobo';
 import Coelho_choco from './src/pages/coelho_choco';
 import Ovo_choco from './src/pages/ovo_choco';
 import Cuscuz2 from './src/pages/cuscuz2';
+import Aniversario from './src/pages/aniversario';
+import Brigadeiro2 from './src/pages/brigadeiro2';
+import Bolochoco2 from './src/pages/bolochoco2';
+import Coxinha2 from './src/pages/coxinha2';
+import Nachos from './src/pages/nachos';
+import Beijinho from './src/pages/beijinho';
+import Dadinho from './src/pages/dadinho';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -288,6 +296,25 @@ export default function App() {
 <Stack.Screen name="cuscuz2" component={Cuscuz2} options={{ headerShown: false }}/>
          
 <Stack.Screen name="bobo" component={Bobo} options={{ headerShown: false }}/>
+
+
+<Stack.Screen name="aniversario" component={Aniversario} options={{ headerShown: false }}/>
+
+<Stack.Screen name="beijinho" component={Beijinho} options={{ headerShown: false }}/>
+
+<Stack.Screen name="brigadeiro2" component={Brigadeiro2} options={{ headerShown: false }}/>
+
+<Stack.Screen name="coxinha2" component={Coxinha2} options={{ headerShown: false }}/>
+
+<Stack.Screen name="bolochoco2" component={Bolochoco2} options={{ headerShown: false }}/>
+
+<Stack.Screen name="nachos" component={Nachos} options={{ headerShown: false }}/>
+
+<Stack.Screen name="dadinho" component={Dadinho} options={{ headerShown: false }}/>
+
+
+<Stack.Screen name="kids2" component={Kids2} options={{ headerShown: false }}/>
+
       </Stack.Navigator>
      
     </NavigationContainer>

@@ -12,7 +12,7 @@ export default function App() {
         <FontAwesome name="arrow-circle-left" size={28} color="#95ad7b" />
       </TouchableOpacity>
        <ScrollView contentContainerStyle={styles.scroll}>
-       <Text style={styles.texto2}>Para crianças fazerem</Text>    
+  
        <View style={styles.quadrado}>
       <View
         style={{
