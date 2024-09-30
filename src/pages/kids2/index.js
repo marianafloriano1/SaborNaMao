@@ -14,13 +14,15 @@ export default function App() {
         </TouchableOpacity>
         <Text style={styles.texto2}>Área Kids</Text>
 
+        <Image source={require('../../img/brocolis.png')} style={styles.imagem}></Image>
+
         <Pressable
           style={{
             width: 360,
             height: 140,
             backgroundColor: '#c6dbb2',
             borderRadius: 25,
-            marginTop: 90,
+            marginTop: 30,
             marginLeft: 25,
             position: 'relative',
             overflow: 'hidden'
@@ -48,10 +50,15 @@ export default function App() {
         >
           <View style={styles.teste}>
             <Image style={styles.img2} source={require('../../img/papinha.png')} />
-            <Text style={styles.texto3}>Para os Bebês</Text>
+            <Text style={styles.texto3}>Para os Bebês de 6 Meses</Text>
           </View>
         </Pressable>
-      </ScrollView>
+
+     <Image source={require('../../img/kidss.png')} style={styles.imagemm}></Image>
+
+    </ScrollView>
+      
+      
     </View>
   );
 }
@@ -70,7 +77,7 @@ const styles = StyleSheet.create({
     left: 20,
   },
   texto2: {
-    fontSize: 28,
+    fontSize: 24,
     textAlign: 'left',
     justifyContent: 'flex-start',
     marginLeft: 55,
@@ -78,7 +85,7 @@ const styles = StyleSheet.create({
   },
   texto: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: 'bold',
     marginTop: 5,
     color: '#fff',
@@ -87,7 +94,7 @@ const styles = StyleSheet.create({
   },
   texto3: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: 'bold',
     marginTop: 5,
     color: '#fff',
@@ -110,4 +117,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+   imagemm:{
+    width: 420,
+    height: 350,
+    marginTop: 20
+
+    },
+    imagem:{
+      width: 80,
+      height: 90,
+      marginLeft: 270,
+      zIndex: 1,
+      marginBottom: -42 
+      },
 });

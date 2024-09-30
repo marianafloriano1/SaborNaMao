@@ -12,129 +12,120 @@ export default function App() {
         <FontAwesome name="arrow-circle-left" size={28} color="#d6705d" />
       </TouchableOpacity>
        <ScrollView contentContainerStyle={styles.scroll}>
-       <Text style={styles.texto2}>Sucos rápidos e práticos</Text>    
+       <Text style={styles.texto2}>Sucos Naturais</Text>    
        <View style={styles.quadrado}>
 
-
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          marginTop: 70,
-          marginRight: 20,
-        }}>
-        
-        <Pressable
+       <Image source={require('../../img/i.png')} style={styles.imagemm}></Image>
+       <Pressable
           style={{
-            width: 150,
-            height: 150,
-            backgroundColor: 'transparent',
+            width: 270,
+            height: 160,
+            backgroundColor: 'rgba(255, 193, 154, 0.5)',
             borderRadius: 25,
-            borderColor:'#d6705d',
-            borderWidth:4,
-          }} onPress={() => nav.navigate('limao')}>  
+            marginTop: 30,
+            marginLeft: 30,
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+          onPress={() => nav.navigate('limao')}
+        >
           <View style={styles.teste}>
-          <Image style={styles.img} source={require('../../img/limao.png')}/> 
-         </View>
-         <Text style={styles.texto}>Suco De Limão</Text>
-        </Pressable>
-
-        <Pressable
-          style={{
-            width: 150,
-            height: 150,
-            backgroundColor: 'transparent',
-            borderRadius: 25,
-            borderColor:'#d6705d',
-            borderWidth:4,
-          }} onPress={() => nav.navigate('abacaxi')}>
-          <View style={styles.teste}>
-          <Image style={styles.img} source={require('../../img/abacaxi.png')}/>
+            <Image style={styles.img} source={require('../../img/limao.png')} />
+            <Text style={styles.texto}>Suco de Limão</Text>
           </View>
-           <Text style={styles.texto}>Suco De Abacaxi</Text>
-        </Pressable>
-         </View>
-
-    
-    
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          marginRight: 20,
-          justifyContent: 'space-evenly',
-        }}>
-        <Pressable
-          style={{
-            width: 150,
-            height: 150,
-            backgroundColor: 'transparent',
-            borderRadius: 25,
-           borderColor:'#d6705d',
-            borderWidth:4,
-          }} onPress={() => nav.navigate('morango')}>
-            <View style={styles.teste}>
-           <Image style={styles.img} source={require('../../img/morango.png')}/>
-           </View>
-          <Text style={styles.texto}>Suco De Morango</Text>
         </Pressable>
 
         <Pressable
           style={{
-            width: 150,
-            height: 150,
-            backgroundColor: 'transparent',
+            width: 270,
+            height: 160,
+            backgroundColor: 'rgba(255, 193, 154, 0.5)',
             borderRadius: 25,
-            borderColor:'#d6705d',
-            borderWidth:4,
-          }} onPress={() => nav.navigate('melancia')}>
-            <View style={styles.teste}>
-           <Image style={styles.img} source={require('../../img/melancia.png')}/>
-           </View>
-         <Text style={styles.texto}>Suco De Melancia</Text>
-        </Pressable>
-      </View>
-
-      <View
-        style={{
-          flex: 1,
-          marginRight: 20,
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-        }}>
-        <Pressable
-          style={{
-            width: 150,
-            height: 150,
-            backgroundColor: 'transparent',
-            borderRadius: 25,
-            borderColor:'#d6705d',
-            borderWidth:4,
+            marginTop: 60,
+            marginLeft: 95,
+            position: 'relative',
+            overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('cenoura')}>
-            <View style={styles.teste}>
-           <Image style={styles.img} source={require('../../img/cenoura.png')}/>
-           </View>
-         <Text style={styles.texto}>Suco De Cenoura</Text>
+          onPress={() => nav.navigate('abacaxi')}
+        >
+          <View style={styles.teste}>
+            <Image style={styles.img2} source={require('../../img/abacaxi.png')} />
+            <Text style={styles.texto3}>Suco de Abacaxi</Text>
+          </View>
         </Pressable>
-
         <Pressable
           style={{
-            width: 150,
-            height: 150,
-            backgroundColor: 'transparent',
+            width: 270,
+            height: 160,
+            backgroundColor: 'rgba(255, 193, 154, 0.5)',
             borderRadius: 25,
-            borderColor:'#d6705d',
-            borderWidth:4,
+            marginTop: 60,
+            marginLeft: 30,
+            position: 'relative',
+            overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('verde')}>
-           <View style={styles.teste}>
-           <Image style={styles.img} source={require('../../img/verde.png')}/>
-           </View>
-         <Text style={styles.texto}>Suco Verde</Text>
+          onPress={() => nav.navigate('morango')}
+        >
+          <View style={styles.teste}>
+            <Image style={styles.img} source={require('../../img/morango.png')} />
+            <Text style={styles.texto}>Suco de Morango</Text>
+          </View>
         </Pressable>
-      </View>
+        <Pressable
+          style={{
+            width: 270,
+            height: 160,
+            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            borderRadius: 25,
+            marginTop: 60,
+            marginLeft: 95,
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+          onPress={() => nav.navigate('melancia')}
+        >
+          <View style={styles.teste}>
+            <Image style={styles.img2} source={require('../../img/melancia.png')} />
+            <Text style={styles.texto3}>Suco de Melancia</Text>
+          </View>
+        </Pressable>
+        <Pressable
+          style={{
+            width: 270,
+            height: 160,
+            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            borderRadius: 25,
+            marginTop: 60,
+            marginLeft: 30,
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+          onPress={() => nav.navigate('cenoura')}
+        >
+          <View style={styles.teste}>
+            <Image style={styles.img} source={require('../../img/cenoura.png')} />
+            <Text style={styles.texto}>Suco de Cenoura</Text>
+          </View>
+        </Pressable>
+        <Pressable
+          style={{
+            width: 270,
+            height: 160,
+            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            borderRadius: 25,
+            marginTop: 60,
+            marginLeft: 95,
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+          onPress={() => nav.navigate('verde')}
+        >
+          <View style={styles.teste}>
+            <Image style={styles.img2} source={require('../../img/verde.png')} />
+            <Text style={styles.texto3}>Suco Verde</Text>
+          </View>
+        </Pressable>
+  
       </View>
       </ScrollView>
     </View>
@@ -147,49 +138,69 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffc19a',
    
   },
-  quadrado:{
-    backgroundColor: 'rgba(253, 237, 233, 0.9)',
+  quadrado: {
+    backgroundColor: 'rgba(253, 237, 233, 0.7)',
     position: 'absolute',
     zIndex: -1,
-    height: 800,
-    width: 430,
+    flex: 1,
+    width: '100%', // ou mantenha 430 se preferir
     borderTopLeftRadius: 50,
     borderTopRightRadius: 80,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     top: 110,
   },
+  
   scroll: {
     flexGrow: 1,
     justifyContent: 'center',
   },
-  texto:{
-    textAlign:'center',
-    fontSize:15,
-    fontWeight:'bold',
-    marginTop:10,
-    color: '#565656',
+
+  texto2:{
+    color: '#fff',
+    fontSize: 28,
+    textAlign: 'center',
+    justifyContent: 'flex-start',
+    marginBottom: 790,
+    fontWeight: 'bold',
+    marginLeft: 15
+
   },
-  img:{
+  texto: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 5,
+    color: '#fff',
+    position: 'absolute',
+    marginLeft: 250
+  },
+  texto3: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 5,
+    color: '#fff',
+    position: 'absolute',
+  },
+  img2: {
+    width: 110,
+    height: 110,
+    marginTop:30,
+    marginLeft: 270
+  },
+
+  img: {
     width: 100,
-    height:100,  
+    height: 100,
+    marginTop:30,
   },
   teste: {
     width: 141,
     height: 141,
-    borderRadius:19,
-    alignItems:'center',
-    justifyContent:'center',
-  },
-  texto2:{
-    color: '#d6705d',
-    fontSize: 28,
-    textAlign: 'center',
-    justifyContent: 'flex-start',
-    marginBottom: 750,
-    fontWeight: 'bold',
-    marginLeft: 15
-
+    borderRadius: 19,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   seta: {
     position: 'fixed',
@@ -197,6 +208,16 @@ const styles = StyleSheet.create({
     top: 60,
     zIndex: 1,
     left: 20
+
   },
+
+  imagemm:{
+    width: 100,
+    height: 80,
+    marginLeft:150,
+    borderRadius: 30,
+    marginTop: 20
+    },
   
 });
+

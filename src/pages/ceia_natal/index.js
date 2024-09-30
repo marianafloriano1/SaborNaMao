@@ -8,13 +8,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-       <ImageBackground source={require('../../img/planta.png')} style={styles.a} />
-       
+       <ImageBackground style={styles.container} source={require('../../img/a.png')}>
+       <ScrollView contentContainerStyle={styles.scroll}>
         <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#fff" />
       </TouchableOpacity>
-       <ScrollView contentContainerStyle={styles.scroll}>
-       
        <Text style={styles.texto2}>Receitas Natalinas</Text>   
 
 
@@ -129,9 +127,13 @@ export default function App() {
             <Text style={styles.texto3}>Salada Natalina</Text>
           </View>
         </Pressable>
-  
+    <Image source={require('../../img/papainoel.png')} style={styles.imagemm}></Image>
       </View>
       </ScrollView>
+       </ImageBackground>
+       
+       
+      
     </View>
   );
 }
@@ -140,10 +142,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 2,
     backgroundColor: '#cc4b4e',
-   
+    zIndex: -1,
+    height: 150 
   },
   quadrado: {
-    backgroundColor: 'rgba(253, 237, 233, 0.7)',
+    backgroundColor: 'rgba(253, 237, 233, 1)',
     position: 'absolute',
     zIndex: -1,
     flex: 1,
@@ -172,7 +175,7 @@ const styles = StyleSheet.create({
   },
   texto: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 22,
     fontWeight: 'bold',
     marginTop: 5,
     color: '#fff',
@@ -181,7 +184,7 @@ const styles = StyleSheet.create({
   },
   texto3: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 22,
     fontWeight: 'bold',
     marginTop: 5,
     color: '#fff',
@@ -213,9 +216,10 @@ const styles = StyleSheet.create({
     zIndex: 1,
     left: 20
   },
-  a:{
-    zIndex: -1,
-    position: 'absolute'
-  },
+  imagemm:{
+    width: 100,
+    height: 120,
+    
+    },
   
 });

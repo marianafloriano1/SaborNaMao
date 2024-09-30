@@ -8,10 +8,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+     
+       <ScrollView contentContainerStyle={styles.scroll}>
+
        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#be6e80" />
       </TouchableOpacity>
-       <ScrollView contentContainerStyle={styles.scroll}>
+
+
        <Text style={styles.texto2}>Comidas tipícas</Text>    
        <View style={styles.quadrado}>
        <Pressable
@@ -123,6 +127,7 @@ export default function App() {
             <Text style={styles.texto3}>Quentão (Vinho)</Text>
           </View>
         </Pressable>
+        <Image source={require('../../img/junina.png')} style={styles.imagemm}></Image>
   
       </View>
       </ScrollView>
@@ -166,7 +171,7 @@ const styles = StyleSheet.create({
   },
   texto: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 22,
     fontWeight: 'bold',
     marginTop: 5,
     color: '#fff',
@@ -175,7 +180,7 @@ const styles = StyleSheet.create({
   },
   texto3: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 22,
     fontWeight: 'bold',
     marginTop: 5,
     color: '#fff',
@@ -208,5 +213,9 @@ const styles = StyleSheet.create({
     left: 20
 
   },
-  
+  imagemm:{
+    width: 100,
+    height: 120,
+
+    },
 });

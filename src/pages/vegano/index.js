@@ -8,10 +8,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      
+       <ScrollView contentContainerStyle={styles.scroll}>
+
        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#fff" />
       </TouchableOpacity>
-       <ScrollView contentContainerStyle={styles.scroll}>
+
+      
        <Text style={styles.texto2}>Veganas</Text>    
        <View style={styles.quadrado}>
 

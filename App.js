@@ -104,6 +104,7 @@ import Coxinha2 from './src/pages/coxinha2';
 import Nachos from './src/pages/nachos';
 import Beijinho from './src/pages/beijinho';
 import Dadinho from './src/pages/dadinho';
+import Bebidas from './src/pages/bebidas';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -314,6 +315,9 @@ export default function App() {
 
 
 <Stack.Screen name="kids2" component={Kids2} options={{ headerShown: false }}/>
+
+<Stack.Screen name="bebidas" component={Bebidas} options={{ headerShown: false }}/>
+
 
       </Stack.Navigator>
      

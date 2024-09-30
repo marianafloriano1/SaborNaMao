@@ -52,12 +52,12 @@ export default function App() {
         </TouchableOpacity>
       </View>
       <View style={styles.buttonRow1}>
-          <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('sucos');}}>
+          <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('bebidas');}}>
             <View style={styles.buttonSplit}>
               <View style={styles.leftSide} />
               <View style={styles.rightSide} />
               <Image style={styles.buttonImage1} source={require('../../img/suco.png')}  />
-              <Text style={styles.texto1}>Sucos</Text>
+              <Text style={styles.texto1}>Bebidas</Text>
             </View>
           </TouchableOpacity>
             <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('kids2');}}>
@@ -286,7 +286,7 @@ img7:{
   },
 
   subtitulo: {
-    textAlign: 'center',
+    textAlign: 'left',
     marginTop: 5,
       fontSize: 13,
       marginBottom: 15

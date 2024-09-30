@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Pressable, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Pressable, Image, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -9,11 +9,13 @@ export default function App() {
   return (
     <View style={styles.container}>
       
+<ImageBackground style={styles.container} source={require('../../img/pag.png')}>
+<ScrollView contentContainerStyle={styles.scroll}>
 
-       <ScrollView contentContainerStyle={styles.scroll}>
        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#f14992" />
       </TouchableOpacity>
+      
 <Text style={styles.texto2}>Receitas de Aniversário</Text>       
 <View style={styles.quadrado}>
 
@@ -21,7 +23,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(187, 184, 205, 0.5)',
+            backgroundColor: 'rgba(241, 73, 146, 0.5)',
             borderRadius: 25,
             marginTop: 90,
             marginLeft: 30,
@@ -40,7 +42,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(187, 184, 205, 0.5)',
+            backgroundColor: 'rgba(241, 73, 146, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
@@ -58,7 +60,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(187, 184, 205, 0.5)',
+            backgroundColor: 'rgba(241, 73, 146, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 30,
@@ -76,7 +78,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(187, 184, 205, 0.5)',
+            backgroundColor: 'rgba(241, 73, 146, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
@@ -94,7 +96,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(187, 184, 205, 0.5)',
+            backgroundColor: 'rgba(241, 73, 146, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 30,
@@ -112,7 +114,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(187, 184, 205, 0.5)',
+            backgroundColor: 'rgba(241, 73, 146, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
@@ -129,6 +131,8 @@ export default function App() {
   
       </View>
       </ScrollView>
+</ImageBackground>
+      
     </View>
   );
 }
@@ -136,10 +140,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: 'red'
+    zIndex: -1
   },
   quadrado: {
-    backgroundColor: 'rgba(253, 237, 233, 0.7)',
+    backgroundColor: 'rgba(253, 237, 233, 1)',
     position: 'absolute',
     zIndex: -1,
     flex: 1,
