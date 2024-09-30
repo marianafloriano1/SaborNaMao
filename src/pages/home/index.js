@@ -163,7 +163,7 @@ export default function App() {
           style={{
             width: 140,
             height: 140,
-            backgroundColor: 'rgba(118, 109, 170, 0.6)',
+            backgroundColor: 'rgba(171, 203, 149, 0.6)',
             borderRadius: 25,
             marginRight:20,
             marginBottom:20,
@@ -188,22 +188,7 @@ export default function App() {
   
           
         }}>
-          <View style={{ alignItems: 'center' }}>
-          <Pressable
-          style={{
-            width: 140,
-            height: 140,
-            backgroundColor: 'rgba(162, 205, 186, 0.6)',
-            borderRadius: 25,
-            marginRight:20,
-            marginBottom:10,
-          }}
-          onPress={() => nav.navigate('mamaes')}>
-          <Image style={styles.img6} source={require('../../img/papinha.png')} />
-        </Pressable>
-        <Text style={styles.texto}>Receitas Para Mamães</Text>
-        <Text style={styles.subtitulo}>Papinha</Text>
-  </View>
+         
 
   <View style={{ alignItems: 'center' }}>
   <Pressable
@@ -220,52 +205,27 @@ export default function App() {
         <Text style={styles.texto}>Receitas Vegetarianas</Text>
         <Text style={styles.subtitulo}>Hambúrguer</Text>
   </View>
-      </View>
 
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          alignItems:'center',
-          textAlign:'center',
-  
-          
-        }}>
-          <View style={{ alignItems: 'center' }}>
+  <View style={{ alignItems: 'center' }}>
           <Pressable
           style={{
             width: 140,
             height: 140,
             backgroundColor: 'rgba(162, 205, 186, 0.6)',
             borderRadius: 25,
-            marginRight:20,
+            marginRight:5,
             marginBottom:10,
           }}
           onPress={() => nav.navigate('aniversario')}>
           <Image style={styles.img6} source={require('../../img/bolo2.png')} />
         </Pressable>
         <Text style={styles.texto}>Receitas De Aniversário</Text>
-        <Text style={styles.subtitulo}>Bolo de Aniversário</Text>
+        <Text style={styles.subtitulo}>Bolo de Chocolate</Text>
   </View>
 
-  <View style={{ alignItems: 'center' }}>
-  <Pressable
-          style={{
-            width: 140,
-            height: 140,
-            backgroundColor: 'rgba(159, 135, 180, 0.6)',
-            borderRadius: 25,
-            marginBottom:10,
-          }}
-          onPress={() => nav.navigate('vegetariano')}>
-          <Image style={styles.img7} source={require('../../img/burger.png')} />
-        </Pressable>
-        <Text style={styles.texto}>Receitas Vegetarianas</Text>
-        <Text style={styles.subtitulo}>Hambúrguer</Text>
-  </View>
       </View>
 
+    
 </ScrollView>
     </View>
     
