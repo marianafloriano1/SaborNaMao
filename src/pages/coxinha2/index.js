@@ -9,7 +9,7 @@ export default function App() {
     >
       <View style={styles.content}>
         <View style={styles.row}>
-          <Image style={styles.img} source={require('../../img/coxinha2.png')} />
+          <Image style={styles.img} source={require('../../img/coxinha.png')} />
           <Text style={styles.paragraph}>
             Coxinha
           </Text>
