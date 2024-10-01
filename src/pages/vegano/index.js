@@ -12,7 +12,7 @@ export default function App() {
        <ScrollView contentContainerStyle={styles.scroll}>
 
        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
-        <FontAwesome name="arrow-circle-left" size={28} color="#fff" />
+        <FontAwesome name="arrow-circle-left" size={28} color="#84a66c" />
       </TouchableOpacity>
 
       
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
   },
 
   texto2:{
-    color: '#fff',
+    color: '#84a66c',
     fontSize: 28,
     textAlign: 'center',
     justifyContent: 'flex-start',

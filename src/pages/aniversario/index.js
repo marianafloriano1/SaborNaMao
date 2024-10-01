@@ -18,6 +18,7 @@ export default function App() {
       
 <Text style={styles.texto2}>Receitas de Aniversário</Text>       
 <View style={styles.quadrado}>
+<Image source={require('../../img/balao.png')} style={styles.imagemm}></Image>
 
 <Pressable
           style={{
@@ -25,7 +26,7 @@ export default function App() {
             height: 160,
             backgroundColor: 'rgba(241, 73, 146, 0.5)',
             borderRadius: 25,
-            marginTop: 90,
+            marginTop: 30,
             marginLeft: 30,
             position: 'relative',
             overflow: 'hidden'
@@ -214,5 +215,10 @@ const styles = StyleSheet.create({
     left: 20
 
   },
-  
+  imagemm:{
+    width: 100,
+    height: 100,
+    marginLeft: 220,
+    marginTop: 20,
+    },
 });

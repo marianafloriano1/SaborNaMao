@@ -17,13 +17,15 @@ export default function App() {
 <Text style={styles.texto2}>Receitas de Pascoa</Text>       
 <View style={styles.quadrado}>
 
+<Image source={require('../../img/coelho.png')} style={styles.imagemm}></Image>
+
 <Pressable
           style={{
             width: 270,
             height: 160,
             backgroundColor: 'rgba(224, 185, 223, 0.5)',
             borderRadius: 25,
-            marginTop: 90,
+            marginTop: -10,
             marginLeft: 30,
             position: 'relative',
             overflow: 'hidden'
@@ -211,5 +213,11 @@ const styles = StyleSheet.create({
     left: 20
 
   },
-  
+  imagemm:{
+    width: 100,
+    height: 100,
+    marginLeft: 130,
+    marginTop: 25,
+    zIndex: 1
+    },
 });

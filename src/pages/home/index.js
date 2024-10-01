@@ -13,6 +13,32 @@ export default function App() {
     console.log(`Botão ${buttonNumber} pressionado!`);
   };
 
+  const items = [
+    { title: 'Natal', image: require('../../img/Natal.png'), route: 'ceia_natal' },
+    { title: 'Páscoa', image: require('../../img/Pascoa.png'), route: 'pascoa' },
+    { title: 'Arraiá', image: require('../../img/arrai.png'), route: 'festa_junina' },
+    { title: 'Ano Novo', image: require('../../img/arrai.png'), route: 'pascoa' },
+    { title: 'Arraiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
+    { title: 'Arraasaiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
+    { title: 'Arraaiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
+    { title: 'Arrasiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
+    { title: 'Arrdaiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextItems = () => {
+    if (currentIndex + 3 < items.length) {
+      setCurrentIndex(currentIndex + 3);
+    }
+  };
+
+  const prevItems = () => {
+    if (currentIndex - 3 >= 0) {
+      setCurrentIndex(currentIndex - 3);
+    }
+  };
+
   return (
     
 
@@ -38,18 +64,27 @@ export default function App() {
         </View>
       
       <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.button} onPress={() => {nav.navigate('ceia_natal')}}>
-          <Image style={styles.buttonImage} source={require('../../img/Natal.png')} />
-            <Text style={styles.texto}>Natal</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => {nav.navigate('pascoa')}}>
-          <Image style={styles.buttonImage} source={require('../../img/Pascoa.png')} />
-          <Text style={styles.texto}>Páscoa</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => {nav.navigate('festa_junina')}}>
-          <Image style={styles.buttonImage} source={require('../../img/arrai.PNG')} />
-          <Text style={styles.texto}>Arraiá</Text>
-        </TouchableOpacity>
+      <TouchableOpacity onPress={prevItems} style={styles.arrowButton} disabled={currentIndex === 0}>
+    <FontAwesome name="angle-left" size={24} color="#FF8F7E" />
+  </TouchableOpacity>
+
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {items.slice(currentIndex, currentIndex + 3).map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            onPress={() => { nav.navigate(item.route); }}
+            style={styles.carouselItem}
+          >
+            <Image style={styles.buttonImage} source={item.image} />
+            <Text style={styles.texto}>{item.title}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+
+      <TouchableOpacity onPress={nextItems} style={[styles.arrowButton, styles.arrowButtonRight]} disabled={currentIndex + 3 >= items.length}>
+  <FontAwesome name="angle-right" size={24} color="#FF8F7E" />
+</TouchableOpacity>
+
       </View>
       <View style={styles.buttonRow1}>
           <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('bebidas');}}>
@@ -68,7 +103,7 @@ export default function App() {
               <Text style={styles.texto1}>Kids</Text>
             </View>
           </TouchableOpacity>
-            <TouchableOpacity style={styles.button1} onPress={() => handlePress(num)}>
+            <TouchableOpacity style={styles.button1}  onPress={() => {nav.navigate('dietas');}}>
             <View style={styles.buttonSplit}>
               <View style={styles.leftSide} />
               <View style={styles.rightSide} />
@@ -76,7 +111,7 @@ export default function App() {
               <Text style={styles.texto1}>Dieta</Text>
             </View>
           </TouchableOpacity>
-            <TouchableOpacity style={styles.button1} onPress={() => handlePress(num)}>
+            <TouchableOpacity style={styles.button1}  onPress={() => {nav.navigate('restricao');}}>
             <View style={styles.buttonSplit}>
               <View style={styles.leftSide} />
               <View style={styles.rightSide} />
@@ -324,22 +359,49 @@ img7:{
     left:5,
   },
   //primeira fileira
+
   buttonRow: {
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: 20,
+  },
+  scrollView: {
+    paddingHorizontal: 10, // Adiciona espaçamento horizontal ao ScrollView
+  },
+
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 25, // Adicione uma margem horizontal para espaçamento
   },
   button: {
     alignItems: 'center',
     backgroundColor: '#fff5f0',
-    width: 85,
-    height: 100,
+    width: 100,
+    height: 120,
     borderRadius: 8,
+    margin: 10,
+  },
+  carouselItem:{
+    marginHorizontal: 20
   },
   buttonImage: {
     width: 70,
     height: 70,
+    marginBottom: 5,
   },
+  arrowButton: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    
+  },
+  arrowText: {
+    fontSize: 14,
+    color: '#FF8F7E',
+  },
+
 texto:{
   textAlign: 'center',
   marginTop: 5,

@@ -111,7 +111,7 @@ android {
 
     namespace 'com.marianafloriano.snack1026af2962af4e52be5e4d17cbc582b2'
     defaultConfig {
-        applicationId 'com.marianafloriano.snack1026af2962af4e52be5e4d17cbc582b2'
+        applicationId 'com.marianafloriano.sabornamao'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
