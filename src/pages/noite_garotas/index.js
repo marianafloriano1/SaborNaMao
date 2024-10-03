@@ -5,6 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 export default function App() {
   const nav = useNavigation();
+  
 
   return (
     <View style={styles.container}>

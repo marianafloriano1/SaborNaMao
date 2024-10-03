@@ -16,13 +16,11 @@ export default function App() {
   const items = [
     { title: 'Natal', image: require('../../img/Natal.png'), route: 'ceia_natal' },
     { title: 'Páscoa', image: require('../../img/Pascoa.png'), route: 'pascoa' },
-    { title: 'Arraiá', image: require('../../img/arrai.png'), route: 'festa_junina' },
-    { title: 'Ano Novo', image: require('../../img/arrai.png'), route: 'pascoa' },
-    { title: 'Arraiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
-    { title: 'Arraasaiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
-    { title: 'Arraaiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
-    { title: 'Arrasiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
-    { title: 'Arrdaiá', image: require('../../img/arrai.PNG'), route: 'festa_junina' },
+    { title: 'Arraiá', image: require('../../img/arraia.png'), route: 'festa_junina' },
+    { title: 'Halloween', image: require('../../img/halloween.png'), route: 'pascoa' },
+    { title: 'Ano Novo', image: require('../../img/anonovo.PNG'), route: 'festa_junina' },
+    { title: 'Festas', image: require('../../img/esse.PNG'), route: 'festa_junina' },
+
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -378,7 +376,7 @@ img7:{
   },
   button: {
     alignItems: 'center',
-    backgroundColor: '#fff5f0',
+
     width: 100,
     height: 120,
     borderRadius: 8,

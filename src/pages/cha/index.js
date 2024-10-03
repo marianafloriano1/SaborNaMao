@@ -12,19 +12,19 @@ export default function App() {
        <ScrollView contentContainerStyle={styles.scroll}>
 
        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
-        <FontAwesome name="arrow-circle-left" size={28} color="#d6705d" />
+        <FontAwesome name="arrow-circle-left" size={28} color="#fbca8e" />
       </TouchableOpacity>
 
-      
-       <Text style={styles.texto2}>Sucos Naturais</Text>    
+
+       <Text style={styles.texto2}>Chás</Text>    
        <View style={styles.quadrado}>
 
-       <Image source={require('../../img/i.png')} style={styles.imagemm}></Image>
+       <Image source={require('../../img/chas.png')} style={styles.imagemm}></Image>
        <Pressable
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            backgroundColor: 'rgba(251, 202, 142, 0.5)',
             borderRadius: 25,
             marginTop: 30,
             marginLeft: 30,
@@ -34,8 +34,8 @@ export default function App() {
           onPress={() => nav.navigate('limao')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/limao.png')} />
-            <Text style={styles.texto}>Suco de Limão</Text>
+            <Image style={styles.img} source={require('../../img/cha-preto.png')} />
+            <Text style={styles.texto}>Chá Preto</Text>
           </View>
         </Pressable>
 
@@ -43,7 +43,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            backgroundColor: 'rgba(251, 202, 142, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
@@ -53,15 +53,15 @@ export default function App() {
           onPress={() => nav.navigate('abacaxi')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/abacaxi.png')} />
-            <Text style={styles.texto3}>Suco de Abacaxi</Text>
+            <Image style={styles.img2} source={require('../../img/cha-de-gengibre.png')} />
+            <Text style={styles.texto3}>Chá de Gengibre</Text>
           </View>
         </Pressable>
         <Pressable
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            backgroundColor: 'rgba(251, 202, 142, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 30,
@@ -71,15 +71,15 @@ export default function App() {
           onPress={() => nav.navigate('morango')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/morango.png')} />
-            <Text style={styles.texto}>Suco de Morango</Text>
+            <Image style={styles.img} source={require('../../img/cha-verde.png')} />
+            <Text style={styles.texto}>Chá Verde</Text>
           </View>
         </Pressable>
         <Pressable
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            backgroundColor: 'rgba(251, 202, 142, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
@@ -89,15 +89,15 @@ export default function App() {
           onPress={() => nav.navigate('melancia')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/melancia.png')} />
-            <Text style={styles.texto3}>Suco de Melancia</Text>
+            <Image style={styles.img2} source={require('../../img/hibiscus.png')} />
+            <Text style={styles.texto3}>Chá de Hibisco</Text>
           </View>
         </Pressable>
         <Pressable
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            backgroundColor: 'rgba(251, 202, 142, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 30,
@@ -107,15 +107,15 @@ export default function App() {
           onPress={() => nav.navigate('cenoura')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/cenoura.png')} />
-            <Text style={styles.texto}>Suco de Cenoura</Text>
+            <Image style={styles.img} source={require('../../img/caneca-de-cha.png')} />
+            <Text style={styles.texto}>Chá de Laranja</Text>
           </View>
         </Pressable>
         <Pressable
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(255, 193, 154, 0.5)',
+            backgroundColor: 'rgba(251, 202, 142, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
@@ -125,8 +125,8 @@ export default function App() {
           onPress={() => nav.navigate('verde')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/verde.png')} />
-            <Text style={styles.texto3}>Suco Verde</Text>
+            <Image style={styles.img2} source={require('../../img/caneca-de-cha (1).png')} />
+            <Text style={styles.texto3}>Chá de Margarida</Text>
           </View>
         </Pressable>
   
@@ -139,7 +139,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: '#ffc19a',
+    backgroundColor: '#ffe2c0',
    
   },
   quadrado: {
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: -1,
     flex: 1,
-    width: '100%', // ou mantenha 430 se preferir
+    width: '100%', 
     borderTopLeftRadius: 50,
     borderTopRightRadius: 80,
     borderBottomLeftRadius: 0,
@@ -216,9 +216,9 @@ const styles = StyleSheet.create({
   },
 
   imagemm:{
-    width: 100,
+    width: 250,
     height: 80,
-    marginLeft:150,
+    marginLeft: 80,
     borderRadius: 30,
     marginTop: 20
     },

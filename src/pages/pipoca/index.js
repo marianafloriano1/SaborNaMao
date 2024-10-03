@@ -1,102 +1,183 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
+
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
+
 export default function App() {
   const nav = useNavigation();
+
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
+  
+
   return (
     <View style={styles.container}>
       
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
 
-     <ScrollView showsVerticalScrollIndicator={false}>
+      
 
-
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
-  <FontAwesome name="arrow-circle-left" size={28} color="#ff8f7e" />
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('noite_garotas')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#ff8f7e" />
 </TouchableOpacity>
 
+
       <View style={styles.row}>
+        
         <Text style={styles.paragraph}>
-          Pipoca
+          Pipoca Salgada
         </Text>
       </View>
 
-      
-      <Text style={styles.sectionTitle}>Ingredientes:</Text>
-      <View style={styles.ingredientsList}>
-        <Text style={styles.topicos}>- 1 copo de 200ml de milho.</Text>
-        <Text style={styles.topicos}>- 1/2 colher de sobremesa de margarina.</Text>
-        <Text style={styles.topicos}>- 5 colheres de sopa de óleo.</Text>
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
+      <View style={styles.ingredientesColuna}>
+        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 copo de 200ml de milho.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 1/2 colher de sobremesa de margarina.
+          </Text>
+        </TouchableOpacity>
+     
+      <View style={styles.ingredientesColuna}>
+        <TouchableOpacity onPress={() => toggleCheck('item3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 5 colheres de sopa de óleo.
+          </Text>
+        </TouchableOpacity>
+        </View>
+        <Text style={styles.ingredientes}>OPCIONAL</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} Sal a gosto.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} Caldo em pó (bacon, carne).
+          </Text>
+        </TouchableOpacity>
       </View>
-
-      
-      <Text style={styles.sectionTitle}>Opcional:</Text>
-      <View style={styles.ingredientsList}>
-        <Text style={styles.topicos}>- Sal a gosto</Text>
-        <Text style={styles.topicos}>- Caldo em pó (bacon, carne)</Text>
-      </View>
-
-      
-      <Text style={styles.sectionTitle}>Modo de Preparo:</Text>
-      <Text style={styles.topicos}>1. Coloque o óleo e a margarina em uma panela (funda ou própria para pipoca).</Text>
-      <Text style={styles.topicos}>2. Deixe fritar até escurecer um pouco (isso é o que dá o gosto de manteiga na pipoca).</Text>
-      <Text style={styles.topicos}>3. Coloque o milho e feche bem com a tampa da panela.</Text>
-      <Text style={styles.topicos}>4. Deixe em fogo forte.</Text>
-      <Text style={styles.topicos}>5. NÃO MEXA A PANELA (é isso que faz estourar todos os grãos).</Text>
-      <Text style={styles.topicos}>6. Quando estiver estourando pouco, desligue para não queimar.</Text>
-      <Text style={styles.topicos}>7. Coloque o sal e o caldo em pó, trocando da panela para a tigela para distribuir bem.</Text>
-    
-      </ScrollView>
-
-
     </View>
-  );
-}
 
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Coloque o óleo e a margarina em uma panela (funda ou própria para pipoca).
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step2')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text> Deixe fritar até escurecer um pouco (isso é o que dá o gosto de manteiga na pipoca).
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step3')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text> Coloque o milho e feche bem com a tampa da panela.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step4')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Deixe em fogo forte.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step5')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> NÃO MEXA A PANELA (é isso que faz estourar todos os grãos).
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step6')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6.</Text> Quando estiver estourando pouco, desligue para não queimar.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step7')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text> Coloque o sal e o caldo em pó, trocando da panela para a tigela para distribuir bem.
+      </Text>
+    </TouchableOpacity>
+   
+    </ScrollView>
+  </View>
+);
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fdede9', 
-    height: 900
+    justifyContent: 'flex-start',
+    backgroundColor: '#fdede9',
+    padding: 45,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
   },
   paragraph: {
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: 'bold',
+    textAlign: 'left',
+    marginLeft: 10,
     color: '#ff8f7e',
-    marginLeft: 55,
-    marginTop: 90,
-    marginBottom: 40
   },
-
-  seta: {
-    position: 'absolute',
-    right: 10,
-    top: 85,
-    zIndex: 1,
-    left: 15
+  img: {
+    width: 90,
+    height: 90,
+    marginRight: 30,
   },
-
-  sectionTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#ff8f7e',
-    marginTop: 10,
-    marginLeft:20
+  ingredientes: {
+    marginTop: 50,
+    fontSize: 16,
+    marginBottom: 15,
+    backgroundColor: '#ff8f7e',
+    paddingVertical: 5,
   },
-  ingredientsList: {
+  ingredientesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginBottom: 20,
   },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
+  },
   topicos: {
-    fontSize: 16,
-    marginBottom: 8,
-    lineHeight: 22,
-    marginLeft: 10
+    marginBottom: 10,
+    lineHeight: 24,
+  },
+  numero: {
+    color: '#ff8f7e',
+    fontWeight: 'bold',
+    fontSize: 19,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
   },
 });

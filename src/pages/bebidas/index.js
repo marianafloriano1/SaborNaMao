@@ -72,14 +72,14 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('mamaes')}
+          onPress={() => nav.navigate('cha')}
         >
          <Text style={styles.texto}>Chás</Text>
   <View style={styles.teste2}>
-    <Image style={styles.img} source={require('../../img/limao.png')} />
-    <Image style={styles.img} source={require('../../img/abacaxi.png')} />
-    <Image style={styles.img} source={require('../../img/morango.png')} />
-    <Image style={styles.img} source={require('../../img/melancia.png')} />
+    <Image style={styles.img2} source={require('../../img/cha-preto.png')} />
+    <Image style={styles.img} source={require('../../img/cha-de-gengibre.png')} />
+    <Image style={styles.img} source={require('../../img/cha-verde.png')} />
+    <Image style={styles.img} source={require('../../img/hibiscus.png')} />
   </View>
         </Pressable>
 
@@ -134,6 +134,11 @@ const styles = StyleSheet.create({
   img: {
     width: 70,
     height: 70,
+  },
+  img2: {
+    width: 60,
+    height: 60,
+    marginTop: 20
   },
   teste: {
     width: 141,

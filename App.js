@@ -107,6 +107,7 @@ import Dadinho from './src/pages/dadinho';
 import Bebidas from './src/pages/bebidas';
 import Dietas from './src/pages/dietas';
 import Restricao from './src/pages/restricao';
+import Cha from './src/pages/cha';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -323,6 +324,8 @@ export default function App() {
 <Stack.Screen name="dietas" component={Dietas} options={{ headerShown: false }}/>
 
 <Stack.Screen name="restricao" component={Restricao} options={{ headerShown: false }}/>
+
+<Stack.Screen name="cha" component={Cha} options={{ headerShown: false }}/>
 
       </Stack.Navigator>
      
