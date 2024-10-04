@@ -12,7 +12,7 @@ export default function App() {
        <ScrollView contentContainerStyle={styles.scroll}>
 
        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
-        <FontAwesome name="arrow-circle-left" size={28} color="#7d6094" />
+        <FontAwesome name="arrow-circle-left" size={28} color="#abcb95" />
       </TouchableOpacity>
 
       
@@ -23,7 +23,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(193, 178, 205, 0.5)',
+            backgroundColor: 'rgba(197, 223, 180,0.5)',
             borderRadius: 25,
             marginTop: 90,
             marginLeft: 30,
@@ -42,14 +42,14 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(193, 178, 205, 0.5)',
+            backgroundColor: 'rgba(202, 223, 188, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('buguer')}
+          onPress={() => nav.navigate('burguer')}
         >
           <View style={styles.teste}>
             <Image style={styles.img2} source={require('../../img/burger.png')} />
@@ -60,7 +60,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(193, 178, 205, 0.5)',
+            backgroundColor: 'rgba(202, 223, 188,0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 30,
@@ -78,7 +78,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(193, 178, 205, 0.5)',
+            backgroundColor: 'rgba(202, 223, 188,0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
@@ -96,7 +96,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(193, 178, 205, 0.5)',
+            backgroundColor: 'rgba(202, 223, 188, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 30,
@@ -114,7 +114,7 @@ export default function App() {
           style={{
             width: 270,
             height: 160,
-            backgroundColor: 'rgba(193, 178, 205, 0.5)',
+            backgroundColor: 'rgba(202, 223, 188, 0.5)',
             borderRadius: 25,
             marginTop: 60,
             marginLeft: 95,
@@ -138,7 +138,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: '#c1b2cd',
+    backgroundColor: '#cadfbc',
    
   },
   quadrado: {
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
   },
 
   texto2:{
-    color: '#7d6094',
+    color: '#abcb95',
     fontSize: 28,
     textAlign: 'center',
     justifyContent: 'flex-start',

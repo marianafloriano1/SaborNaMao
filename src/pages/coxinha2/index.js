@@ -1,64 +1,181 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ImageBackground } from 'react-native';
+
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
+  const nav = useNavigation();
+
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
+  
+
   return (
-    <ImageBackground 
-      style={styles.container} 
-      source={require('../../img/pag.png')} 
-    >
-      <View style={styles.content}>
-        <View style={styles.row}>
-          <Image style={styles.img} source={require('../../img/coxinha.png')} />
-          <Text style={styles.paragraph}>
-            Coxinha
-          </Text>
-        </View>
+    <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
 
-        <Text style={styles.ingredientes}>Ingredientes (+/- 70 porções):</Text>
-        <Text style={styles.coisa}>Massa:</Text>
-        <Text style={styles.topicos}>- 1 litro de água</Text>
-        <Text style={styles.topicos}>- 2 envelopes de caldo de galinha</Text>
-        <Text style={styles.topicos}>- 1/2 colher sopa de sal</Text>
-        <Text style={styles.topicos}>- 500 g farinha trigo</Text>
-        <Text style={styles.topicos}>- 1/2 xícara de óleo soja</Text>
-        <Text style={styles.coisa}>Recheio:</Text>
-        <Text style={styles.topicos}>- 1 peito de frango desfiado</Text>
-        <Text style={styles.topicos}>- Cheiro verde</Text>
-        <Text style={styles.topicos}>- 1 cebola cortada</Text>
-        <Text style={styles.topicos}>- 1 tomate picado</Text>
-        <Text style={styles.coisa}>Para empanar:</Text>
-        <Text style={styles.topicos}>- Farinha de rosca</Text>
-        <Text style={styles.topicos}>- leite</Text>
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('almoco_domingo')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#dfc265" />
+</TouchableOpacity>
 
 
-        <Text style={styles.ingredientes}>Modo de preparo:</Text>
-        <Text style={styles.topicos}>1. Coloque a água, o caldo de galinha, sal e óleo no fogo até ferver.</Text>
-        <Text style={styles.topicos}>2. Acrescente a farinha de trigo e mexa até virar uma mistura homogênea.</Text>
-        <Text style={styles.topicos}>3. Deixe cozinhar por 5 minutos e continue mexendo. </Text>
-        <Text style={styles.topicos}>4. Refogue o peito de frango com a cebola, tomate e cheiro verde.</Text>
-        <Text style={styles.topicos}>5. Faça bolinhas, recheie com o frango e faça o formato de coxinha, passe no leite e depois na farinha de rosca.</Text>
-        <Text style={styles.topicos}>6. Frite em óleo quente.</Text>
- 
+      <View style={styles.row}>
+        
+        <Text style={styles.paragraph}>
+            Coxinha de Frango
+        </Text>
       </View>
-    </ImageBackground>
-  );
-}
 
+
+    <Text style={styles.ingredientes}>INGREDIENTES (MASSA)</Text>
+    <View style={styles.ingredientesContainer}>
+      <View style={styles.ingredientesColuna}>
+        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 litro de água.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 2 saches de caldo de galinha.
+          </Text>
+        </TouchableOpacity>
+      
+
+        <TouchableOpacity onPress={() => toggleCheck('item3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1/2 colher sopa de sal.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => toggleCheck('item4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}500 g farinha trigo.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} 1/2 xícara de óleo soja.
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.ingredientes}>INGREDIENTES (RECHEIO)</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 1 peito de frango desfiado.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} Cheiro verde.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} 1 cebola cortada.
+          </Text>
+        </TouchableOpacity>
+      
+        <TouchableOpacity onPress={() => toggleCheck('item9')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''} 1 tomate picado.
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.ingredientes}>INGREDIENTES (EMPANAR)</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item10')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item10 ? <Text style={styles.check}>✓ </Text> : ''} Farinha de rosca.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => toggleCheck('item11')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item11 ? <Text style={styles.check}>✓ </Text> : ''} Leite.
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Coloque a água, o caldo de galinha, sal e óleo no fogo até ferver.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step2')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Acrescente a farinha de trigo e mexa até virar uma mistura homogênea.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step3')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Deixe cozinhar por 5 minutos e continue mexendo.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step4')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Refogue o peito de frango com a cebola, tomate e cheiro verde.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step5')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> Faça bolinhas, recheie com o frango e faça o formato de coxinha, passe no leite e depois na farinha de rosca.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step6')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6.</Text>Frite em óleo quente.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step7')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text> Retire quando estiver dourada. 
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step8')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8.</Text> Esta pronto! Bom apetite.
+      </Text>
+    </TouchableOpacity>
+
+   
+    </ScrollView>
+  </View>
+);
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-  },
-  content: {
-    flex: 1,
+    justifyContent: 'flex-start',
+    backgroundColor: '#fdede9',
     padding: 45,
-
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20, 
   },
   paragraph: {
     fontSize: 30,
@@ -68,26 +185,38 @@ const styles = StyleSheet.create({
     color: '#f14992',
   },
   img: {
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     marginRight: 30,
   },
   ingredientes: {
     marginTop: 50,
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 16,
     marginBottom: 15,
-    color: '#f14992',
+    backgroundColor: '#f14992',
+    paddingVertical: 5,
+  },
+  ingredientesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
   },
   topicos: {
-    fontSize: 15,
     marginBottom: 10,
-    color: '#000', 
+    lineHeight: 24,
   },
-
-  coisa:{
-    fontSize: 17,
-    marginBottom: 16,
+  numero: {
     color: '#f14992',
-  }
+    fontWeight: 'bold',
+    fontSize: 19,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
+  },
 });

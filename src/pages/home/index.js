@@ -228,7 +228,7 @@ export default function App() {
           style={{
             width: 140,
             height: 140,
-            backgroundColor: 'rgba(159, 135, 180, 0.6)',
+            backgroundColor: 'rgba(202, 223, 188, 0.6)',
             borderRadius: 25,
             marginBottom:10,
           }}

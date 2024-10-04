@@ -1,60 +1,159 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ImageBackground } from 'react-native';
+
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
+  const nav = useNavigation();
+
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
+  
+
   return (
-    <ImageBackground 
-      style={styles.container} 
-      source={require('../../img/pag.png')} 
-    >
-      <View style={styles.content}>
-        <View style={styles.row}>
-          <Image style={styles.img} source={require('../../img/nachos.png')} />
-          <Text style={styles.paragraph}>
-            Guacamole
-          </Text>
-        </View>
+    <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
 
-        <Text style={styles.ingredientes}>Ingredientes:</Text>
-        <Text style={styles.topicos}>- 1 abacate brasileiro médio (ou 4 avocados)</Text>
-        <Text style={styles.topicos}>- 1 cebola pequena</Text>
-        <Text style={styles.topicos}>- 1 maço de coentro</Text>
-        <Text style={styles.topicos}>- suco de 1 limão grande</Text>
-        <Text style={styles.topicos}>- sal a gosto</Text>
-        <Text style={styles.topicos}>- 1 tomate grande sem sementes</Text>
-        <Text style={styles.topicos}>- 2 dentes de alho bem socados</Text>
-        <Text style={styles.topicos}>- 1 pimenta malagueta sem sementes</Text>
-        <Text style={styles.topicos}>- azeite extra virgem</Text>
-        <Text style={styles.topicos}>- Nachos</Text>
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('almoco_domingo')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#dfc265" />
+</TouchableOpacity>
 
 
-         <Text style={styles.ingredientes}>Modo de preparo:</Text>
-        <Text style={styles.topicos}>1. Amasse o abacate com um garfo, acrescente o alho socado, o suco de limão, sal e azeite a gosto e misture como um purê.</Text>
-        <Text style={styles.topicos}>2. Pique a cebola, o tomate e o coentro. Pique bem a pimenta.</Text>
-        <Text style={styles.topicos}>3. Acrescente os ingredientes picados ao "purê" de abacate.</Text>
-        <Text style={styles.topicos}>4. Adicione o sal e pimenta a gosto.</Text>
-        <Text style={styles.topicos}>5. Sirva em pequenas porções com uma boa quantidade de nachos.</Text>
-       
-       
+      <View style={styles.row}>
+        
+        <Text style={styles.paragraph}>
+          Guacamole
+        </Text>
       </View>
-    </ImageBackground>
-  );
-}
 
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
+      <View style={styles.ingredientesColuna}>
+        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 abacate brasileiro médio (ou 4 avocados).
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 1 cebola pequena.
+          </Text>
+        </TouchableOpacity>
+      
+
+        <TouchableOpacity onPress={() => toggleCheck('item3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 maço de coentro.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => toggleCheck('item4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}Suco de 1 limão grande.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} Sal à gosto.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 1 tomate grande sem sementes.
+          </Text>
+        </TouchableOpacity>
+    
+        <TouchableOpacity onPress={() => toggleCheck('item7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} 2 dentes de alho bem socados.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} 1 pimenta malagueta sem sementes.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item9')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''} Azeite extra virgem.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item10')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item10 ? <Text style={styles.check}>✓ </Text> : ''} Nachos para acompanhar.
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Amasse o abacate com um garfo, acrescente o alho socado, o suco de limão, sal e azeite a gosto e misture como um purê.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step2')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Pique a cebola, o tomate e o coentro. Pique bem a pimenta.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step3')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Acrescente os ingredientes picados ao "purê" de abacate.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step4')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Adicione o sal e pimenta a gosto.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step5')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> Sirva em pequenas porções com uma boa quantidade de nachos.
+      </Text>
+    </TouchableOpacity>
+
+
+   
+    </ScrollView>
+  </View>
+);
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-  },
-  content: {
-    flex: 1,
+    justifyContent: 'flex-start',
+    backgroundColor: '#fdede9',
     padding: 45,
-
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20, 
   },
   paragraph: {
     fontSize: 30,
@@ -64,26 +163,38 @@ const styles = StyleSheet.create({
     color: '#f14992',
   },
   img: {
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     marginRight: 30,
   },
   ingredientes: {
     marginTop: 50,
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 16,
     marginBottom: 15,
-    color: '#f14992',
+    backgroundColor: '#f14992',
+    paddingVertical: 5,
+  },
+  ingredientesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
   },
   topicos: {
-    fontSize: 15,
     marginBottom: 10,
-    color: '#000', 
+    lineHeight: 24,
   },
-
-  coisa:{
-    fontSize: 17,
-    marginBottom: 16,
+  numero: {
     color: '#f14992',
-  }
+    fontWeight: 'bold',
+    fontSize: 19,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
+  },
 });

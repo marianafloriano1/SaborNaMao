@@ -1,112 +1,287 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
+  const nav = useNavigation();
+
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
+  
+
   return (
     <View style={styles.container}>
-     <ScrollView showsVerticalScrollIndicator={false}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
+
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('vegetariano')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#abcb95"/>
+</TouchableOpacity>
+
+
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/pie.png')} />
+        
         <Text style={styles.paragraph}>
-          Torta de Legumes e Ricota
+         Torta de Legumes e Ricota
         </Text>
       </View>
 
-      
-      <Text style={styles.sectionTitle}>Ingredientes (6 porções):</Text>
-      <View style={styles.ingredientsList}>
-        <Text style={styles.topicos}>- 1 xícara (chá) de leite.</Text>
-      <Text style={styles.topicos}>- 1 xícara (chá) de óleo.</Text>
-      <Text style={styles.topicos}>- 4 ovos.</Text>
-      <Text style={styles.topicos}>- Sal a gosto.</Text>
-      <Text style={styles.topicos}>- 1 xícara (chá) de farinha de trigo.</Text>
-      <Text style={styles.topicos}>- 1 xícara (chá) de farinha de trigo integral.</Text>
-      <Text style={styles.topicos}>- 1 colher (sopa) de fermento em pó químico.</Text>
-      <Text style={styles.topicos}>- Margarina e farinha de trigo para untar.</Text>
-      <Text style={styles.topicos}>- Queijo parmesão ralado a gosto para polvilhar.</Text>
 
-      <Text style={styles.sectionTitle}>Recheio:</Text>
-     <Text style={styles.topicos}>- 1 abobrinha picada.</Text>
-     <Text style={styles.topicos}>- 1 cenoura cozida picada.</Text>
-     <Text style={styles.topicos}>- 2 xícaras (chá) de brócolis cozido picado.</Text>
-     <Text style={styles.topicos}>- 1 tomate sem sementes picado.</Text>
-     <Text style={styles.topicos}>- 1 cebola em rodelas finas.</Text>
-     <Text style={styles.topicos}>- 1/2 berinjela em cubos cozida.</Text>
-     <Text style={styles.topicos}>- 2 colheres (sopa) de manjericão picado.</Text>
-     <Text style={styles.topicos}>- 4 colheres (sopa) de manteiga.</Text>
-     <Text style={styles.topicos}>- 2 dentes de alho picados.</Text>
-     <Text style={styles.topicos}>- Sal e pimenta-do-reino a gosto.</Text>
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
+      <View style={styles.ingredientesColuna}>
+        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara (chá) de leite.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}  1 xícara (chá) de óleo.
+          </Text>
+        </TouchableOpacity>
 
-      <Text style={styles.sectionTitle}>Creme:</Text>
-     <Text style={styles.topicos}>- 1 xícara (chá) de ricota amassada.</Text>
-     <Text style={styles.topicos}>- 1 lata de creme de leite.</Text>
-     <Text style={styles.topicos}>- 1 copo de requeijão cremoso (200g).</Text>
-     <Text style={styles.topicos}>- Sal a gosto.</Text>
-      </View>
 
-    
-     
-      <Text style={styles.sectionTitle}>Modo de Preparo:</Text>
-   <Text style={styles.topicos}>1. Para o recheio, em uma tigela, misture a abobrinha, a cenoura, o brócolis, o tomate, a cebola, a berinjela e o manjericão.</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 4 ovos.
+          </Text>
+        </TouchableOpacity>
 
-      <Text style={styles.topicos}>2. Em uma panela, derreta a manteiga e refogue o alho por 2 minutos.</Text>
-
-        <Text style={styles.topicos}>3. Despeje sobre os legumes, misture e tempere com sal e pimenta.</Text>
-
-        <Text style={styles.topicos}>4. Para o creme, bata os ingredientes no liquidificador e reserve.</Text>
-
-        <Text style={styles.topicos}>5. Para a massa, bata no liquidificador o leite, o óleo, os ovos, sal, as farinhas e o fermento.</Text>
-
-        <Text style={styles.topicos}>6. Espalhe metade da massa em uma fôrma de 25cm x 35cm untada e enfarinhada.</Text>
-
-        <Text style={styles.topicos}>7. Espalhe os legumes sobre a massa e cubra com o creme de ricota.</Text>
-
-        <Text style={styles.topicos}>8. Cubra com a massa restante, polvilhe com parmesão e leve ao forno médio (180º C), preaquecido, por 40 minutos ou até dourar. Sirva.</Text>
-
+        <TouchableOpacity onPress={() => toggleCheck('item4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} Sal à gosto.
+          </Text>
+        </TouchableOpacity>
         
-     </ScrollView>
-     </View>
-  );
-}
+        <TouchableOpacity onPress={() => toggleCheck('item5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara (chá) de farinha de trigo.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara (chá) de farinha de trigo integral.
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={() => toggleCheck('item7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} 1 colher (sopa) de fermento em pó químico.
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={() => toggleCheck('item8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} Margarina e farinha de trigo para untar.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item9')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''} Queijo parmesão ralado a gosto para polvilhar.
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.ingredientes}>RECHEIO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item10')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item10 ? <Text style={styles.check}>✓ </Text> : ''} 1 abobrinha picada.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item11')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item11 ? <Text style={styles.check}>✓ </Text> : ''} 1 cenoura cozida picada.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item12')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item12 ? <Text style={styles.check}>✓ </Text> : ''} 2 xícaras (chá) de brócolis cozido picado.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item13')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item13 ? <Text style={styles.check}>✓ </Text> : ''} 1 tomate sem sementes picado.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item14')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item14 ? <Text style={styles.check}>✓ </Text> : ''} 1 cebola em rodelas finas.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item15')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item15 ? <Text style={styles.check}>✓ </Text> : ''} 1/2 berinjela em cubos cozida.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item16')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item16 ? <Text style={styles.check}>✓ </Text> : ''} 2 colheres (sopa) de manjericão picado.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item17')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item17 ? <Text style={styles.check}>✓ </Text> : ''} 4 colheres (sopa) de manteiga.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item18')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item18 ? <Text style={styles.check}>✓ </Text> : ''} 2 dentes de alho picados.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item19')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item19 ? <Text style={styles.check}>✓ </Text> : ''} Sal e pimenta-do-reino a gosto.
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.ingredientes}>CREME</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item20')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item20 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara (chá) de ricota amassada.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item21')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item21 ? <Text style={styles.check}>✓ </Text> : ''} 1 lata de creme de leite.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item22')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item22 ? <Text style={styles.check}>✓ </Text> : ''} 1 copo de requeijão cremoso (200g).
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item23')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item23 ? <Text style={styles.check}>✓ </Text> : ''} Sal a gosto.
+          </Text>
+        </TouchableOpacity>
+        
+        
 
+  
+      </View>
+    </View>
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Para o recheio, em uma tigela, misture a abobrinha, a cenoura, o brócolis, o tomate, a cebola, a berinjela e o manjericão.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step2')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Em uma panela, derreta a manteiga e refogue o alho por 2 minutos.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step3')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text> Despeje sobre os legumes, misture e tempere com sal e pimenta.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step4')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text>Para o creme, bata os ingredientes no liquidificador e reserve.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step5')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> Para a massa, bata no liquidificador o leite, o óleo, os ovos, sal, as farinhas e o fermento.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step6')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6.</Text> Espalhe metade da massa em uma fôrma de 25cm x 35cm untada e enfarinhada.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step7')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text> Espalhe os legumes sobre a massa e cubra com o creme de ricota.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step8')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text> Cubra com a massa restante, polvilhe com parmesão e leve ao forno médio (180º C), preaquecido, por 40 minutos ou até dourar. Sirva.
+      </Text>
+    </TouchableOpacity>
+
+   
+    </ScrollView>
+  </View>
+);
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#c1b2cd',
-    paddingHorizontal: 20,
-    paddingTop: 40,
+    justifyContent: 'flex-start',
+    backgroundColor: '#fdede9',
+    padding: 45,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
   },
   paragraph: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#7d6094',
+    textAlign: 'left',
     marginLeft: 10,
-    flex: 1
-    
+    color: '#abcb95',
   },
   img: {
     width: 90,
     height: 90,
-    marginRight: 20,
+    marginRight: 30,
   },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#7d6094',
-    marginTop: 10,
+  ingredientes: {
+    marginTop: 50,
+    fontSize: 16,
+    marginBottom: 15,
+    backgroundColor: '#abcb95',
+    paddingVertical: 5,
   },
-  ingredientsList: {
+  ingredientesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginBottom: 20,
   },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
+  },
   topicos: {
-    fontSize: 16,
-    marginBottom: 8,
-    lineHeight: 22,
+    marginBottom: 10,
+    lineHeight: 24,
+  },
+  numero: {
+    color: '#abcb95',
+    fontWeight: 'bold',
+    fontSize: 19,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
   },
 });

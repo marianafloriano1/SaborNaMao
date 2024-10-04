@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
   },
 
   texto2:{
-    color: '#fff',
+    color: '#609f84',
     fontSize: 28,
     textAlign: 'center',
     justifyContent: 'flex-start',

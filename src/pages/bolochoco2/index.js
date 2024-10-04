@@ -1,75 +1,192 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ImageBackground } from 'react-native';
+
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
+  const nav = useNavigation();
+
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
+  
+
   return (
-    <ImageBackground 
-      style={styles.container} 
-      source={require('../../img/pag.png')} 
-    >
-      <View style={styles.content}>
-        <View style={styles.row}>
-          <Image style={styles.img} source={require('../../img/bolo2.png')} />
-          <Text style={styles.paragraph}>
-            Bolo de Chocolate
-          </Text>
-        </View>
+    <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
 
-        <Text style={styles.ingredientes}>Ingredientes:</Text>
-        <Text style={styles.coisa}>Massa:</Text>
-        <Text style={styles.topicos}>- 4 ovos</Text>
-        <Text style={styles.topicos}>- 2 colheres (sopa) de manteiga</Text>
-        <Text style={styles.topicos}>- 2 xícaras (chá) de açúcar</Text>
-        <Text style={styles.topicos}>- 1 xícara (chá) de leite</Text>
-        <Text style={styles.topicos}>- 4 colheres (sopa) de chocolate em pó</Text>
-        <Text style={styles.topicos}>- 3 xícaras (chá) de farinha de trigo</Text>
-        <Text style={styles.topicos}>- 2 colheres (sopa) de fermento</Text>
-    
-        <Text style={styles.coisa}>Calda:</Text>
-        <Text style={styles.topicos}>- 2 colheres (sopa) de manteiga</Text>
-        <Text style={styles.topicos}>- 2 latas de creme de leite com soro</Text>
-        <Text style={styles.topicos}>- 7 colheres (sopa) de chocolate em pó</Text>
-        <Text style={styles.topicos}>- 3 colheres (sopa) de açúcar</Text>
+      
 
-        <Text style={styles.ingredientes}>Utensílios:</Text>
-        <Text style={styles.topicos}>- Forma de bolo, caso não tenha pode usar uma assadeira</Text>
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('almoco_domingo')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#dfc265" />
+</TouchableOpacity>
 
 
-        <Text style={styles.ingredientes}>Modo de preparo da Massa:</Text>
-        <Text style={styles.topicos}>1. Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha de trigo, o açúcar e o leite, depois bata por 5 minutos.</Text>
-        <Text style={styles.topicos}>2. Adicione o fermento e misture com uma espátula delicadamente.</Text>
-        <Text style={styles.topicos}>3. Em uma forma untada, despeje a massa e asse em forno médio (180 ºC) preaquecido por cerca de 40 minutos. Não se esqueça de usar uma forma alta para essa receita: como leva duas colheres de fermento, ela cresce bastante! Outra solução pode ser colocar apenas uma colher de fermento e manter a sua receita em uma forma pequena.</Text>
-
-        <Text style={styles.ingredientes}>Modo de preparo da Calda:</Text>
-        <Text style={styles.topicos}>1. Em uma panela, aqueça a manteiga e misture o chocolate em pó até que esteja homogêneo.</Text>
-        <Text style={styles.topicos}>2. Acrescente o creme de leite e misture bem até obter uma consistência cremosa.</Text>
-        <Text style={styles.topicos}>3. Desligue o fogo e acrescente o açúcar.</Text>
-
-         <Text style={styles.ingredientes}>Modo de preparo do Bolo:</Text>
-        <Text style={styles.topicos}>1. Desunte o bolo em um prato ou outro tipo de apoio.</Text>
-        <Text style={styles.topicos}>2. Caso não saia fácil, passe uma faca em torno da assadeira.</Text>
-        <Text style={styles.topicos}>3. Espere esfriar um pouco e derrame a calda como preferir</Text>
-        <Text style={styles.topicos}>4. Caso queira decorar compre granulado ou algum enfeite para bolo em casa de festa e não esqueça das velas!</Text>
-       
+      <View style={styles.row}>
+        
+        <Text style={styles.paragraph}>
+          Bolo de Chocolate
+        </Text>
       </View>
-    </ImageBackground>
-  );
-}
 
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
+      <View style={styles.ingredientesColuna}>
+        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 2 colheres (sopa) de manteiga.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 2 xícaras (chá) de açúcar.
+          </Text>
+        </TouchableOpacity>
+      
+
+        <TouchableOpacity onPress={() => toggleCheck('item3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara (chá) de leite.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => toggleCheck('item4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}4 colheres (sopa) de chocolate em pó.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} 3 xícaras (chá) de farinha de trigo.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 2 colheres (sopa) de fermento.
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.ingredientes}>CALDA</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''}2 colheres (sopa) de manteiga.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} 2 latas de creme de leite com soro.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item9')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''} 7 colheres (sopa) de chocolate em pó.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item10')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item10 ? <Text style={styles.check}>✓ </Text> : ''} 3 colheres (sopa) de açúcar.
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.ingredientes}>UTENSÍLIOS</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item11')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item11 ? <Text style={styles.check}>✓ </Text> : ''} Forma de bolo, caso não tenha pode usar uma assadeira.
+          </Text>
+        </TouchableOpacity>
+      
+      </View>
+    </View>
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO (MASSA)</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha de trigo, o açúcar e o leite, depois bata por 5 minutos.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step2')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Adicione o fermento e misture com uma espátula delicadamente.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step3')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Em uma forma untada, despeje a massa e asse em forno médio (180 ºC) preaquecido por cerca de 40 minutos. Não se esqueça de usar uma forma alta para essa receita: como leva duas colheres de fermento, ela cresce bastante! Outra solução pode ser colocar apenas uma colher de fermento e manter a sua receita em uma forma pequena.
+      </Text>
+    </TouchableOpacity>
+    <Text style={styles.ingredientes}>MODO DE PREPARO (CALDA)</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step4')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Em uma panela, aqueça a manteiga e misture o chocolate em pó até que esteja homogêneo.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step5')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> Acrescente o creme de leite e misture bem até obter uma consistência cremosa.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step6')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6.</Text>Desligue o fogo e acrescente o açúcar.
+      </Text>
+    </TouchableOpacity>
+    <Text style={styles.ingredientes}>MODO DE PREPARO (BOLO)</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step7')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text> Desunte o bolo em um prato ou outro tipo de apoio.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step8')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8.</Text> Caso não saia fácil, passe uma faca em torno da assadeira.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step9')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step9 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>9.</Text> Espere esfriar um pouco e derrame a calda como preferir.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step10')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step10 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>10.</Text> Caso queira decorar compre granulado ou algum enfeite para bolo em casa de festa e não esqueça das velas!
+      </Text>
+    </TouchableOpacity>
+
+   
+    </ScrollView>
+  </View>
+);
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-  },
-  content: {
-    flex: 1,
+    justifyContent: 'flex-start',
+    backgroundColor: '#fdede9',
     padding: 45,
-
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20, 
   },
   paragraph: {
     fontSize: 30,
@@ -79,26 +196,38 @@ const styles = StyleSheet.create({
     color: '#f14992',
   },
   img: {
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     marginRight: 30,
   },
   ingredientes: {
     marginTop: 50,
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 16,
     marginBottom: 15,
-    color: '#f14992',
+    backgroundColor: '#f14992',
+    paddingVertical: 5,
+  },
+  ingredientesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
   },
   topicos: {
-    fontSize: 15,
     marginBottom: 10,
-    color: '#000', 
+    lineHeight: 24,
   },
-
-  coisa:{
-    fontSize: 17,
-    marginBottom: 16,
+  numero: {
     color: '#f14992',
-  }
+    fontWeight: 'bold',
+    fontSize: 19,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
+  },
 });

@@ -1,56 +1,169 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ImageBackground } from 'react-native';
+
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
+  const nav = useNavigation();
+
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
+  
+
   return (
-    <ImageBackground 
-      style={styles.container} 
-      source={require('../../img/pag.png')} 
-    >
-      <View style={styles.content}>
-        <View style={styles.row}>
-          <Image style={styles.img} source={require('../../img/beijinho.png')} />
-          <Text style={styles.paragraph}>
-            Beijinho
-          </Text>
-        </View>
-
-        <Text style={styles.ingredientes}>Ingredientes (23 Unidades):</Text>
-        <Text style={styles.topicos}>- 1 lata de leite condensado (395 g)</Text>
-        <Text style={styles.topicos}>- 1 xícara (chá) de coco seco ralado (cerca de 80 g)</Text>
-        <Text style={styles.topicos}>- ⅓ de xícara (chá) de leite</Text>
-        <Text style={styles.topicos}>- 1 colher (sopa) de manteiga</Text>
-        <Text style={styles.topicos}>- manteiga para untar as mãos</Text>
-        <Text style={styles.topicos}>- 23 cravos-da-índia</Text>
+    <View style={styles.container}>
+      
      
-        <Text style={styles.ingredientes}>Utensílios:</Text>
-        <Text style={styles.topicos}>- Forma de papel para brigadeiros</Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
 
-         <Text style={styles.ingredientes}>Modo de preparo:</Text>
-        <Text style={styles.topicos}>1. Coloque o leite condensado, o leite e a manteiga numa panela pequena e leve ao fogo baixo. Mexa com uma espátula até a manteiga derreter.</Text>
-        <Text style={styles.topicos}>2. Acrescente ½ xícara (chá) do coco ralado e continue mexendo por cerca de 20 minutos, até o doce engrossar, no ponto de enrolar – mexa raspando bem os fundos e lateral da panela com a espátula para não queimar. Atenção para o ponto: incline levemente a panela para verificar, a massa de beijinho deve descolar do fundo da panela.</Text>
-        <Text style={styles.topicos}>3. Transfira o beijinho para um prato fundo (ou travessa) e deixe esfriar completamente em temperatura ambiente antes de enrolar.</Text>
-        <Text style={styles.topicos}>4. Em um prato fundo coloque o restante do coco ralado. Para modelar os beijinhos: unte as mãos com um pouco de manteiga e enrole uma porção de beijinho formando uma bolinha. Passe pelo coco ralado seco, cobrindo bem toda a superfície do doce. Coloque o doce numa forminha e espete com um cravo. Repita com o restante.</Text>
-       
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('almoco_domingo')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#dfc265" />
+</TouchableOpacity>
+
+
+      <View style={styles.row}>
+        
+        <Text style={styles.paragraph}>
+          Beijinho
+        </Text>
       </View>
-    </ImageBackground>
-  );
-}
 
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
+      <View style={styles.ingredientesColuna}>
+        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 caixa de leite condensado.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara (chá) de coco seco ralado (cerca de 80 g).
+          </Text>
+        </TouchableOpacity>
+      
+
+        <TouchableOpacity onPress={() => toggleCheck('item3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1/3 de xícara (chá) de leite.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => toggleCheck('item4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}1 colher (sopa) de manteiga.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} Manteiga para untar as mãos.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 23 cravos-da-índia.
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.ingredientes}>UTENSÍLIOS</Text>
+        <TouchableOpacity onPress={() => toggleCheck('item7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} Panela.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} Espatula ou colher.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item9')}>
+          <Text style={styles.topicos}>
+            {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''} Forma de papel para brigadeiros.
+          </Text>
+        </TouchableOpacity>
+      
+      </View>
+    </View>
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Coloque o leite condensado, o leite e a manteiga numa panela pequena e leve ao fogo baixo. Mexa com uma espátula até a manteiga derreter.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step2')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Acrescente 1/2 xícara (chá) do coco ralado e continue mexendo por cerca de 20 minutos, até o doce engrossar, no ponto de enrolar – mexa raspando bem os fundos e lateral da panela com a espátula para não queimar. Atenção para o ponto: incline levemente a panela para verificar, a massa de beijinho deve descolar do fundo da panela.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step3')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Transfira o beijinho para um prato fundo (ou travessa) e deixe esfriar completamente em temperatura ambiente antes de enrolar.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step4')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Em um prato fundo coloque o restante do coco ralado. 
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step5')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> Passe um pouco de manteiga na mão.
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step6')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6.</Text>Enrole uma porção de beijinho formando uma bolinha. Passe pelo coco ralado seco, cobrindo bem toda a superfície do doce. 
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step7')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text> Coloque o doce numa forminha e espete com um cravo. 
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => toggleCheck('step8')}>
+      <Text style={styles.topicos}>
+        {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8.</Text> Repita com o restante.
+      </Text>
+    </TouchableOpacity>
+
+   
+    </ScrollView>
+  </View>
+);
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-  },
-  content: {
-    flex: 1,
+    justifyContent: 'flex-start',
+    backgroundColor: '#fdede9',
     padding: 45,
-
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20, 
   },
   paragraph: {
     fontSize: 30,
@@ -60,26 +173,38 @@ const styles = StyleSheet.create({
     color: '#f14992',
   },
   img: {
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     marginRight: 30,
   },
   ingredientes: {
     marginTop: 50,
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 16,
     marginBottom: 15,
-    color: '#f14992',
+    backgroundColor: '#f14992',
+    paddingVertical: 5,
+  },
+  ingredientesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
   },
   topicos: {
-    fontSize: 15,
     marginBottom: 10,
-    color: '#000', 
+    lineHeight: 24,
   },
-
-  coisa:{
-    fontSize: 17,
-    marginBottom: 16,
+  numero: {
     color: '#f14992',
-  }
+    fontWeight: 'bold',
+    fontSize: 19,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
+  },
 });

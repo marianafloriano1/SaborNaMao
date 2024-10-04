@@ -158,9 +158,9 @@ export default function App() {
             {checkedItems.item20 ? <Text style={styles.check}>✓ </Text> : ''} 1 colher de sopa de açafrão.
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item6')}>
+        <TouchableOpacity onPress={() => toggleCheck('item21')}>
           <Text style={styles.topicos}>
-            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 5 camarões grandes.
+            {checkedItems.item21 ? <Text style={styles.check}>✓ </Text> : ''} 5 camarões grandes.
           </Text>
         </TouchableOpacity>
 
