@@ -108,6 +108,33 @@ import Bebidas from './src/pages/bebidas';
 import Dietas from './src/pages/dietas';
 import Restricao from './src/pages/restricao';
 import Cha from './src/pages/cha';
+import Lactose from './src/pages/lactose';
+import Pao_lactose from './src/pages/pao_lactose';
+import Cookies_lactose from './src/pages/cookies_lactose';
+import Chips_lactose from './src/pages/chips_lactose';
+import Brigadeiro_lactose from './src/pages/brigadeiro_lactose';
+import Bolo_lactose from './src/pages/bolo_lactose';
+import Churros from './src/pages/churros';
+import Gluten from './src/pages/gluten';
+import Bolo_gluten from './src/pages/bolo_gluten';
+import Sanduiche_gluten from './src/pages/sanduiche_gluten';
+import Brownie_gluten from './src/pages/brownie_gluten';
+import Doritos_gluten from './src/pages/doritos_gluten';
+import Pastel_gluten from './src/pages/pastel_gluten';
+import Pizza_gluten from './src/pages/pizza_gluten';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -327,6 +354,38 @@ export default function App() {
 
 <Stack.Screen name="cha" component={Cha} options={{ headerShown: false }}/>
 
+
+<Stack.Screen name="lactose" component={Lactose} options={{ headerShown: false }}/>
+
+<Stack.Screen name="pao_lactose" component={Pao_lactose} options={{ headerShown: false }}/>
+
+<Stack.Screen name="cookies_lactose" component={Cookies_lactose} options={{ headerShown: false }}/>
+
+<Stack.Screen name="brigadeiro_lactose" component={Brigadeiro_lactose} options={{ headerShown: false }}/>
+
+<Stack.Screen name="bolo_lactose" component={Bolo_lactose} options={{ headerShown: false }}/>
+
+<Stack.Screen name="chips_lactose" component={Chips_lactose} options={{ headerShown: false }}/>
+
+<Stack.Screen name="churros" component={Churros} options={{ headerShown: false }}/>
+
+
+
+
+<Stack.Screen name="gluten" component={Gluten} options={{ headerShown: false }}/>
+
+
+<Stack.Screen name="bolo_gluten" component={Bolo_gluten} options={{ headerShown: false }}/>
+
+<Stack.Screen name="sanduiche_gluten" component={Sanduiche_gluten} options={{ headerShown: false }}/>
+
+<Stack.Screen name="brownie_gluten" component={Brownie_gluten} options={{ headerShown: false }}/>
+
+<Stack.Screen name="doritos_gluten" component={Doritos_gluten} options={{ headerShown: false }}/>
+
+<Stack.Screen name="pastel_gluten" component={Pastel_gluten} options={{ headerShown: false }}/>
+
+<Stack.Screen name="pizza_gluten" component={Pizza_gluten} options={{ headerShown: false }}/>
       </Stack.Navigator>
      
     </NavigationContainer>

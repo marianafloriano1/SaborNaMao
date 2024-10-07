@@ -27,10 +27,10 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('vegetariano')}
+          onPress={() => nav.navigate('lactose')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/esse.png')} />
+            <Image style={styles.img} source={require('../../img/leite.png')} />
             <Text style={styles.texto}>Intolerância a Lactose</Text>
           </View>
         </Pressable>
@@ -46,10 +46,10 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('vegano')}
+          onPress={() => nav.navigate('gluten')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/esse.png')} />
+            <Image style={styles.img2} source={require('../../img/paoo.png')} />
             <Text style={styles.texto3}>Sensibilidade a Glúten</Text>
           </View>
         </Pressable>
@@ -127,8 +127,8 @@ const styles = StyleSheet.create({
       },
     
       img: {
-        width: 110,
-        height: 110,
+        width: 90,
+        height: 115,
       },
   teste: {
     width: 141,

@@ -128,7 +128,7 @@ export default function App() {
             <Text style={styles.texto3}>Lasanha</Text>
           </View>
         </Pressable>
-  
+        <Image source={require('../../img/vege.png')} style={styles.imagemm}></Image>
       </View>
       </ScrollView>
     </View>
@@ -169,6 +169,11 @@ const styles = StyleSheet.create({
     marginLeft: 15
 
   },
+  imagemm:{
+    width: 100,
+    height: 100,
+    
+    },
   texto: {
     textAlign: 'center',
     fontSize: 22,
