@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';

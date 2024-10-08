@@ -65,10 +65,10 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('kids')}
+          onPress={() => nav.navigate('diabetes')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/esse.png')} />
+            <Image style={styles.img3} source={require('../../img/bala.png')} />
             <Text style={styles.texto}>Diabetes</Text>
           </View>
         </Pressable>
@@ -128,6 +128,10 @@ const styles = StyleSheet.create({
     
       img: {
         width: 90,
+        height: 115,
+      },
+      img3: {
+        width: 110,
         height: 115,
       },
   teste: {

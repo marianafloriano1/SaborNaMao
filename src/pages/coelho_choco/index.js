@@ -1,32 +1,114 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  // Estado para controlar os itens marcados
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
+    step9: false,
+   
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/coelhinho.png')} />
+        <Image style={styles.img} source={require('./assets/coelhinho.png')} />
         <Text style={styles.paragraph}>
-          Bobó de Camarão
+          Coelho de Chocolate
         </Text>
       </View>
-      <Text style={styles.ingredientes}>Ingredientes:</Text>
-      <Text style={styles.topicos}>- 250 gramas de chocolate meio amargo em pedaços</Text>
-      <Text style={styles.topicos}>- 1 xícara (chá) de chocolate branco picado</Text>
-      <Text style={styles.topicos}>- gota de corante comestível (anilina) variado a gosto </Text>
-     
-       <Text style={styles.ingredientes}>Modo de Preparo:</Text>
-        <Text style={styles.topicos}>1. Derreta o chocolate meio amargo no micro-ondas por 3 minutos na potência média. </Text>
-      <Text style={styles.topicos}>2. Retire do forno e mexa até acabar de derreter. </Text>
-      <Text style={styles.topicos}>3. Transfira para um refratário limpo e bem seco, e mexa o chocolate até que, ao encostar um pouco nos lábios, dê a sensação de frio. </Text>
-      <Text style={styles.topicos}>4. Preencha formas para pirulito no formato de coelhinhos com o chocolate derretinho e coloque o palito para no lugar indicado.</Text>
-      <Text style={styles.topicos}>5. Leve à geladeira e deixe secar até a forma ficar opaca. </Text>
-      <Text style={styles.topicos}>6. Retire a forma da geladeira e desenforme com cuidado. </Text>
-      <Text style={styles.topicos}>7. Deixe secar completamente. </Text>
-      <Text style={styles.topicos}>8. Derreta o chocolate branco no banho-maria e retire do fogo. </Text>
-      <Text style={styles.topicos}>9. Use o chocolate branco para fazer os detalhes do coelho. </Text>
-<Text style={styles.topicos}>9. Deixe secar na temperatura ambiente por 1 hora.</Text>
 
+      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
+      <View style={styles.ingredientesContainer}>
+        <View style={styles.ingredientesColuna}>
+          <TouchableOpacity onPress={() => toggleCheck('item1')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}250 gramas de chocolate meio amargo em pedaços
+            </Text>
+          </TouchableOpacity>
+        
+          <TouchableOpacity onPress={() => toggleCheck('item3')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara (chá) de chocolate branco picado
+            </Text>
+          </TouchableOpacity>
+        
+        </View>
+       <View style={styles.ingredientesColuna}>
+          <TouchableOpacity onPress={() => toggleCheck('item8')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} gota de corante comestível (anilina) variado a gosto
+            </Text>
+          </TouchableOpacity>
+     
+        </View>
+      </View>
+
+      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
+      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text> Derreta o chocolate meio amargo no micro-ondas por 3 minutos na potência média. 
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step2')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Retire do forno e mexa até acabar de derreter. 
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step3')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Transfira para um refratário limpo e bem seco, e mexa o chocolate até que, ao encostar um pouco nos lábios, dê a sensação de frio. 
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step4')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Preencha formas para pirulito no formato de coelhinhos com o chocolate derretinho e coloque o palito para no lugar indicado.
+        </Text>
+      </TouchableOpacity>
+       <TouchableOpacity onPress={() => toggleCheck('step5')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Leve à geladeira e deixe secar até a forma ficar opaca.
+        </Text>
+      </TouchableOpacity>
+       <TouchableOpacity onPress={() => toggleCheck('step6')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6</Text> Retire a forma da geladeira e desenforme com cuidado. 
+        </Text>
+      </TouchableOpacity>
+       <TouchableOpacity onPress={() => toggleCheck('step7')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7</Text> Deixe secar completamente.
+        </Text>
+      </TouchableOpacity>
+       <TouchableOpacity onPress={() => toggleCheck('step8')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8</Text> Derreta o chocolate branco no banho-maria e retire do fogo.
+        </Text>
+      </TouchableOpacity>
+       <TouchableOpacity onPress={() => toggleCheck('step9')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step9 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8</Text> Use o chocolate branco para fazer os detalhes do coelho.
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -34,8 +116,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex',
-    backgroundColor: '#e0b9df',
+    justifyContent: 'flex-start',
+    backgroundColor: '#ffe2c0',
     padding: 45,
   },
   row: {
@@ -43,26 +125,46 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   paragraph: {
- fontSize: 30,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'left',
     marginLeft: 10,
     color: '#c780c5',
-    
   },
   img: {
     width: 90,
     height: 90,
     marginRight: 30,
   },
-  ingredientes:{
+  ingredientes: {
     marginTop: 50,
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 16,
     marginBottom: 15,
-    color: '#c780c5',
+    backgroundColor: '#c780c5',
+    paddingVertical: 5,
   },
-  topicos:{
-  
-  }
+  ingredientesContainer: {
+    flexDirection: 'row', // Exibe em duas colunas
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
+  },
+  topicos: {
+    marginBottom: 10,
+    lineHeight: 24,
+  },
+  numero: {
+    color: '#c780c5',
+    fontWeight: 'bold',
+    fontSize: 19,
+    margin: 6,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
+  },
 });

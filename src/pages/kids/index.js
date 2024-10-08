@@ -11,7 +11,7 @@ export default function App() {
      
        <ScrollView contentContainerStyle={styles.scroll}>
 
-  <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
+  <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('kids2')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#95ad7b" />
       </TouchableOpacity>
 
@@ -85,7 +85,7 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('rapadinha')}
+          onPress={() => nav.navigate('raspadinha')}
         >
           <View style={styles.teste}>
             <Image style={styles.img2} source={require('../../img/raspadinha.png')} />

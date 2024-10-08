@@ -1,88 +1,225 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  // Estado para controlar os itens marcados
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
+    item8: false,
+    item9: false,
+    item10: false,
+    item11: false,
+    item12: false,
+     item13: false,
+    item14: false,
+        item15: false,
+    item16: false,
+    item17: false,
+    item18: false,
+    item19: false,
+    item20: false,
+    
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
+    step9: false,
+     step10: false,
+      step11: false,
+
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
   return (
     <View style={styles.container}>
-     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/arroz_natal.png')} />
+  
         <Text style={styles.paragraph}>
-          Arroz de Forno Natalino
+        Arroz de Forno Natalino
         </Text>
       </View>
 
+      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
       
-      <Text style={styles.sectionTitle}>Ingredientes:</Text>
-      <View style={styles.ingredientsList}>
-          <Text style={styles.topicos}>3 xícaras de arroz cozido.</Text>
-      <Text style={styles.topicos}>1 peito de frango cozido e desfiado.</Text>
-      <Text style={styles.topicos}>1 cebola média picada em rodelas.</Text>
-      <Text style={styles.topicos}>1/2 xícara de batata palha.</Text>
-      <Text style={styles.topicos}>2 colheres (sopa) de molho de tomate.</Text>
-      <Text style={styles.topicos}>sal a gosto.</Text>
-      <Text style={styles.topicos}>1 lata de seleta de legumes (milho, ervilha, batata, cenoura etc).</Text>
-      <Text style={styles.topicos}>2 tomates picados em cubos.</Text>
-      <Text style={styles.topicos}>1 copo de requeijão.</Text>
-      <Text style={styles.topicos}>1/2 xícara de queijo mussarela ralado.</Text>
-      <Text style={styles.topicos}>1 colher (sopa) de óleo.</Text>
-      <Text style={styles.topicos}>pimenta-do-reino a gosto.</Text>
-      <Text style={styles.topicos}>Salsa e cebolinha a gosto.</Text>
+      <View style={styles.ingredientesContainer}>
+        <View style={styles.ingredientesColuna}>
+          <TouchableOpacity onPress={() => toggleCheck('item1')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}3 xícaras de arroz cozido
+            </Text>
+          </TouchableOpacity>
+        
+          <TouchableOpacity onPress={() => toggleCheck('item2')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}1 peito de frango cozido e desfiado
+            </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={() => toggleCheck('item3')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}1 cebola média picada em rodelas
+            </Text>
+          </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item4')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}1/2 xícara de batata palha
+            </Text>
+          </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item5')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}Sal
+            </Text>
+          </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item6')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''}2 colheres (sopa) de molho de tomate
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item7')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''}sal a gosto
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item8')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''}1 lata de seleta de legumes (milho, ervilha, batata, cenoura etc)
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item9')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''}2 tomates picados em cubos
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item10')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item10 ? <Text style={styles.check}>✓ </Text> : ''}1 copo de requeijão
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item11')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item11 ? <Text style={styles.check}>✓ </Text> : ''}1/2 xícara de queijo mussarela ralado
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item12')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item12 ? <Text style={styles.check}>✓ </Text> : ''}1 colher (sopa) de óleo
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item13')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item13 ? <Text style={styles.check}>✓ </Text> : ''}pimenta-do-reino a gosto
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item14')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item14 ? <Text style={styles.check}>✓ </Text> : ''}Salsa e cebolinha a gosto
+            </Text>
+          </TouchableOpacity>
+         
+
+        
+           
+        </View>
       </View>
 
-    
-     
-      <Text style={styles.sectionTitle}>Modo de Preparo:</Text>
-      <Text style={styles.topicos}>1. Misture o conteúdo da lata de seleta de legumes com o arroz cozido, sem levar ao fogo e reserve.</Text>
-         <Text style={styles.topicos}>2. Refogue a cebola no óleo, junte o tomate picado, o peito de frango desfiado e as 2 colheres de molho de tomate.</Text>
-
- <Text style={styles.topicos}>3. Tempere com sal e pimenta-do-reino a gosto.</Text>
-<Text style={styles.topicos}>4. Em um refratário faça uma camada de arroz, uma de requeijão e uma de molho e repita novamente a mesma sequência, terminando com a última camada de arroz..</Text>
-<Text style={styles.topicos}>5. Sobre as camadas prontas, espalhar a batata palha e o queijo ralado.</Text>
-<Text style={styles.topicos}>6. Levar ao forno médio por no máximo 15 minutos ou no micro-ondas na potência alta por no máximo 6 minutos.</Text>
-     </ScrollView>
-     </View>
+      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
+      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Misture o conteúdo da lata de seleta de legumes com o arroz cozido, sem levar ao fogo e reserve.
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step2')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Refogue a cebola no óleo, junte o tomate picado, o peito de frango desfiado e as 2 colheres de molho de tomate.
+        </Text>
+      </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Tempere com sal e pimenta-do-reino a gosto.
+        </Text>
+      </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step4')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Em um refratário faça uma camada de arroz, uma de requeijão e uma de molho e repita novamente a mesma sequência, terminando com a última camada de arroz.
+        </Text>
+      </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step5')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Sobre as camadas prontas, espalhar a batata palha e o queijo ralado.
+        </Text>
+      </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step6')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6</Text> Levar ao forno médio por no máximo 15 minutos ou no micro-ondas na potência alta por no máximo 6 minutos.
+        </Text>
+      </TouchableOpacity>  
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffcb9a',
-    paddingHorizontal: 20,
-    paddingTop: 40,
+    justifyContent: 'flex-start',
+    backgroundColor: '#ffe2c0',
+    padding: 45,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
   },
   paragraph: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#e48a55',
+    textAlign: 'left',
     marginLeft: 10,
-    flex: 1,
-    
+    color: '#cc4b4e',
   },
-  img: {
-    width: 90,
-    height: 90,
-    marginRight: 20,
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
+    color: '#cc4b4e',
   },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#e48a55',
-    marginTop: 10,
+  ingredientes: {
+    marginTop: 50,
+    fontSize: 16,
+    marginBottom: 15,
+    backgroundColor: '#cc4b4e',
+    paddingVertical: 5,
   },
-  ingredientsList: {
+  ingredientesContainer: {
+    flexDirection: 'row', // Exibe em duas colunas
+    justifyContent: 'space-between',
     marginBottom: 20,
   },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
+  },
   topicos: {
-    fontSize: 16,
-    marginBottom: 8,
-    lineHeight: 22,
+    marginBottom: 10,
+    lineHeight: 24,
+  },
+  numero: {
+    color: '#cc4b4e',
+    fontWeight: 'bold',
+    fontSize: 19,
+    margin: 6,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
   },
 });

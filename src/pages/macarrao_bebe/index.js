@@ -1,98 +1,205 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import React, { Component } from 'react';
+import { View, StyleSheet, Text, Pressable, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function App() {
+  // Estado para controlar os itens marcados
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
+    item8: false,
+    item9: false,
+    item10: false,
+    item11: false,
+    item12: false,
+     item13: false,
+    item14: false,
+        item15: false,
+    item16: false,
+    item17: false,
+    item18: false,
+    item19: false,
+    item20: false,
+    
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
+    step9: false,
+     step10: false,
+      step11: false,
+
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
+  const nav = useNavigation();
   return (
     <View style={styles.container}>
-     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/pesto.png')} />
+      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('mamaes')}>
+        <FontAwesome name="arrow-circle-left" size={28} color="#609f84" />
+      </TouchableOpacity>
+
         <Text style={styles.paragraph}>
-          Macarrão Cremoso De Espinafre
+           Macarrão Cremoso De Espinafre
         </Text>
       </View>
 
+      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
       
-      <Text style={styles.sectionTitle}>Ingredientes:</Text>
-      <View style={styles.ingredientsList}>
-      <Text style={styles.topicos}>- 1/4 de xícara de macarrão pequeno (como conchinha ou estrela).</Text>
-      <Text style={styles.topicos}>- 1/2 xícara de espinafre fresco.</Text>
-      <Text style={styles.topicos}>- 1/4 de xícara de batata-doce ou abóbora, descascada e cortada em cubos pequenos.</Text>
-      <Text style={styles.topicos}>- 1 colher de chá de azeite de oliva.</Text>
-      <Text style={styles.topicos}>- 1/4 de xícara de queijo cottage (ou outro queijo fresco sem sal).</Text>
-      <Text style={styles.topicos}>- 1/4 de xícara de água ou caldo de legumes (sem sal).</Text>
-      </View>
+      <View style={styles.ingredientesContainer}>
+        <View style={styles.ingredientesColuna}>
+          <TouchableOpacity onPress={() => toggleCheck('item1')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}1/4 de xícara de macarrão pequeno (como conchinha ou estrela)
+            </Text>
+          </TouchableOpacity>
+        
+          <TouchableOpacity onPress={() => toggleCheck('item2')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}1/2 xícara de espinafre fresco
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item3')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}1/4 de xícara de batata-doce ou abóbora, descascada e cortada em cubos pequenos
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item4')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}1 colher de chá de azeite de oliva
+            </Text>
+          </TouchableOpacity>
+             <TouchableOpacity onPress={() => toggleCheck('item5')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}1/4 de xícara de queijo cottage (ou outro queijo fresco sem sal)
+            </Text>
+          </TouchableOpacity>
+             <TouchableOpacity onPress={() => toggleCheck('item6')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''}1/4 de xícara de água ou caldo de legumes (sem sal)
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View> 
 
-    
-     
-      <Text style={styles.sectionTitle}>Modo de Preparo:</Text>
-       <Text style={styles.topicos}>1. Cozinhe a batata-doce (ou abóbora) em água fervente até que esteja bem macia. Isso deve levar cerca de 10-15 minutos.</Text>
+      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
+      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Cozinhe a batata-doce (ou abóbora) em água fervente até que esteja bem macia. Isso deve levar cerca de 10-15 minutos.
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step2')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text>  Em outra panela, cozinhe o espinafre em água fervente por cerca de 2-3 minutos até murchar. Escorra bem e pique finamente ou passe no processador.
+        </Text>
+      </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text>Cozinhe o macarrão de acordo com as instruções da embalagem, mas certifique-se de que fique bem macio para facilitar a digestão do bebê.
+        </Text>
+      </TouchableOpacity> 
+       <TouchableOpacity onPress={() => toggleCheck('step4')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Em uma panela separada, adicione o azeite de oliva e aqueça em fogo baixo.
+        </Text>
+      </TouchableOpacity>  
+     <TouchableOpacity onPress={() => toggleCheck('step5')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text>  Adicione o espinafre picado e mexa até que tudo esteja bem incorporado.
+        </Text>
+      </TouchableOpacity>    <TouchableOpacity onPress={() => toggleCheck('step6')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6</Text> Adicione o macarrão cozido à mistura de espinafre e batata-doce. Mexa bem para combinar.
+        </Text>
+      </TouchableOpacity>    <TouchableOpacity onPress={() => toggleCheck('step7')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7</Text> dicione água suficiente para cobrir os legumes e leve ao fogo.
+        </Text>
+      </TouchableOpacity>    <TouchableOpacity onPress={() => toggleCheck('step8')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8</Text> Deixe esfriar um pouco antes de servir ao bebê. A textura deve ser bem suave e o molho bem cremoso.
+        </Text>
+      </TouchableOpacity>   
+       <Text style={styles.ingrediente}>Dica:</Text>
 
-      <Text style={styles.topicos}>2. Em outra panela, cozinhe o espinafre em água fervente por cerca de 2-3 minutos até murchar. Escorra bem e pique finamente ou passe no processador.</Text>
+      <Text style={styles.topicos}>Se necessário, passe o macarrão com o molho em um processador de alimentos ou liquidificador para garantir que esteja bem liso e sem grumos.</Text>
 
-      <Text style={styles.topicos}>3. Cozinhe o macarrão de acordo com as instruções da embalagem, mas certifique-se de que fique bem macio para facilitar a digestão do bebê.</Text>
-
-      <Text style={styles.topicos}>4. Em uma panela pequena, aqueça o azeite em fogo baixo. Adicione a batata-doce cozida e amassada, e misture bem.</Text>
-
-      <Text style={styles.topicos}>5. Adicione o espinafre picado e mexa até que tudo esteja bem incorporado.</Text>
-
-      <Text style={styles.topicos}>6. Gradualmente adicione o queijo cottage e a água (ou caldo de legumes), mexendo até que o molho fique cremoso e homogêneo.</Text>
-
-      <Text style={styles.topicos}>7. Adicione o macarrão cozido à mistura de espinafre e batata-doce. Mexa bem para combinar.</Text>
-
-      <Text style={styles.topicos}>8. Deixe esfriar um pouco antes de servir ao bebê. A textura deve ser bem suave e o molho bem cremoso.</Text>
-
-      <Text style={styles.sectionTitle}>Dica:</Text>
-
-      <Text style={styles.topicos}>- Se necessário, passe o macarrão com o molho em um processador de alimentos ou liquidificador para garantir que esteja bem liso e sem grumos.</Text>
-
-      <Text style={styles.sectionTitle}>Atenção!</Text>
-
-      <Text style={styles.topicos}>- Adequado a partir de 6 meses.</Text>
-      
-     </ScrollView>
-     </View>
+      <Text style={styles.ingredientes}>  ATENÇÃO!</Text>
+      <Text style={styles.topicos}>Adequado a partir de 6 meses.</Text>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#c1dbcf',
-    paddingHorizontal: 20,
-    paddingTop: 40,
+    justifyContent: 'flex-start',
+    backgroundColor: '#ffe2c0',
+    padding: 45,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
   },
   paragraph: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#609f84',
+    textAlign: 'left',
     marginLeft: 10,
-    flex: 1,
-    
-  },
-  img: {
-    width: 90,
-    height: 90,
-    marginRight: 20,
-  },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
     color: '#609f84',
-    marginTop: 10,
   },
-  ingredientsList: {
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
+    color: '#609f84',
+  },
+  ingredientes: {
+    marginTop: 50,
+    fontSize: 16,
+    marginBottom: 15,
+    backgroundColor: '#609f84',
+    paddingVertical: 5,
+  },
+  ingredientesContainer: {
+    flexDirection: 'row', // Exibe em duas colunas
+    justifyContent: 'space-between',
     marginBottom: 20,
   },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
+  },
   topicos: {
-    fontSize: 16,
-    marginBottom: 8,
-    lineHeight: 22,
+    marginBottom: 10,
+    lineHeight: 24,
+  },
+  numero: {
+    color: '#609f84',
+    fontWeight: 'bold',
+    fontSize: 19,
+    margin: 6,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
   },
 });

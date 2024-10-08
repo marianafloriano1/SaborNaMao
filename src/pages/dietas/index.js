@@ -54,25 +54,7 @@ export default function App() {
           </View>
         </Pressable>
 
-        <Pressable
-          style={{
-            width: 360,
-            height: 140,
-            backgroundColor: '#c5eea9',
-            borderRadius: 25,
-            marginTop: 90,
-            marginLeft: 25,
-            position: 'relative',
-            overflow: 'hidden'
-          }}
-          onPress={() => nav.navigate('kids')}
-        >
-          <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/esse.png')} />
-            <Text style={styles.texto}>Receitas Fitness</Text>
-          </View>
-        </Pressable>
-
+        
      <Image source={require('../../img/we.png')} style={styles.imagemm}></Image>
 
     </ScrollView>
@@ -140,7 +122,7 @@ const styles = StyleSheet.create({
    imagemm:{
     width: '100%',
     height: 200,
-    marginTop: 30
+    marginTop: 150
 
     },
     imagem:{

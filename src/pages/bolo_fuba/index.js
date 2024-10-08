@@ -1,43 +1,167 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView  } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  // Estado para controlar os itens marcados
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
+    item8: false,
+    item9: false,
+    item10: false,
+    item11: false,
+    item12: false,
+     item13: false,
+    item14: false,
+        item15: false,
+    item16: false,
+    item17: false,
+    item18: false,
+    item19: false,
+    item20: false,
+    
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
+    step9: false,
+     step10: false,
+      step11: false,
+
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+
   return (
     <View style={styles.container}>
-     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/bolo.png')} />
+  
         <Text style={styles.paragraph}>
-        Bolo de Fubá
-            </Text>
+         Bolo de Fubá
+        </Text>
       </View>
 
-            <Text style={styles.sectionTitle}>Ingredientes:</Text>
-            <View style={styles.ingredientsList}>
-      <Text style={styles.topicos}>- 2 ovos.</Text>
-      <Text style={styles.topicos}>- 2 xícaras de açúcar.</Text>
-      <Text style={styles.topicos}>- 2 xícaras de farinha de trigo.</Text>
-      <Text style={styles.topicos}>- 2 colheres (chá) de fermento em pó.</Text>
-      <Text style={styles.topicos}>- 2 xícaras de leite.</Text>
-      <Text style={styles.topicos}>- 2 xícaras de fubá.</Text>
-      <Text style={styles.topicos}>- 1 xícara de óleo.</Text>
-           <Text style={styles.sectionTitle}>Utensílios:</Text>
-      <Text style={styles.topicos}>- Liquidificador.</Text>
-      <Text style={styles.topicos}>- Forma de bolo.</Text>
-      </View>
-
+      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
       
-           <Text style={styles.sectionTitle}>Modo de Preparo:</Text>
-      <Text style={styles.topicos}>1. Bata no liquidificador em velocidade alta, os ovos, o óleo, o leite e o açúcar.</Text>
-      <Text style={styles.topicos}>2. Quando estiver homogêneo, vá acrescentando a farinha e o fubá.</Text>
-      <Text style={styles.topicos}>3. A massa vai começar a ficar grossa, então ajude mexendo com uma colher.</Text>
-      <Text style={styles.topicos}>4. Quando estiver tudo bem misturado acrescente o fermento em pó e misture bem.</Text>
-      <Text style={styles.topicos}>5. Unte uma assadeira grande de buraco no meio com óleo e açúcar (de preferência cristal).</Text>
-      <Text style={styles.topicos}>6. Leve ao forno médio até dourar (cerca de 40 minutos).</Text>
-      <Text style={styles.topicos}>7. Quando estiver quase totalmente frio pode desenformar.</Text>
-      <Text style={styles.topicos}>8. Passe uma faca na lateral da forma, pegue um prato grande e coloque em cima da forma.</Text>
-      <Text style={styles.topicos}>9. Vire a forma de ponta cabeça e pronto.</Text>
-      </ScrollView>
+      <View style={styles.ingredientesContainer}>
+        <View style={styles.ingredientesColuna}>
+          <TouchableOpacity onPress={() => toggleCheck('item1')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}2 ovos
+            </Text>
+          </TouchableOpacity>
+        
+          <TouchableOpacity onPress={() => toggleCheck('item2')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}2 xícaras de açúcar
+            </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={() => toggleCheck('item3')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}2 xícaras de farinha de trigo
+            </Text>
+          </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item4')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}2 colheres (chá) de fermento em pó
+            </Text>
+          </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item5')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}2 xícaras de leite
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item6')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''}2 xícaras de fubá
+            </Text>
+          </TouchableOpacity>
+           <TouchableOpacity onPress={() => toggleCheck('item7')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''}1 xícara de óleo
+            </Text>
+          </TouchableOpacity>
+          <Text style={styles.ingrediente}>Utensílios:</Text>
+           <TouchableOpacity onPress={() => toggleCheck('item8')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''}liquidificador
+            </Text>
+          </TouchableOpacity>
+           <TouchableOpacity onPress={() => toggleCheck('item9')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''}forma de bolo
+            </Text>
+          </TouchableOpacity> 
+ 
+         
+        
+           
+        </View>
+      </View>
+
+      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
+      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Bata no liquidificador em velocidade alta, os ovos, o óleo, o leite e o açúcar.
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step2')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Quando estiver homogêneo, vá acrescentando a farinha e o fubá.
+        </Text>
+      </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> A massa vai começar a ficar grossa, então ajude mexendo com uma colher.
+        </Text>
+      </TouchableOpacity> 
+       <TouchableOpacity onPress={() => toggleCheck('step4')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Quando estiver tudo bem misturado acrescente o fermento em pó e misture bem.
+        </Text>
+      </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step5')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Quando estiver tudo bem misturado acrescente o fermento em pó e misture bem.
+        </Text>
+      </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step6')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6</Text> Unte uma assadeira grande de buraco no meio com óleo e açúcar (de preferência cristal).
+        </Text>
+      </TouchableOpacity>  
+      <TouchableOpacity onPress={() => toggleCheck('step7')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7</Text> Leve ao forno médio até dourar (cerca de 40 minutos).
+        </Text>
+      </TouchableOpacity>  
+      <TouchableOpacity onPress={() => toggleCheck('step8')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8</Text> Quando estiver quase totalmente frio pode desenformar.
+        </Text>
+      </TouchableOpacity>  
+      <TouchableOpacity onPress={() => toggleCheck('step9')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step9 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>9</Text> Passe uma faca na lateral da forma, pegue um prato grande e coloque em cima da forma.
+        </Text>
+      </TouchableOpacity>  
+      <TouchableOpacity onPress={() => toggleCheck('step10')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step10 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>10</Text> Vire a forma de ponta cabeça e pronto.
+        </Text>
+      </TouchableOpacity>  
     </View>
   );
 }
@@ -45,41 +169,55 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#d698a6',
-    paddingHorizontal: 20,
-    paddingTop: 40,
+    justifyContent: 'flex-start',
+    backgroundColor: '#ffe2c0',
+    padding: 45,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
   },
   paragraph: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#be6e80',
+    textAlign: 'left',
     marginLeft: 10,
-    flex: 1
-    
+    color: '#cc4b4e',
   },
-  img: {
-    width: 90,
-    height: 90,
-    marginRight: 20,
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
+    color: '#cc4b4e',
   },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#be6e80',
-    marginTop: 10,
+  ingredientes: {
+    marginTop: 50,
+    fontSize: 16,
+    marginBottom: 15,
+    backgroundColor: '#cc4b4e',
+    paddingVertical: 5,
   },
-  ingredientsList: {
+  ingredientesContainer: {
+    flexDirection: 'row', // Exibe em duas colunas
+    justifyContent: 'space-between',
     marginBottom: 20,
   },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
+  },
   topicos: {
-    fontSize: 16,
-    marginBottom: 8,
-    lineHeight: 22,
+    marginBottom: 10,
+    lineHeight: 24,
+  },
+  numero: {
+    color: '#cc4b4e',
+    fontWeight: 'bold',
+    fontSize: 19,
+    margin: 6,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
   },
 });

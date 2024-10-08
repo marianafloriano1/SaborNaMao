@@ -1,78 +1,173 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import React, { Component } from 'react';
+import { View, StyleSheet, Text, Pressable, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function App() {
+  // Estado para controlar os itens marcados
+  const [checkedItems, setCheckedItems] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
+    item8: false,
+    item9: false,
+    item10: false,
+    item11: false,
+    item12: false,
+     item13: false,
+    item14: false,
+        item15: false,
+    item16: false,
+    item17: false,
+    item18: false,
+    item19: false,
+    item20: false,
+    
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+    step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
+    step9: false,
+     step10: false,
+      step11: false,
+
+  });
+
+  // Função para alternar a marcação de um item
+  const toggleCheck = (item) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
+  const nav = useNavigation();
+  
   return (
     <View style={styles.container}>
-     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.row}>
-        <Image style={styles.img} source={require('../../img/melancia.png')} />
+      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('sucos')}>
+        <FontAwesome name="arrow-circle-left" size={28} color="#d6705d" />
+      </TouchableOpacity>
         <Text style={styles.paragraph}>
-          Suco De Melancia com Limão
+         Suco De Melancia com Limão
         </Text>
       </View>
 
+      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
       
-      <Text style={styles.sectionTitle}>Ingredientes:</Text>
-      <View style={styles.ingredientsList}>
-        <Text style={styles.topicos}>- 1 xícara (chá) de melancia em cubos sem sementes.</Text>
-        <Text style={styles.topicos}>- caldo de 1 limão.</Text>
-        <Text style={styles.topicos}>- 3/4 de xícara (chá) de água.</Text>
-        <Text style={styles.topicos}>- açúcar e cubos de gelo a gosto.</Text>
+      <View style={styles.ingredientesContainer}>
+        <View style={styles.ingredientesColuna}>
+          <TouchableOpacity onPress={() => toggleCheck('item1')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}1 xícara (chá) de melancia em cubos sem sementes
+            </Text>
+          </TouchableOpacity>
+        
+          <TouchableOpacity onPress={() => toggleCheck('item2')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}caldo de 1 limão
+            </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={() => toggleCheck('item3')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}3/4 de xícara (chá) de água
+            </Text>
+          </TouchableOpacity>    
+          <TouchableOpacity onPress={() => toggleCheck('item4')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}açúcar e cubos de gelo a gosto
+            </Text>
+          </TouchableOpacity>    
+           
+        </View>
       </View>
 
-    
-      <Text style={styles.sectionTitle}>Modo de Preparo:</Text>
-      <Text style={styles.topicos}>1. No liquidificador, junte a melancia, a água e o caldo de limão (se quiser adicione açúcar a gosto).</Text>
-
-      <Text style={styles.topicos}>2. Bata até ficar liso.</Text>
-      <Text style={styles.topicos}>3. Transfira para um copo e acrescente cubos de gelo a gosto. </Text>
-      <Text style={styles.topicos}>4. Sirva a seguir.</Text>
-
-      
-     </ScrollView>
-     </View>
+      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
+      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>No liquidificador, junte a melancia, a água e o caldo de limão (se quiser adicione açúcar a gosto).
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step2')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text>  Bata até ficar liso.
+        </Text>
+      </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Transfira para um copo e acrescente cubos de gelo a gosto.
+        </Text>
+      </TouchableOpacity> 
+       <TouchableOpacity onPress={() => toggleCheck('step4')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Sirva a seguir.
+        </Text>
+      </TouchableOpacity>  
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffc19a',
-    paddingHorizontal: 20,
-    paddingTop: 40,
+    justifyContent: 'flex-start',
+    backgroundColor: '#ffe2c0',
+    padding: 45,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
   },
   paragraph: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#d6705d',
+    textAlign: 'left',
     marginLeft: 10,
-    flex: 1,
-    
+    color: '#ffc19a',
   },
-  img: {
-    width: 90,
-    height: 90,
-    marginRight: 20,
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
+    color: '#ffc19a',
   },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#d6705d',
-    marginTop: 10,
+  ingredientes: {
+    marginTop: 50,
+    fontSize: 16,
+    marginBottom: 15,
+    backgroundColor: '#ffc19a',
+    paddingVertical: 5,
   },
-  ingredientsList: {
+  ingredientesContainer: {
+    flexDirection: 'row', // Exibe em duas colunas
+    justifyContent: 'space-between',
     marginBottom: 20,
   },
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
+  },
   topicos: {
-    fontSize: 16,
-    marginBottom: 8,
-    lineHeight: 22,
+    marginBottom: 10,
+    lineHeight: 24,
+  },
+  numero: {
+    color: '#ffc19a',
+    fontWeight: 'bold',
+    fontSize: 19,
+    margin: 6,
+  },
+  check: {
+    color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
   },
 });

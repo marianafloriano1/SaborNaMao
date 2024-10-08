@@ -11,7 +11,7 @@ export default function App() {
      
        <ScrollView contentContainerStyle={styles.scroll}>
 
-       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
+       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('bebidas')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#fbca8e" />
       </TouchableOpacity>
 
@@ -31,11 +31,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('limao')}
+          onPress={() => nav.navigate('canela')}
         >
           <View style={styles.teste}>
             <Image style={styles.img} source={require('../../img/cha-preto.png')} />
-            <Text style={styles.texto}>Chá Preto</Text>
+            <Text style={styles.texto}>Chá de Canela</Text>
           </View>
         </Pressable>
 
@@ -50,7 +50,7 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('abacaxi')}
+          onPress={() => nav.navigate('gengibre')}
         >
           <View style={styles.teste}>
             <Image style={styles.img2} source={require('../../img/cha-de-gengibre.png')} />
@@ -68,7 +68,7 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('morango')}
+          onPress={() => nav.navigate('macha')}
         >
           <View style={styles.teste}>
             <Image style={styles.img} source={require('../../img/cha-verde.png')} />
@@ -86,7 +86,7 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('melancia')}
+          onPress={() => nav.navigate('hibisco')}
         >
           <View style={styles.teste}>
             <Image style={styles.img2} source={require('../../img/hibiscus.png')} />
@@ -104,7 +104,7 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('cenoura')}
+          onPress={() => nav.navigate('laranja_cha')}
         >
           <View style={styles.teste}>
             <Image style={styles.img} source={require('../../img/caneca-de-cha.png')} />
@@ -122,7 +122,7 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('verde')}
+          onPress={() => nav.navigate('margarida')}
         >
           <View style={styles.teste}>
             <Image style={styles.img2} source={require('../../img/caneca-de-cha (1).png')} />

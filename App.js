@@ -122,12 +122,19 @@ import Brownie_gluten from './src/pages/brownie_gluten';
 import Doritos_gluten from './src/pages/doritos_gluten';
 import Pastel_gluten from './src/pages/pastel_gluten';
 import Pizza_gluten from './src/pages/pizza_gluten';
-
-
-
-
-
-
+import Laranja_cha from './src/pages/laranja_cha';
+import Margarida from './src/pages/margarida';
+import Macha from './src/pages/macha';
+import Canela from './src/pages/canela';
+import Hibisco from './src/pages/hibisco';
+import Gengibre from './src/pages/gengibre';
+import Diabetes from './src/pages/diabetes';
+import Torta3 from './src/pages/torta3';
+import Salada2 from './src/pages/salada2';
+import Quibe from './src/pages/quibe';
+import Salmao from './src/pages/salmao';
+import Palitos from './src/pages/palitos';
+import Cheesecake from './src/pages/cheesecake';
 
 
 
@@ -352,7 +359,24 @@ export default function App() {
 
 <Stack.Screen name="restricao" component={Restricao} options={{ headerShown: false }}/>
 
+
+
+
 <Stack.Screen name="cha" component={Cha} options={{ headerShown: false }}/>
+
+<Stack.Screen name="margarida" component={Margarida} options={{ headerShown: false }}/>
+
+<Stack.Screen name="macha" component={Macha} options={{ headerShown: false }}/>
+
+<Stack.Screen name="laranja_cha" component={Laranja_cha} options={{ headerShown: false }}/>
+
+<Stack.Screen name="gengibre" component={Gengibre} options={{ headerShown: false }}/>
+
+<Stack.Screen name="canela" component={Canela} options={{ headerShown: false }}/>
+
+<Stack.Screen name="hibisco" component={Hibisco} options={{ headerShown: false }}/>
+
+
 
 
 <Stack.Screen name="lactose" component={Lactose} options={{ headerShown: false }}/>
@@ -386,6 +410,25 @@ export default function App() {
 <Stack.Screen name="pastel_gluten" component={Pastel_gluten} options={{ headerShown: false }}/>
 
 <Stack.Screen name="pizza_gluten" component={Pizza_gluten} options={{ headerShown: false }}/>
+
+
+
+
+<Stack.Screen name="diabetes" component={Diabetes} options={{ headerShown: false }}/>
+
+
+<Stack.Screen name="torta3" component={Torta3} options={{ headerShown: false }}/>
+
+<Stack.Screen name="salada2" component={Salada2} options={{ headerShown: false }}/>
+
+<Stack.Screen name="palitos" component={Palitos} options={{ headerShown: false }}/>
+
+<Stack.Screen name="cheesecake" component={Cheesecake} options={{ headerShown: false }}/>
+
+<Stack.Screen name="quibe" component={Quibe} options={{ headerShown: false }}/>
+
+<Stack.Screen name="salmao" component={Salmao} options={{ headerShown: false }}/>
+
       </Stack.Navigator>
      
     </NavigationContainer>

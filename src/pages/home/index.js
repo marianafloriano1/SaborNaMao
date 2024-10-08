@@ -1,9 +1,9 @@
 
-import { View, StyleSheet, TextInput, Text, Pressable, Image, TouchableOpacity,ScrollView, ImageBackground} from 'react-native';
+import { View, StyleSheet, TextInput, Text, Pressable, Image, TouchableOpacity, ScrollView, ImageBackground, Animated } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 import Menu from '../../components/Menu';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 export default function App() {
@@ -12,6 +12,35 @@ export default function App() {
   const handlePress = (buttonNumber) => {
     console.log(`Botão ${buttonNumber} pressionado!`);
   };
+  const [tourVisible, setTourVisible] = useState(false);
+  const [tourStep, setTourStep] = useState(0);
+  const [fadeAnim] = useState(new Animated.Value(1));
+
+  useEffect(() => {
+    setTourVisible(true); 
+  }, []);
+
+
+  useEffect(() => {
+    if (tourStep === 1) {
+
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(fadeAnim, {
+            toValue: 0.5,
+            duration: 500,
+            useNativeDriver: true,
+          }),
+          Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 500,
+            useNativeDriver: true,
+          }),
+        ])
+      ).start();
+    }
+  }, [tourStep]);
+
 
   const items = [
     { title: 'Natal', image: require('../../img/Natal.png'), route: 'ceia_natal' },
@@ -36,6 +65,35 @@ export default function App() {
       setCurrentIndex(currentIndex - 3);
     }
   };
+
+
+  const nextStep = () => {
+    if (tourStep < 3) {
+      setTourStep(tourStep + 1);
+    } else {
+      setTourVisible(false);
+      setTourStep(0);
+    }
+  };
+
+  const renderTourStep = () => {
+    const steps = [
+      "Bem-vindo ao Sabor na Mão! Aqui você pode encontrar várias receitas.",
+      "Aqui estão os eventos disponíveis! Toque em um para saber mais.",
+      "Explore as opções de bebidas e comidas para crianças.",
+      "Dê uma olhada nas receitas saudáveis e restrições alimentares."
+    ];
+
+    return (
+      <View style={styles.tourOverlay}>
+        <Text style={styles.tourText}>{steps[tourStep]}</Text>
+        <Pressable onPress={nextStep} style={styles.nextButton}>
+          <Text style={styles.nextButtonText}>Próximo</Text>
+        </Pressable>
+      </View>
+    );
+  };
+
 
   return (
     
@@ -66,18 +124,20 @@ export default function App() {
     <FontAwesome name="angle-left" size={24} color="#FF8F7E" />
   </TouchableOpacity>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {items.slice(currentIndex, currentIndex + 3).map((item, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => { nav.navigate(item.route); }}
-            style={styles.carouselItem}
-          >
-            <Image style={styles.buttonImage} source={item.image} />
-            <Text style={styles.texto}>{item.title}</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+  <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              {items.slice(currentIndex, currentIndex + 3).map((item, index) => (
+                <TouchableOpacity
+                  key={index}
+                  onPress={() => { nav.navigate(item.route); }}
+                  style={styles.carouselItem}
+                >
+                  <Animated.View style={{ opacity: fadeAnim }}>
+                    <Image style={styles.buttonImage} source={item.image} />
+                    <Text style={styles.texto}>{item.title}</Text>
+                  </Animated.View>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
 
       <TouchableOpacity onPress={nextItems} style={[styles.arrowButton, styles.arrowButtonRight]} disabled={currentIndex + 3 >= items.length}>
   <FontAwesome name="angle-right" size={24} color="#FF8F7E" />
@@ -258,7 +318,7 @@ export default function App() {
 
       </View>
 
-    
+    {tourVisible && renderTourStep()}
 </ScrollView>
     </View>
     
@@ -442,11 +502,39 @@ texto:{
     top: '49%',
     left: '60%',
     
-    transform: [{ translateX: -25 }, { translateY: -25 }], // Centraliza a imagem
+    transform: [{ translateX: -25 }, { translateY: -25 }], 
   },
   texto1:{
     textAlign: 'center',
   marginTop: 5,
     fontSize: 12,
+  },
+
+  tourOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    zIndex: 2, // Manter a sobreposição
+  },
+  tourText: {
+    color: '#fff',
+    fontSize: 18,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  nextButton: {
+    backgroundColor: '#FF8F7E',
+    padding: 10,
+    borderRadius: 5,
+  },
+  nextButtonText: {
+    color: '#fff',
+    fontSize: 16,
   },
 });

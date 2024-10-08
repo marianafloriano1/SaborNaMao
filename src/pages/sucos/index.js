@@ -11,7 +11,7 @@ export default function App() {
      
        <ScrollView contentContainerStyle={styles.scroll}>
 
-       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('home')}>
+       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('bebidas')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#d6705d" />
       </TouchableOpacity>
 
