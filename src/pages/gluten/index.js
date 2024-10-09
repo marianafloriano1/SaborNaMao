@@ -16,7 +16,7 @@ export default function App() {
       </TouchableOpacity>
 
       
-       <Text style={styles.texto2}>Receitas sem Lactose</Text>    
+       <Text style={styles.texto2}>Receitas sem Glúten</Text>    
        <View style={styles.quadrado}>
        <Image source={require('../../img/gluten.png')} style={styles.imagemm}></Image>
 
@@ -31,11 +31,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('pao_lactose')}
+          onPress={() => nav.navigate('sanduiche_gluten')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/esse.png')} />
-            <Text style={styles.texto}>Pão de Queijo</Text>
+            <Image style={styles.img} source={require('../../img/sandu.png')} />
+            <Text style={styles.texto}>Sanduíche</Text>
           </View>
         </Pressable>
 
@@ -50,11 +50,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('cookies_lactose')}
+          onPress={() => nav.navigate('pizza_gluten')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/cookies.png')} />
-            <Text style={styles.texto3}>Cookies de Chocolate</Text>
+            <Image style={styles.img2} source={require('../../img/pizza (3).png')} />
+            <Text style={styles.texto3}>Pizza</Text>
           </View>
         </Pressable>
         <Pressable
@@ -68,11 +68,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('chips_lactose')}
+          onPress={() => nav.navigate('pastel_gluten')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/chips.png')} />
-            <Text style={styles.texto}>Chips Crocante</Text>
+            <Image style={styles.img} source={require('../../img/pastel.png')} />
+            <Text style={styles.texto}>Pastel</Text>
           </View>
         </Pressable>
         <Pressable
@@ -86,11 +86,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('brigadeiro_lactose')}
+          onPress={() => nav.navigate('doritos_gluten')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/brigadeiro.png')} />
-            <Text style={styles.texto3}>Brigadeiro</Text>
+            <Image style={styles.img2} source={require('../../img/chipss.png')} />
+            <Text style={styles.texto3}>Doritos</Text>
           </View>
         </Pressable>
         <Pressable
@@ -104,11 +104,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('bolo_lactose')}
+          onPress={() => nav.navigate('brownie_gluten')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/bolo-de-cenoura.png')} />
-            <Text style={styles.texto}>Bolo de Laranja</Text>
+            <Image style={styles.img} source={require('../../img/brownie (6).png')} />
+            <Text style={styles.texto}>Brownie</Text>
           </View>
         </Pressable>
         <Pressable
@@ -122,11 +122,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('churros')}
+          onPress={() => nav.navigate('bolo_gluten')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/churros.png')} />
-            <Text style={styles.texto3}>Churros</Text>
+            <Image style={styles.img2} source={require('../../img/bolo-de-cenoura.png')} />
+            <Text style={styles.texto3}>Bolo de Cenoura</Text>
           </View>
         </Pressable>
   

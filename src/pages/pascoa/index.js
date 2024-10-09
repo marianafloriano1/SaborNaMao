@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   },
   texto: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 22,
     fontWeight: 'bold',
     marginTop: 5,
     color: '#fff',
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   },
   texto3: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 22,
     fontWeight: 'bold',
     marginTop: 5,
     color: '#fff',

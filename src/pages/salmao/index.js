@@ -1,35 +1,23 @@
+
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
-  // Estado para controlar os itens marcados
+  const nav = useNavigation();
+
   const [checkedItems, setCheckedItems] = useState({
     item1: false,
     item2: false,
     item3: false,
     item4: false,
-    item5: false,
-    item6: false,
-    item7: false,
-    item8: false,
-    item9: false,
-    item10: false,
-    item11: false,
-    item12: false,
-     item13: false,
-    item14: false,
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
-    step6: false,
-    step7: false,
-    step8: false,
-    step9: false,
-    sauceStep1: false,
-    sauceStep2: false,
-    sauceStep3: false,
   });
 
   // Função para alternar a marcação de um item
@@ -40,20 +28,31 @@ export default function App() {
     }));
   };
 
+  
+
   return (
     <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
+
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('diabetes')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#578ad6" />
+</TouchableOpacity>
+
+
       <View style={styles.row}>
-      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('diabetes')}>
-        <FontAwesome name="arrow-circle-left" size={28} color="#578ad6" />
-      </TouchableOpacity>
+        
         <Text style={styles.paragraph}>
-         Salmão Grelhado
+        Salmão Grelhado
         </Text>
       </View>
 
-      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
-      
-      <View style={styles.ingredientesContainer}>
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
@@ -94,8 +93,9 @@ export default function App() {
         </View>
       </View>
 
-      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
-      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+   
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
           {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Junte todos os temperos em uma tigela, coloque o peixe e deixe descansar por uma hora.
         </Text>
@@ -105,18 +105,16 @@ export default function App() {
           {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Tire os filés e grelhe cada um por 4 minutos de cada lado até que o peixe fique firme.
         </Text>
       </TouchableOpacity>
-      
-  
-      
-    </View>
-  );
+    
+    </ScrollView>
+  </View>
+);
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#ffe2c0',
+    backgroundColor: '#fdede9',
     padding: 45,
   },
   row: {
@@ -147,10 +145,7 @@ ingrediente: {
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-  ingredientesColuna: {
-    flex: 1,
-    marginRight: 10,
-  },
+
   topicos: {
     marginBottom: 10,
     lineHeight: 24,
@@ -167,6 +162,3 @@ ingrediente: {
     marginRight: 5,
   },
 });
-
-
-

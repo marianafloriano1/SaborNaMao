@@ -50,14 +50,14 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('mamaes')}
+          onPress={() => nav.navigate('vitaminas')}
         >
             <Text style={styles.texto}>Vitaminas</Text>
   <View style={styles.teste2}>
-    <Image style={styles.img} source={require('../../img/limao.png')} />
-    <Image style={styles.img} source={require('../../img/abacaxi.png')} />
-    <Image style={styles.img} source={require('../../img/morango.png')} />
-    <Image style={styles.img} source={require('../../img/melancia.png')} />
+    <Image style={styles.img} source={require('../../img/fruit-juice (2).png')} />
+    <Image style={styles.img} source={require('../../img/smoothie.png')} />
+    <Image style={styles.img} source={require('../../img/apple-juice.png')} />
+    <Image style={styles.img} source={require('../../img/banana-juice.png')} />
   </View>
         </Pressable>
 

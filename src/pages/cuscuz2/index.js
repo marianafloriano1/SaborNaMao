@@ -1,28 +1,23 @@
+
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
-  // Estado para controlar os itens marcados
+  const nav = useNavigation();
+
   const [checkedItems, setCheckedItems] = useState({
     item1: false,
     item2: false,
     item3: false,
     item4: false,
-    item5: false,
-    item6: false,
-    item7: false,
-    item8: false,
-    item9: false,
-    item10: false,
-    item11: false,
-    item12: false,
-     item13: false,
-    item14: false,
     step1: false,
     step2: false,
     step3: false,
     step4: false,
-
+    step5: false,
   });
 
   // Função para alternar a marcação de um item
@@ -33,17 +28,31 @@ export default function App() {
     }));
   };
 
+  
+
   return (
     <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
+
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('pascoa')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#c780c5" />
+</TouchableOpacity>
+
+
       <View style={styles.row}>
-        <Image style={styles.img} source={require('./assets/pudim.png')} />
+        
         <Text style={styles.paragraph}>
-          Cuscus
+          Cuscuz
         </Text>
       </View>
 
-      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
-      <View style={styles.ingredientesContainer}>
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
@@ -120,8 +129,11 @@ export default function App() {
         </View>
       </View>
 
-      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
-      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+
+
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
           {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text> Refogue no azeite, a cebola, o pimentão, as azeitonas, a ervilha, o milho verde, o molho de tomate, o cheiro-verde, a sardinha, os temperos e o tablete de caldo.
         </Text>
@@ -141,16 +153,16 @@ export default function App() {
           {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Coloque a massa na forma, deixe esfriar e desenforme.
         </Text>
       </TouchableOpacity>
-      
-    </View>
-  );
+     
+    </ScrollView>
+  </View>
+);
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#ffe2c0',
+    backgroundColor: '#fdede9',
     padding: 45,
   },
   row: {
@@ -164,10 +176,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     color: '#c780c5',
   },
-  img: {
-    width: 90,
-    height: 90,
-    marginRight: 30,
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
+    color: '#c780c5',
   },
   ingredientes: {
     marginTop: 50,
@@ -181,10 +193,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-  ingredientesColuna: {
-    flex: 1,
-    marginRight: 10,
-  },
+
   topicos: {
     marginBottom: 10,
     lineHeight: 24,
@@ -201,6 +210,3 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
 });
-
-
-

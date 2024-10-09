@@ -1,128 +1,84 @@
-
-import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-
+import React from 'react';
+import { Text, View, StyleSheet, Image } from 'react-native';
 
 export default function App() {
-  const nav = useNavigation();
-
-  const [checkedItems, setCheckedItems] = useState({
-    item1: false,
-    item2: false,
-    item3: false,
-    item4: false,
-    step1: false,
-    step2: false,
-    step3: false,
-    step4: false,
-    step5: false,
-  });
-
-  // Função para alternar a marcação de um item
-  const toggleCheck = (item) => {
-    setCheckedItems((prevState) => ({
-      ...prevState,
-      [item]: !prevState[item],
-    }));
-  };
-
-  
-
   return (
     <View style={styles.container}>
-      
-     
-      <ScrollView showsVerticalScrollIndicator={false}>
-
-      
-
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('lactose')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#57a8d6" />
-</TouchableOpacity>
-
-
       <View style={styles.row}>
-        
+
         <Text style={styles.paragraph}>
-          Bolo de Laranja
+     Bolo de laranja sem lactose
         </Text>
       </View>
-
-
-    <Text style={styles.ingredientes}>INGREDIENTES</Text>
-    <View style={styles.ingredientesContainer}>
-      <View style={styles.ingredientesColuna}>
-        <TouchableOpacity onPress={() => toggleCheck('item1')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 2 xícaras de suco de laranja coado.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item2')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 3 colheres de sobremesa (rasa) de fermento em pó.
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => toggleCheck('item3')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 3 ovos.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item4')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} 3 xícaras de farinha de trigo.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item5')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara de óleo de canola ou similar (milho, girasol ou soja)
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item6')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 2 xícaras de açúcar. 
-          </Text>
-        </TouchableOpacity>
-
+     
       
 
-      </View>
+      
+        <Text style={styles.ingredientes}>ingredientes:</Text>
+      <text>
+<strong>•2 xícaras de suco de laranja coado</strong>
+</text>
+     
+
+        <text>
+<strong> • 3 colheres de sobremesa (rasa) de fermento em pó</strong>
+</text>
+         <text>
+<strong> • 3 ovos</strong>
+</text>
+          <text>
+<strong> • 3 xícaras de farinha de trigo</strong>
+</text>
+        
+
+<text>
+<strong> •1 xícara de óleo de canola ou similar (milho, girasol ou soja)</strong>
+</text>
+     
+
+<text>
+<strong> •2 xícaras de açúcar</strong>
+</text>
+     
+
+     
+
+      <Text style={styles.ingredientes}>Modo de preparo:</Text>
+        <text>
+<strong> •Bata o açúcar, o óleo e as gemas de ovo até obter um creme claro. </strong>
+</text>
+     
+
+        <text>
+<strong> •Continue batendo e misture alternadamente aos poucos o suco, a farinha e o fermento. </strong>
+</text>
+     
+
+        <text>
+<strong> • À parte bata as claras em neve. </strong>
+</text>
+     
+
+        <text>
+<strong> • Misture a massa às claras batidas em neve até obter uma massa homogênea. </strong>
+</text>
+     
+
+       
+      
+         
+      
+       
+
     </View>
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Bata o açúcar, o óleo e as gemas de ovo até obter um creme claro.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step2')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text> Continue batendo e misture alternadamente aos poucos o suco, a farinha e o fermento.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step3')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>À parte bata as claras em neve.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step4')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text>Misture a massa às claras batidas em neve até obter uma massa homogênea.
-      </Text>
-    </TouchableOpacity>
-
-
-    </ScrollView>
-  </View>
-);
+  );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    backgroundColor: '#fdede9',
+    justifyContent: 'flex',
+    backgroundColor: '#fee9a3',
     padding: 45,
   },
   row: {
@@ -130,45 +86,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   paragraph: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'left',
-    marginLeft: 10,
-    color: '#57a8d6',
+    marginLeft: 15,
+    
   },
   img: {
     width: 90,
     height: 90,
     marginRight: 30,
   },
-  ingredientes: {
+  ingredientes:{
     marginTop: 50,
-    fontSize: 16,
-    marginBottom: 15,
-    backgroundColor: '#57a8d6',
-    paddingVertical: 5,
-  },
-  ingredientesContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 20,
-  },
-  ingredientesColuna: {
-    flex: 1,
-    marginRight: 10,
-  },
-  topicos: {
-    marginBottom: 10,
-    lineHeight: 24,
-  },
-  numero: {
-    color: '#57a8d6',
+    fontSize: 17,
     fontWeight: 'bold',
-    fontSize: 19,
+    marginBottom: 16,
+    color: '#4b2521', 
   },
-  check: {
-    color: '#32CD32', // Cor verde para o check
-    fontSize: 20,
-    marginRight: 5,
-  },
+   strong:{
+    marginTop:100,
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginBottom: 12, 
+   },
 });

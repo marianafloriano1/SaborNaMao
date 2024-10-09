@@ -1,42 +1,23 @@
+
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
-  // Estado para controlar os itens marcados
+  const nav = useNavigation();
+
   const [checkedItems, setCheckedItems] = useState({
     item1: false,
     item2: false,
     item3: false,
     item4: false,
-    item5: false,
-    item6: false,
-    item7: false,
-    item8: false,
-    item9: false,
-    item10: false,
-    item11: false,
-    item12: false,
-     item13: false,
-    item14: false,
-        item15: false,
-    item16: false,
-    item17: false,
-    item18: false,
-    item19: false,
-    item20: false,
-    
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
-    step6: false,
-    step7: false,
-    step8: false,
-    step9: false,
-     step10: false,
-      step11: false,
-
   });
 
   // Função para alternar a marcação de um item
@@ -47,18 +28,31 @@ export default function App() {
     }));
   };
 
+  
+
   return (
     <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
+
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('ceia_natal')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#fff" />
+</TouchableOpacity>
+
+
       <View style={styles.row}>
-  
+        
         <Text style={styles.paragraph}>
-        Salpicão De Frango
+          Salpicão de Frango
         </Text>
       </View>
 
-      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
-      
-      <View style={styles.ingredientesContainer}>
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
@@ -104,16 +98,11 @@ export default function App() {
               {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''}Cheiro-verde a gosto
             </Text>
           </TouchableOpacity>
-         __
-         
-
-        
-           
         </View>
       </View>
 
-      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
-      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
           {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Misture todos os ingredientes em uma vasilha grande, menos a batata palha.
         </Text>
@@ -123,16 +112,15 @@ export default function App() {
           {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Depois de tudo misturado, forre com a batata palha.
         </Text>
       </TouchableOpacity>
-        
-    </View>
-  );
+    </ScrollView>
+  </View>
+);
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#ffe2c0',
+    backgroundColor: '#fdede9',
     padding: 45,
   },
   row: {
@@ -144,6 +132,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'left',
     marginLeft: 10,
+    color: '#cc4b4e',
+  },
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
     color: '#cc4b4e',
   },
   ingredientes: {
@@ -158,10 +151,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-  ingredientesColuna: {
-    flex: 1,
-    marginRight: 10,
-  },
+
   topicos: {
     marginBottom: 10,
     lineHeight: 24,

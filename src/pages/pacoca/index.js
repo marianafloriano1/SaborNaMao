@@ -1,42 +1,23 @@
+
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
-  // Estado para controlar os itens marcados
+  const nav = useNavigation();
+
   const [checkedItems, setCheckedItems] = useState({
     item1: false,
     item2: false,
     item3: false,
     item4: false,
-    item5: false,
-    item6: false,
-    item7: false,
-    item8: false,
-    item9: false,
-    item10: false,
-    item11: false,
-    item12: false,
-     item13: false,
-    item14: false,
-        item15: false,
-    item16: false,
-    item17: false,
-    item18: false,
-    item19: false,
-    item20: false,
-    
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
-    step6: false,
-    step7: false,
-    step8: false,
-    step9: false,
-     step10: false,
-      step11: false,
-
   });
 
   // Função para alternar a marcação de um item
@@ -47,18 +28,32 @@ export default function App() {
     }));
   };
 
+  
+
   return (
     <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
+
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('festa_junina')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#cc4b4e" />
+</TouchableOpacity>
+
+
       <View style={styles.row}>
-  
+        
         <Text style={styles.paragraph}>
-         Paçoca
+        Paçoca
+        
         </Text>
       </View>
 
-      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
-      
-      <View style={styles.ingredientesContainer}>
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
@@ -80,8 +75,12 @@ export default function App() {
         </View>
       </View>
 
-      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
-      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+
+
+
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
           {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Torre o amendoim por aproximadamente 20 minutos.
         </Text>
@@ -114,16 +113,17 @@ export default function App() {
         <Text style={styles.topicos}>
           {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7</Text>  Deixe descansar por 20 minutos e corte os quadradinhos ou no formato.
         </Text>
-      </TouchableOpacity>  
-    </View>
-  );
+      </TouchableOpacity>
+     
+    </ScrollView>
+  </View>
+);
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#ffe2c0',
+    backgroundColor: '#fdede9',
     padding: 45,
   },
   row: {
@@ -135,18 +135,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'left',
     marginLeft: 10,
-    color: '#bc3251',
+    color: '#cc4b4e',
   },
 ingrediente: {
     fontSize: 17,
     marginBottom: 15,
-    color: '#bc3251',
+    color: '#cc4b4e',
   },
   ingredientes: {
     marginTop: 50,
     fontSize: 16,
     marginBottom: 15,
-    backgroundColor: '#bc3251',
+    backgroundColor: '#cc4b4e',
     paddingVertical: 5,
   },
   ingredientesContainer: {
@@ -154,16 +154,13 @@ ingrediente: {
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-  ingredientesColuna: {
-    flex: 1,
-    marginRight: 10,
-  },
+
   topicos: {
     marginBottom: 10,
     lineHeight: 24,
   },
   numero: {
-    color: '#bc3251',
+    color: '#cc4b4e',
     fontWeight: 'bold',
     fontSize: 19,
     margin: 6,

@@ -1,44 +1,23 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, Text, Pressable, Image, ScrollView, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
-  // Estado para controlar os itens marcados
+  const nav = useNavigation();
+
   const [checkedItems, setCheckedItems] = useState({
     item1: false,
     item2: false,
     item3: false,
     item4: false,
-    item5: false,
-    item6: false,
-    item7: false,
-    item8: false,
-    item9: false,
-    item10: false,
-    item11: false,
-    item12: false,
-     item13: false,
-    item14: false,
-        item15: false,
-    item16: false,
-    item17: false,
-    item18: false,
-    item19: false,
-    item20: false,
-    
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
-    step6: false,
-    step7: false,
-    step8: false,
-    step9: false,
-     step10: false,
-      step11: false,
-
   });
 
   // Função para alternar a marcação de um item
@@ -48,22 +27,32 @@ export default function App() {
       [item]: !prevState[item],
     }));
   };
-  const nav = useNavigation();
+
   
+
   return (
     <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
+
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('sucos')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#ffc19a" />
+</TouchableOpacity>
+
+
       <View style={styles.row}>
-      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('sucos')}>
-        <FontAwesome name="arrow-circle-left" size={28} color="#d6705d" />
-      </TouchableOpacity>
+        
         <Text style={styles.paragraph}>
-         Suco de limão
+          Suco de Limão
         </Text>
       </View>
 
-      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
-      
-      <View style={styles.ingredientesContainer}>
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
@@ -90,9 +79,11 @@ export default function App() {
           
         </View>
       </View>
+      
 
-      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
-      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
           {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Descascar os limões e tirar as sementes.
         </Text>
@@ -111,17 +102,17 @@ export default function App() {
         <Text style={styles.topicos}>
           {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text>É uma delícia.
         </Text>
-      </TouchableOpacity>  
+      </TouchableOpacity> 
      
-    </View>
-  );
+    </ScrollView>
+  </View>
+);
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#ffe2c0',
+    backgroundColor: '#fdede9',
     padding: 45,
   },
   row: {
@@ -152,10 +143,7 @@ ingrediente: {
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-  ingredientesColuna: {
-    flex: 1,
-    marginRight: 10,
-  },
+
   topicos: {
     marginBottom: 10,
     lineHeight: 24,
@@ -172,5 +160,3 @@ ingrediente: {
     marginRight: 5,
   },
 });
-
-

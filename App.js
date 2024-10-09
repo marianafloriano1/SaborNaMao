@@ -135,8 +135,21 @@ import Quibe from './src/pages/quibe';
 import Salmao from './src/pages/salmao';
 import Palitos from './src/pages/palitos';
 import Cheesecake from './src/pages/cheesecake';
-
-
+import Vitaminas from './src/pages/vitaminas';
+import Vitamina_acai from './src/pages/vitamina_acai';
+import Vitamina_banana from './src/pages/vitamina_banana';
+import Vitamina_maca from './src/pages/vitamina_maca';
+import Vitamina_mamao from './src/pages/vitamina_mamao';
+import Vitamina_melancia from './src/pages/vitamina_melancia';
+import Vitamina_morango from './src/pages/vitamina_morango';
+import Halloween from './src/pages/halloween';
+import Dedo from './src/pages/dedo';
+import Olho from './src/pages/olho';
+import Caveira from './src/pages/caveira';
+import Pudim_sangue from './src/pages/pudim_sangue';
+import Minhoca from './src/pages/minhoca';
+import Bolinhoo from './src/pages/bolinhoo';
+import Ano_novo from './src/pages/ano_novo';
 
 
 
@@ -429,6 +442,38 @@ export default function App() {
 
 <Stack.Screen name="salmao" component={Salmao} options={{ headerShown: false }}/>
 
+
+<Stack.Screen name="vitaminas" component={Vitaminas} options={{ headerShown: false }}/>
+
+<Stack.Screen name="vitamina_morango" component={Vitamina_morango} options={{ headerShown: false }}/>
+
+<Stack.Screen name="vitamina_melancia" component={Vitamina_melancia} options={{ headerShown: false }}/>
+
+<Stack.Screen name="vitamina_maca" component={Vitamina_maca} options={{ headerShown: false }}/>
+
+<Stack.Screen name="vitamina_mamao" component={Vitamina_mamao} options={{ headerShown: false }}/>
+
+<Stack.Screen name="vitamina_acai" component={Vitamina_acai} options={{ headerShown: false }}/>
+
+<Stack.Screen name="vitamina_banana" component={Vitamina_banana} options={{ headerShown: false }}/>
+
+
+<Stack.Screen name="halloween" component={Halloween} options={{ headerShown: false }}/>
+
+<Stack.Screen name="dedo" component={Dedo} options={{ headerShown: false }}/>
+
+<Stack.Screen name="olho" component={Olho} options={{ headerShown: false }}/>
+
+<Stack.Screen name="caveira" component={Caveira} options={{ headerShown: false }}/>
+
+<Stack.Screen name="bolinhoo" component={Bolinhoo} options={{ headerShown: false }}/>
+
+<Stack.Screen name="pudim_sangue" component={Pudim_sangue} options={{ headerShown: false }}/>
+
+<Stack.Screen name="minhoca" component={Minhoca} options={{ headerShown: false }}/>
+
+
+<Stack.Screen name="ano_novo" component={Ano_novo} options={{ headerShown: false }}/>
       </Stack.Navigator>
      
     </NavigationContainer>

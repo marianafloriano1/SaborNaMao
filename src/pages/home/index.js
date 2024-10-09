@@ -1,55 +1,31 @@
-
-import { View, StyleSheet, TextInput, Text, Pressable, Image, TouchableOpacity, ScrollView, ImageBackground, Animated } from 'react-native';
+import { View, StyleSheet, TextInput, Text, Pressable, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 import Menu from '../../components/Menu';
 import React, { useState, useEffect } from 'react';
-
+import Tutorial from '../../components/Tutorial';
 
 export default function App() {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false); // Estado para controlar o tutorial
   const nav = useNavigation();
+
+  useEffect(() => {
+    // Exibir o tutorial ao carregar a página
+    setShowTutorial(true);
+  }, []);
+
   const handlePress = (buttonNumber) => {
     console.log(`Botão ${buttonNumber} pressionado!`);
   };
-  const [tourVisible, setTourVisible] = useState(false);
-  const [tourStep, setTourStep] = useState(0);
-  const [fadeAnim] = useState(new Animated.Value(1));
-
-  useEffect(() => {
-    setTourVisible(true); 
-  }, []);
-
-
-  useEffect(() => {
-    if (tourStep === 1) {
-
-      Animated.loop(
-        Animated.sequence([
-          Animated.timing(fadeAnim, {
-            toValue: 0.5,
-            duration: 500,
-            useNativeDriver: true,
-          }),
-          Animated.timing(fadeAnim, {
-            toValue: 1,
-            duration: 500,
-            useNativeDriver: true,
-          }),
-        ])
-      ).start();
-    }
-  }, [tourStep]);
-
 
   const items = [
     { title: 'Natal', image: require('../../img/Natal.png'), route: 'ceia_natal' },
     { title: 'Páscoa', image: require('../../img/Pascoa.png'), route: 'pascoa' },
     { title: 'Arraiá', image: require('../../img/arraia.png'), route: 'festa_junina' },
-    { title: 'Halloween', image: require('../../img/halloween.png'), route: 'pascoa' },
-    { title: 'Ano Novo', image: require('../../img/anonovo.PNG'), route: 'festa_junina' },
+    { title: 'Halloween', image: require('../../img/halloween.png'), route: 'halloween' },
+    { title: 'Ano Novo', image: require('../../img/anonovo.PNG'), route: 'ano_novo' },
     { title: 'Festas', image: require('../../img/esse.PNG'), route: 'festa_junina' },
-
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -66,82 +42,45 @@ export default function App() {
     }
   };
 
-
-  const nextStep = () => {
-    if (tourStep < 3) {
-      setTourStep(tourStep + 1);
-    } else {
-      setTourVisible(false);
-      setTourStep(0);
-    }
-  };
-
-  const renderTourStep = () => {
-    const steps = [
-      "Bem-vindo ao Sabor na Mão! Aqui você pode encontrar várias receitas.",
-      "Aqui estão os eventos disponíveis! Toque em um para saber mais.",
-      "Explore as opções de bebidas e comidas para crianças.",
-      "Dê uma olhada nas receitas saudáveis e restrições alimentares."
-    ];
-
-    return (
-      <View style={styles.tourOverlay}>
-        <Text style={styles.tourText}>{steps[tourStep]}</Text>
-        <Pressable onPress={nextStep} style={styles.nextButton}>
-          <Text style={styles.nextButtonText}>Próximo</Text>
-        </Pressable>
-      </View>
-    );
-  };
-
-
   return (
-    
-
-
-    
     <View style={styles.container}>
       <ScrollView>
-        
+        <Menu visible={menuVisible} onClose={() => setMenuVisible(false)} />
+        <Pressable onPress={() => setMenuVisible(true)} style={styles.menuButton}>
+          <FontAwesome name="bars" size={34} color="#FF8F7E" />
+        </Pressable>
 
-        
-    <Menu visible={menuVisible} onClose={() => setMenuVisible(false)} />
+        <View style={styles.fundo}>
+          <View style={styles.row}>
+            <Text style={styles.text}>Sabor na Mão</Text>
+            <Image style={styles.img} source={require('../../img/lll.PNG')} />
+          </View>
 
-  <Pressable onPress={() => setMenuVisible(true)} style={styles.menuButton}>
-    <FontAwesome name="bars" size={34} color="#FF8F7E" />
-  
-    
-  </Pressable>
+          {/* Renderiza o Tutorial aqui se showTutorial for true */}
+          {showTutorial && <Tutorial onClose={() => setShowTutorial(false)} />}
 
-  <View style={styles.fundo}>
-  <View style={styles.row}>
-        <Text style={styles.text}>Sabor na Mão</Text>
-        <Image style={styles.img} source={require('../../img/lll.PNG')} />
-        </View>
-      
-      <View style={styles.buttonRow}>
-      <TouchableOpacity onPress={prevItems} style={styles.arrowButton} disabled={currentIndex === 0}>
-    <FontAwesome name="angle-left" size={24} color="#FF8F7E" />
-  </TouchableOpacity>
+          <View style={styles.buttonRow}>
+            <TouchableOpacity onPress={prevItems} style={styles.arrowButton} disabled={currentIndex === 0}>
+              <FontAwesome name="angle-left" size={24} color="#FF8F7E" />
+            </TouchableOpacity>
 
-  <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {items.slice(currentIndex, currentIndex + 3).map((item, index) => (
                 <TouchableOpacity
                   key={index}
                   onPress={() => { nav.navigate(item.route); }}
                   style={styles.carouselItem}
                 >
-                  <Animated.View style={{ opacity: fadeAnim }}>
-                    <Image style={styles.buttonImage} source={item.image} />
-                    <Text style={styles.texto}>{item.title}</Text>
-                  </Animated.View>
+                  <Image style={styles.buttonImage} source={item.image} />
+                  <Text style={styles.texto}>{item.title}</Text>
                 </TouchableOpacity>
               ))}
             </ScrollView>
 
-      <TouchableOpacity onPress={nextItems} style={[styles.arrowButton, styles.arrowButtonRight]} disabled={currentIndex + 3 >= items.length}>
-  <FontAwesome name="angle-right" size={24} color="#FF8F7E" />
-</TouchableOpacity>
+            <TouchableOpacity onPress={nextItems} style={[styles.arrowButton, styles.arrowButtonRight]} disabled={currentIndex + 3 >= items.length}>
+              <FontAwesome name="angle-right" size={24} color="#FF8F7E" />
+            </TouchableOpacity>
+          
 
       </View>
       <View style={styles.buttonRow1}>
@@ -318,7 +257,7 @@ export default function App() {
 
       </View>
 
-    {tourVisible && renderTourStep()}
+
 </ScrollView>
     </View>
     
@@ -510,31 +449,5 @@ texto:{
     fontSize: 12,
   },
 
-  tourOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    zIndex: 2, // Manter a sobreposição
-  },
-  tourText: {
-    color: '#fff',
-    fontSize: 18,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  nextButton: {
-    backgroundColor: '#FF8F7E',
-    padding: 10,
-    borderRadius: 5,
-  },
-  nextButtonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
+ 
 });

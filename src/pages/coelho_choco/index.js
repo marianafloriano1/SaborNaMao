@@ -1,23 +1,23 @@
+
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
-  // Estado para controlar os itens marcados
+  const nav = useNavigation();
+
   const [checkedItems, setCheckedItems] = useState({
     item1: false,
     item2: false,
     item3: false,
-
+    item4: false,
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
-    step6: false,
-    step7: false,
-    step8: false,
-    step9: false,
-   
   });
 
   // Função para alternar a marcação de um item
@@ -28,17 +28,31 @@ export default function App() {
     }));
   };
 
+  
+
   return (
     <View style={styles.container}>
+      
+     
+      <ScrollView showsVerticalScrollIndicator={false}>
+
+      
+
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('pascoa')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#c780c5" />
+</TouchableOpacity>
+
+
       <View style={styles.row}>
-        <Image style={styles.img} source={require('./assets/coelhinho.png')} />
+        
         <Text style={styles.paragraph}>
           Coelho de Chocolate
         </Text>
       </View>
 
-      <Text style={styles.ingredientes}>  INGREDIENTES</Text>
-      <View style={styles.ingredientesContainer}>
+
+    <Text style={styles.ingredientes}>INGREDIENTES</Text>
+    <View style={styles.ingredientesContainer}>
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
@@ -63,8 +77,10 @@ export default function App() {
         </View>
       </View>
 
-      <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
-      <TouchableOpacity onPress={() => toggleCheck('step1')}>
+
+
+    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+    <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
           {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text> Derreta o chocolate meio amargo no micro-ondas por 3 minutos na potência média. 
         </Text>
@@ -109,15 +125,15 @@ export default function App() {
           {checkedItems.step9 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8</Text> Use o chocolate branco para fazer os detalhes do coelho.
         </Text>
       </TouchableOpacity>
-    </View>
-  );
+    </ScrollView>
+  </View>
+);
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#ffe2c0',
+    backgroundColor: '#fdede9',
     padding: 45,
   },
   row: {
@@ -131,10 +147,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     color: '#c780c5',
   },
-  img: {
-    width: 90,
-    height: 90,
-    marginRight: 30,
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
+    color: '#c780c5',
   },
   ingredientes: {
     marginTop: 50,
@@ -148,10 +164,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-  ingredientesColuna: {
-    flex: 1,
-    marginRight: 10,
-  },
+
   topicos: {
     marginBottom: 10,
     lineHeight: 24,
