@@ -39,7 +39,7 @@ export default function App() {
       
 
 <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('ceia_natal')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#fff" />
+<FontAwesome name="arrow-circle-left" size={28} color="#cc4b4e" />
 </TouchableOpacity>
 
 

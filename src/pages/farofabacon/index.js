@@ -149,6 +149,7 @@ ingrediente: {
     marginBottom: 15,
     backgroundColor: '#003274',
     paddingVertical: 5,
+     color: '#fff'
   },
   ingredientesContainer: {
     flexDirection: 'row', // Exibe em duas colunas

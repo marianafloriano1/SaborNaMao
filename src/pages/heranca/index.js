@@ -89,9 +89,7 @@ export default function Heranca() {
               <FontAwesome name="arrow-circle-left" size={28} color="#000" />
             </TouchableOpacity>
           </View>
-          <Pressable style={styles.botao}>
-            <Text style={styles.botaoTexto}>Entrar</Text>
-          </Pressable>
+         
         </ScrollView>
       </View>
     </ImageBackground>

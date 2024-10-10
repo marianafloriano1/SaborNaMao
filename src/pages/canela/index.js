@@ -60,33 +60,34 @@ export default function App() {
     1 colher de sopa de canela em casca
   </Text>
 </TouchableOpacity>
-<TouchableOpacity onPress={() => toggleCheck('item1')}>
+<TouchableOpacity onPress={() => toggleCheck('item2')}>
   <Text style={styles.topicos}>
-    {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}
+    {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}
     250 ml de água
   </Text>
 </TouchableOpacity>
-        </View>
+        
 
-        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+        <TouchableOpacity onPress={() => toggleCheck('item3')}>
   <Text style={styles.topicos}>
-    {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}
+    {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}
     Adoçar a gosto
   </Text>
 </TouchableOpacity>
-      </View>
+     </View> 
+     </View>
       
 
 
     <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text> Colocar a água em uma chaleira, e levar em fogo médio até ferver.
+        {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1.</Text> Colocar a água em uma chaleira, e levar em fogo médio até ferver.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text> Desligar, adicionar a CANELA EM CASCA da PQ Alimentos, tampar e aguardar aproximadamente 10 minutos. Em seguida descartar a canela e adoçar a gosto.
+        {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2.</Text> Desligar, adicionar a CANELA EM CASCA da PQ Alimentos, tampar e aguardar aproximadamente 10 minutos. Em seguida descartar a canela e adoçar a gosto.
         </Text>
       </TouchableOpacity>
      
