@@ -30,11 +30,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('peru')}
+          onPress={() => nav.navigate('coxa')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/peru.png')} />
-            <Text style={styles.texto}>Peru</Text>
+            <Image style={styles.img} source={require('../../img/coxa.png')} />
+            <Text style={styles.texto}>Coxa de Frango</Text>
           </View>
         </Pressable>
 
@@ -49,11 +49,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('arroz_natal')}
+          onPress={() => nav.navigate('frutas')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/arroz_natal.png')} />
-            <Text style={styles.texto3}>Arroz Natalino</Text>
+            <Image style={styles.img2} source={require('../../img/salada-de-frutas.png')} />
+            <Text style={styles.texto3}>Salada de Frutas</Text>
           </View>
         </Pressable>
         <Pressable
@@ -67,11 +67,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('bolinho_arroz')}
+          onPress={() => nav.navigate('farofabacon')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/bolinho.png')} />
-            <Text style={styles.texto}>Bolinho de Arroz</Text>
+            <Image style={styles.img} source={require('../../img/farofabacon.png')} />
+            <Text style={styles.texto}>Farofa de Bacon</Text>
           </View>
         </Pressable>
         <Pressable
@@ -85,11 +85,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('farofa')}
+          onPress={() => nav.navigate('saladabatata')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/farofa.png')} />
-            <Text style={styles.texto3}>Farofa de Ovo</Text>
+            <Image style={styles.img2} source={require('../../img/saladabatata.png')} />
+            <Text style={styles.texto3}>Salada de Batata</Text>
           </View>
         </Pressable>
         <Pressable
@@ -103,11 +103,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('salpicao')}
+          onPress={() => nav.navigate('risoto')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/salpicao.png')} />
-            <Text style={styles.texto}>Salpicão</Text>
+            <Image style={styles.img} source={require('../../img/risoto.png')} />
+            <Text style={styles.texto}>Risoto</Text>
           </View>
         </Pressable>
         <Pressable
@@ -121,11 +121,11 @@ export default function App() {
             position: 'relative',
             overflow: 'hidden'
           }}
-          onPress={() => nav.navigate('salada')}
+          onPress={() => nav.navigate('lombo')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img2} source={require('../../img/salada.png')} />
-            <Text style={styles.texto3}>Salada Natalina</Text>
+            <Image style={styles.img2} source={require('../../img/lombo.png')} />
+            <Text style={styles.texto3}>Lombo Assado</Text>
           </View>
         </Pressable>
 

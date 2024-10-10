@@ -1,23 +1,13 @@
-import { View, StyleSheet, TextInput, Text, Pressable, Image, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, Text, Pressable, Image, TouchableOpacity, ScrollView, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 import Menu from '../../components/Menu';
-import React, { useState, useEffect } from 'react';
-import Tutorial from '../../components/Tutorial';
 
 export default function App() {
   const [menuVisible, setMenuVisible] = useState(false);
-  const [showTutorial, setShowTutorial] = useState(false); // Estado para controlar o tutorial
+ 
   const nav = useNavigation();
-
-  useEffect(() => {
-    // Exibir o tutorial ao carregar a página
-    setShowTutorial(true);
-  }, []);
-
-  const handlePress = (buttonNumber) => {
-    console.log(`Botão ${buttonNumber} pressionado!`);
-  };
 
   const items = [
     { title: 'Natal', image: require('../../img/Natal.png'), route: 'ceia_natal' },
@@ -25,10 +15,12 @@ export default function App() {
     { title: 'Arraiá', image: require('../../img/arraia.png'), route: 'festa_junina' },
     { title: 'Halloween', image: require('../../img/halloween.png'), route: 'halloween' },
     { title: 'Ano Novo', image: require('../../img/anonovo.PNG'), route: 'ano_novo' },
-    { title: 'Festas', image: require('../../img/esse.PNG'), route: 'festa_junina' },
+    { title: 'Festas', image: require('../../img/brilhar.PNG'), route: 'festa_junina' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+
 
   const nextItems = () => {
     if (currentIndex + 3 < items.length) {
@@ -41,6 +33,7 @@ export default function App() {
       setCurrentIndex(currentIndex - 3);
     }
   };
+
 
   return (
     <View style={styles.container}>
@@ -56,9 +49,7 @@ export default function App() {
             <Image style={styles.img} source={require('../../img/lll.PNG')} />
           </View>
 
-          {/* Renderiza o Tutorial aqui se showTutorial for true */}
-          {showTutorial && <Tutorial onClose={() => setShowTutorial(false)} />}
-
+          <Text style={styles.textoo}>Feriados e datas comemorativas:</Text>
           <View style={styles.buttonRow}>
             <TouchableOpacity onPress={prevItems} style={styles.arrowButton} disabled={currentIndex === 0}>
               <FontAwesome name="angle-left" size={24} color="#FF8F7E" />
@@ -80,9 +71,9 @@ export default function App() {
             <TouchableOpacity onPress={nextItems} style={[styles.arrowButton, styles.arrowButtonRight]} disabled={currentIndex + 3 >= items.length}>
               <FontAwesome name="angle-right" size={24} color="#FF8F7E" />
             </TouchableOpacity>
-          
+          </View>
 
-      </View>
+      <Text style={styles.textoo}>Categorias:</Text>
       <View style={styles.buttonRow1}>
           <TouchableOpacity style={styles.button1} onPress={() => {nav.navigate('bebidas');}}>
             <View style={styles.buttonSplit}>
@@ -259,6 +250,7 @@ export default function App() {
 
 
 </ScrollView>
+     
     </View>
     
   );
@@ -362,6 +354,7 @@ img7:{
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: 20,
+    zIndex: 1000,
   },
   scrollView: {
     paddingHorizontal: 10, // Adiciona espaçamento horizontal ao ScrollView
@@ -372,6 +365,11 @@ img7:{
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 25, // Adicione uma margem horizontal para espaçamento
+  },
+  textoo:{
+    fontSize: 16,
+    marginTop: 10,
+    color: '#FF8F7E'
   },
   button: {
     alignItems: 'center',
@@ -448,6 +446,7 @@ texto:{
   marginTop: 5,
     fontSize: 12,
   },
+ 
 
  
 });

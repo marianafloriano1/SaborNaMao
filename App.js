@@ -150,8 +150,12 @@ import Pudim_sangue from './src/pages/pudim_sangue';
 import Minhoca from './src/pages/minhoca';
 import Bolinhoo from './src/pages/bolinhoo';
 import Ano_novo from './src/pages/ano_novo';
-
-
+import Coxa from './src/pages/coxa';
+import Farofabacon from './src/pages/farofabacon';
+import Frutas from './src/pages/frutas';
+import Saladabatata from './src/pages/saladabatata';
+import Lombo from './src/pages/lombo';
+import Risoto from './src/pages/risoto';
 
 
 
@@ -474,6 +478,18 @@ export default function App() {
 
 
 <Stack.Screen name="ano_novo" component={Ano_novo} options={{ headerShown: false }}/>
+
+<Stack.Screen name="farofabacon" component={Farofabacon} options={{ headerShown: false }}/>
+
+<Stack.Screen name="saladabatata" component={Saladabatata} options={{ headerShown: false }}/>
+
+<Stack.Screen name="frutas" component={Frutas} options={{ headerShown: false }}/>
+
+<Stack.Screen name="risoto" component={Risoto} options={{ headerShown: false }}/>
+
+<Stack.Screen name="lombo" component={Lombo} options={{ headerShown: false }}/>
+
+<Stack.Screen name="coxa" component={Coxa} options={{ headerShown: false }}/>
       </Stack.Navigator>
      
     </NavigationContainer>

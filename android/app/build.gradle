@@ -109,7 +109,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.marianafloriano.snack1026af2962af4e52be5e4d17cbc582b2'
+    namespace 'com.marianafloriano.sabornamao'
     defaultConfig {
         applicationId 'com.marianafloriano.sabornamao'
         minSdkVersion rootProject.ext.minSdkVersion

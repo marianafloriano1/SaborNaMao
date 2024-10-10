@@ -36,10 +36,9 @@ export default function App() {
      
       <ScrollView showsVerticalScrollIndicator={false}>
 
-      
 
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('almoco_domingo')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#dfc265" />
+      <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('aniversario')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#f14992" />
 </TouchableOpacity>
 
 

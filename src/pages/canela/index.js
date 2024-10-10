@@ -54,24 +54,26 @@ export default function App() {
     <Text style={styles.ingredientes}>INGREDIENTES</Text>
     <View style={styles.ingredientesContainer}>
         <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 colher (sopa) de CANELA EM CASCA da PQ Alimentos
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 250ml de água
-            </Text>
-          </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+  <Text style={styles.topicos}>
+    {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}
+    1 colher de sopa de canela em casca
+  </Text>
+</TouchableOpacity>
+<TouchableOpacity onPress={() => toggleCheck('item1')}>
+  <Text style={styles.topicos}>
+    {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}
+    250 ml de água
+  </Text>
+</TouchableOpacity>
         </View>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} Adoçar a gosto
-            </Text>
-          </TouchableOpacity>
-        </View>
+
+        <TouchableOpacity onPress={() => toggleCheck('item1')}>
+  <Text style={styles.topicos}>
+    {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}
+    Adoçar a gosto
+  </Text>
+</TouchableOpacity>
       </View>
       
 
