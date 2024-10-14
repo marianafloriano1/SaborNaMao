@@ -9,6 +9,7 @@ export default function App() {
   const nav = useNavigation();
 
   const [checkedItems, setCheckedItems] = useState({
+
     item1: false,
     item2: false,
     item3: false,
@@ -18,6 +19,7 @@ export default function App() {
     step3: false,
     step4: false,
     step5: false,
+
   });
 
   // Função para alternar a marcação de um item
@@ -53,62 +55,65 @@ export default function App() {
 
     <Text style={styles.ingredientes}>INGREDIENTES</Text>
     <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}10 marshmallows
-            </Text>
-          </TouchableOpacity>
-        
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}10 palitos de churrasco  
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 caixa de balas Tic-Tac do sabor da sua preferência
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item4')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}20 cravos da índia
-            </Text>
-          </TouchableOpacity>
-       
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                10 marshmallows
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                10 palitos de churrasco
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1 caixa de balas Tic-Tac do sabor da sua preferência
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                20 cravos da índia
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View> 
 
-      
-
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-   
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Faça um corte perto de uma das extremidades do marshmallow.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step2')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Encaixe 3 balas para formar os dentes.
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>1</Text> Faça um corte perto de uma das extremidades do marshmallow.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>2</Text> Encaixe 3 balas para formar os dentes.
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text>Perfure na outra extremidade com a ponta dos cravos, para fazer os olhos.
-        </Text>
-      </TouchableOpacity> 
-      <TouchableOpacity onPress={() => toggleCheck('step4')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text>Encaixe na ponta do palito.
-        </Text>
-      </TouchableOpacity> 
-      <TouchableOpacity onPress={() => toggleCheck('step5')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Pronto para servir.
-        </Text>
-      </TouchableOpacity> 
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>3</Text> Perfure na outra extremidade com a ponta dos cravos, para fazer os olhos.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>4</Text> Encaixe na ponta do palito.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>5</Text> Pronto para servir.
+          </Text>
+        </TouchableOpacity>
 
 
     </ScrollView>

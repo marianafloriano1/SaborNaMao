@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
 
 export default function App() {
   const nav = useNavigation();
@@ -12,15 +10,10 @@ export default function App() {
     item1: false,
     item2: false,
     item3: false,
-    item4: false,
     step1: false,
     step2: false,
-    step3: false,
-    step4: false,
-    step5: false,
   });
 
-  // Função para alternar a marcação de um item
   const toggleCheck = (item) => {
     setCheckedItems((prevState) => ({
       ...prevState,
@@ -28,67 +21,56 @@ export default function App() {
     }));
   };
 
-  
-
   return (
     <View style={styles.container}>
-      
-     
       <ScrollView showsVerticalScrollIndicator={false}>
+        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('cha')}>
+          <FontAwesome name="arrow-circle-left" size={28} color="#fbca8e" />
+        </TouchableOpacity>
 
-      
-
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('cha')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#fbca8e" />
-</TouchableOpacity>
-
-
-      <View style={styles.row}>
-        
-        <Text style={styles.paragraph}>
-      Chá de Margaridas
-        </Text>
-      </View>
-
-
-    <Text style={styles.ingredientes}>INGREDIENTES</Text>
-    <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} folhas secas de margaridas
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 1,5 litro de água
-            </Text>
-          </TouchableOpacity>
+        <View style={styles.row}>
+          <Text style={styles.paragraph}>Chá de Margaridas</Text>
         </View>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 3 colheres de açúcar
-            </Text>
-          </TouchableOpacity>
+
+        <Text style={styles.ingredientes}>INGREDIENTES</Text>
+        <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                folhas secas de margaridas
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1,5 litro de água
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                3 colheres de açúcar
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
 
-      
-
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text> Coloque uma colher de folhas secas de margarida numa xícara de água fervente.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step2')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text> Deixe descansar por 5 minutos.
-        </Text>
-      </TouchableOpacity>
-     
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>1.</Text> Coloque uma colher de folhas secas de margarida numa xícara de água fervente.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>2.</Text> Deixe descansar por 5 minutos.
+          </Text>
+        </TouchableOpacity>
     </ScrollView>
   </View>
 );

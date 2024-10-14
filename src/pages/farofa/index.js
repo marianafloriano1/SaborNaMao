@@ -13,6 +13,7 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
     step1: false,
     step2: false,
     step3: false,
@@ -53,62 +54,79 @@ export default function App() {
 
     <Text style={styles.ingredientes}>INGREDIENTES</Text>
     <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}300 g de farinha de mandioca
-            </Text>
-          </TouchableOpacity>
-        
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}4 colheres de manteiga
-            </Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}5 ovos
-            </Text>
-          </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item4')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}1 colher de sal
-            </Text>
-          </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item5')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}1 cebola
-            </Text>
-          </TouchableOpacity>
-           
-        </View>
-      </View>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                300 g de farinha de mandioca
+              </Text>
+            </TouchableOpacity>
 
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text> Corte em pedacinhos a cebola.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step2')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Coloque em uma frigideira junto com a manteiga.
-        </Text>
-      </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                4 colheres de manteiga
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                5 ovos
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1 colher de sal
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item5')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1 cebola
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>1</Text> Corte em pedacinhos a cebola.
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>2</Text> Coloque em uma frigideira junto com a manteiga.
+          </Text>
+        </TouchableOpacity>
+
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Deixa dourar.
-        </Text>
-      </TouchableOpacity>  
-      <TouchableOpacity onPress={() => toggleCheck('step4')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Adicione o sal e o ovo e mexa até fritar.
-        </Text>
-      </TouchableOpacity>  
-      <TouchableOpacity onPress={() => toggleCheck('step5')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Acrescente aos poucos a farinha.
-        </Text>
-      </TouchableOpacity>  
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>3</Text> Deixa dourar.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => toggleCheck('step4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>4</Text> Adicione o sal e o ovo e mexa até fritar.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => toggleCheck('step5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>5</Text> Acrescente aos poucos a farinha.
+          </Text>
+        </TouchableOpacity>
    
     </ScrollView>
   </View>

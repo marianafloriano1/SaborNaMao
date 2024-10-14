@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
 
 export default function App() {
   const nav = useNavigation();
@@ -20,7 +18,6 @@ export default function App() {
     step5: false,
   });
 
-  // Função para alternar a marcação de um item
   const toggleCheck = (item) => {
     setCheckedItems((prevState) => ({
       ...prevState,
@@ -28,87 +25,80 @@ export default function App() {
     }));
   };
 
-  
-
   return (
     <View style={styles.container}>
-      
-     
       <ScrollView showsVerticalScrollIndicator={false}>
+        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('cha')}>
+          <FontAwesome name="arrow-circle-left" size={28} color="#fbca8e" />
+        </TouchableOpacity>
 
-      
-
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('cha')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#fbca8e" />
-</TouchableOpacity>
-
-
-      <View style={styles.row}>
-        
-        <Text style={styles.paragraph}>
-      Chá de Gengibre
-        </Text>
-      </View>
-
-
-    <Text style={styles.ingredientes}>INGREDIENTES</Text>
-    <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} Raízes com casca lisa
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} Interior amarelado
-            </Text>
-          </TouchableOpacity>
+        <View style={styles.row}>
+          <Text style={styles.paragraph}>Chá de Gengibre</Text>
         </View>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} Sem fibras
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item4')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} Água
-            </Text>
-          </TouchableOpacity>
+
+        <Text style={styles.ingredientes}>INGREDIENTES</Text>
+        <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                Raízes com casca lisa
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                Interior amarelado
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                Sem fibras
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                Água
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
 
-      
-
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text> Aqueça 200 ml de água filtrada até formar bolhas; sem ferver.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step2')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text> Numa xícara, coloque o gengibre cortado em rodelas bem finas.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step3')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text> Despeje a água quente na xícara, mexa bem e tampe-a.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step4')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Deixe em infusão por 5 minutos.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step5')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> Após os 5 minutos, o chá de gengibre já está pronto para beber. Caso prefira gelado, basta levar à geladeira até esfriar.
-        </Text>
-      </TouchableOpacity>
-     
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>1.</Text> Aqueça 200 ml de água filtrada até formar bolhas; sem ferver.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>2.</Text> Numa xícara, coloque o gengibre cortado em rodelas bem finas.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>3.</Text> Despeje a água quente na xícara, mexa bem e tampe-a.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>4.</Text> Deixe em infusão por 5 minutos.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>5.</Text> Após os 5 minutos, o chá de gengibre já está pronto para beber. Caso prefira gelado, basta levar à geladeira até esfriar.
+          </Text>
+        </TouchableOpacity>
     </ScrollView>
   </View>
 );

@@ -13,11 +13,22 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
+    item8: false,
+    item9: false,
+    item10: false,
+    item11: false,
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
+
   });
 
   // Função para alternar a marcação de um item
@@ -51,114 +62,133 @@ export default function App() {
 
 
     <Text style={styles.ingredientes}>INGREDIENTES (MASSA)</Text>
-    <View style={styles.ingredientesContainer}>
-      <View style={styles.ingredientesColuna}>
-        <TouchableOpacity onPress={() => toggleCheck('item1')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 litro de água.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item2')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 2 saches de caldo de galinha.
-          </Text>
-        </TouchableOpacity>
-      
+   
 
-        <TouchableOpacity onPress={() => toggleCheck('item3')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1/2 colher sopa de sal.
-          </Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => toggleCheck('item4')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}500 g farinha trigo.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item5')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} 1/2 xícara de óleo soja.
-          </Text>
-        </TouchableOpacity>
+  <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1 litro de água.
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                2 saches de caldo de galinha.
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1/2 colher sopa de sal.
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                500 g farinha trigo.
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item5')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1/2 xícara de óleo soja.
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
         <Text style={styles.ingredientes}>INGREDIENTES (RECHEIO)</Text>
         <TouchableOpacity onPress={() => toggleCheck('item6')}>
           <Text style={styles.topicos}>
-            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 1 peito de frango desfiado.
+            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            1 peito de frango desfiado.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item7')}>
           <Text style={styles.topicos}>
-            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} Cheiro verde.
+            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            Cheiro verde.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item8')}>
           <Text style={styles.topicos}>
-            {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} 1 cebola cortada.
+            {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            1 cebola cortada.
           </Text>
         </TouchableOpacity>
-      
         <TouchableOpacity onPress={() => toggleCheck('item9')}>
           <Text style={styles.topicos}>
-            {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''} 1 tomate picado.
+            {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            1 tomate picado.
           </Text>
         </TouchableOpacity>
+
         <Text style={styles.ingredientes}>INGREDIENTES (EMPANAR)</Text>
         <TouchableOpacity onPress={() => toggleCheck('item10')}>
           <Text style={styles.topicos}>
-            {checkedItems.item10 ? <Text style={styles.check}>✓ </Text> : ''} Farinha de rosca.
+            {checkedItems.item10 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            Farinha de rosca.
           </Text>
         </TouchableOpacity>
-
         <TouchableOpacity onPress={() => toggleCheck('item11')}>
           <Text style={styles.topicos}>
-            {checkedItems.item11 ? <Text style={styles.check}>✓ </Text> : ''} Leite.
+            {checkedItems.item11 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            Leite.
           </Text>
         </TouchableOpacity>
-      </View>
-    </View>
 
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Coloque a água, o caldo de galinha, sal e óleo no fogo até ferver.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step2')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Acrescente a farinha de trigo e mexa até virar uma mistura homogênea.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step3')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Deixe cozinhar por 5 minutos e continue mexendo.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step4')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Refogue o peito de frango com a cebola, tomate e cheiro verde.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step5')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> Faça bolinhas, recheie com o frango e faça o formato de coxinha, passe no leite e depois na farinha de rosca.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step6')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6.</Text>Frite em óleo quente.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step7')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text> Retire quando estiver dourada. 
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step8')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8.</Text> Esta pronto! Bom apetite.
-      </Text>
-    </TouchableOpacity>
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>1.</Text> Coloque a água, o caldo de galinha, sal e óleo no fogo até ferver.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>2.</Text> Acrescente a farinha de trigo e mexa até virar uma mistura homogênea.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>3.</Text> Deixe cozinhar por 5 minutos e continue mexendo.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>4.</Text> Refogue o peito de frango com a cebola, tomate e cheiro verde.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>5.</Text> Faça bolinhas, recheie com o frango e faça o formato de coxinha, passe no leite e depois na farinha de rosca.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>6.</Text> Frite em óleo quente.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>7.</Text> Retire quando estiver dourada.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>8.</Text> Está pronto! Bom apetite.
+          </Text>
+        </TouchableOpacity>
 
    
     </ScrollView>

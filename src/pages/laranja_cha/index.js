@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
 
 export default function App() {
   const nav = useNavigation();
@@ -15,12 +13,8 @@ export default function App() {
     item4: false,
     step1: false,
     step2: false,
-    step3: false,
-    step4: false,
-    step5: false,
   });
 
-  // Função para alternar a marcação de um item
   const toggleCheck = (item) => {
     setCheckedItems((prevState) => ({
       ...prevState,
@@ -28,75 +22,67 @@ export default function App() {
     }));
   };
 
-  
-
   return (
     <View style={styles.container}>
-      
-     
       <ScrollView showsVerticalScrollIndicator={false}>
+        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('cha')}>
+          <FontAwesome name="arrow-circle-left" size={28} color="#fbca8e" />
+        </TouchableOpacity>
 
-      
-
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('cha')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#fbca8e" />
-</TouchableOpacity>
-
-
-      <View style={styles.row}>
-        
-        <Text style={styles.paragraph}>
-      Chá de Laranja
-        </Text>
-      </View>
-
-
-    <Text style={styles.ingredientes}>INGREDIENTES</Text>
-    <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 7 laranjas para suco
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 1,5 litro de água
-            </Text>
-          </TouchableOpacity>
+        <View style={styles.row}>
+          <Text style={styles.paragraph}>Chá de Laranja</Text>
         </View>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 15 cravos da índia
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item4')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} 3 colheres de açúcar
-            </Text>
-          </TouchableOpacity>
+
+        <Text style={styles.ingredientes}>INGREDIENTES</Text>
+        <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                7 laranjas para suco
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1,5 litro de água
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                15 cravos da índia
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                3 colheres de açúcar
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-      
 
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text> Coloque para ferver a água com os cravos e o açúcar. Deixe ferver por 10 minutos. Enquanto isso, retire o suco da laranja e reserve.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step2')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text> Quando a água estiver fervendo misture o suco de laranja natural, mas não deixe ferver novamente, somente esquente. Coloque em uma garrafa térmica e sirva.
-        </Text>
-      </TouchableOpacity>
-     
-    </ScrollView>
-  </View>
-);
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>1.</Text> Coloque para ferver a água com os cravos e o açúcar. Deixe ferver por 10 minutos. Enquanto isso, retire o suco da laranja e reserve.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>2.</Text> Quando a água estiver fervendo misture o suco de laranja natural, mas não deixe ferver novamente, somente esquente. Coloque em uma garrafa térmica e sirva.
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
+  );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -115,11 +101,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     color: '#fbca8e',
   },
-ingrediente: {
-    fontSize: 17,
-    marginBottom: 15,
-    color: '#fbca8e',
-  },
   ingredientes: {
     marginTop: 50,
     fontSize: 16,
@@ -128,11 +109,14 @@ ingrediente: {
     paddingVertical: 5,
   },
   ingredientesContainer: {
-    flexDirection: 'row', // Exibe em duas colunas
+    flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-
+  ingredientesColuna: {
+    flex: 1,
+    marginRight: 10,
+  },
   topicos: {
     marginBottom: 10,
     lineHeight: 24,
@@ -145,6 +129,10 @@ ingrediente: {
   },
   check: {
     color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
+  },
+  bolinha: {
     fontSize: 20,
     marginRight: 5,
   },

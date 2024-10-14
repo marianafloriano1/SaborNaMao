@@ -53,97 +53,109 @@ export default function App() {
 
     <Text style={styles.ingredientes}>INGREDIENTES</Text>
     <View style={styles.ingredientesContainer}>
-      <View style={styles.ingredientesColuna}>
-        <TouchableOpacity onPress={() => toggleCheck('item1')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}  1 1/2 pacotes (300 g) de manteiga sem sal.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item2')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 1 1/2 xícaras de chá de açúcar.
-          </Text>
-        </TouchableOpacity>
-   
-      <View style={styles.ingredientesColuna}>
-        <TouchableOpacity onPress={() => toggleCheck('item3')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 6 ovos.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item4')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} 3 1/2 xícaras de farinha de trigo.
-          </Text>
-        </TouchableOpacity>
-        </View>
-        <TouchableOpacity onPress={() => toggleCheck('item5')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} Meia colher de (chá) de fermento em pó.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item6')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 100g de gotas de chocolate ao leite.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item7')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} Geleia de morango (recheio).
-          </Text>
-        </TouchableOpacity>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                1 1/2 pacotes (300 g) de manteiga sem sal.
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                1 1/2 xícaras de chá de açúcar.
+              </Text>
+            </TouchableOpacity>
+     
+        
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                6 ovos.
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                3 1/2 xícaras de farinha de trigo.
+              </Text>
+            </TouchableOpacity>
        
-      </View>
-    </View>
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Massa: Bata a manteiga com o açúcar ate obter creme claro e fofo. Junte os ovos, um a um, batendo sempre ate obter um creme homogêneo.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step2')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Acrescente a farinha peneirada com o fermento e misture delicadamente.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step3')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text> Nas formas próprias para cupcakes com as cavidades forrada com forminhas de papel, distribua a massa, sobre esta coloque 1 colher de chá de geleia de morango e cubra com um pouco de massa.
-        </Text>
-        <Text style={styles.topicos}>
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step4')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Leve para assar em forno médio (180ºC), pré-aquecido. Deixe esfriar.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step5')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text>Cobertura: Bata a manteiga até ficar cremosa.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step6')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6.</Text>Adicione o leite condensado em fio até obter um creme fofo.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step7')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text>  Acrescente o achocolatado sabor morango e bata muito bem.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step8')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8.</Text> Coloque no saco de confeiteiro e decore os cupcakes.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step9')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step9 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>9.</Text>Se preferir jogue por cima da cobertura M&M's ou confetes, as crianças adoram.
-      </Text>
-    </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item5')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+              Meia colher de (chá) de fermento em pó.
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item6')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+              100g de gotas de chocolate ao leite.
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleCheck('item7')}>
+            <Text style={styles.topicos}>
+              {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+              Geleia de morango (recheio).
+            </Text>
+          </TouchableOpacity>
+        </View>
+   </View>
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>1.</Text> Massa: Bata a manteiga com o açúcar até obter creme claro e fofo. Junte os ovos, um a um, batendo sempre até obter um creme homogêneo.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>2.</Text> Acrescente a farinha peneirada com o fermento e misture delicadamente.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>3.</Text> Nas formas próprias para cupcakes com as cavidades forradas com forminhas de papel, distribua a massa, sobre esta coloque 1 colher de chá de geleia de morango e cubra com um pouco de massa.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>4.</Text> Leve para assar em forno médio (180ºC), pré-aquecido. Deixe esfriar.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>5.</Text> Cobertura: Bata a manteiga até ficar cremosa.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>6.</Text> Adicione o leite condensado em fio até obter um creme fofo.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>7.</Text> Acrescente o achocolatado sabor morango e bata muito bem.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>8.</Text> Coloque no saco de confeiteiro e decore os cupcakes.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step9')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step9 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>9.</Text> Se preferir, jogue por cima da cobertura M&M's ou confetes, as crianças adoram.
+          </Text>
+        </TouchableOpacity>
     </ScrollView>
   </View>
 );

@@ -18,6 +18,10 @@ export default function App() {
     step3: false,
     step4: false,
     step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
+    step9: false,
   });
 
   // Função para alternar a marcação de um item
@@ -52,79 +56,90 @@ export default function App() {
 
 
     <Text style={styles.ingredientes}>INGREDIENTES</Text>
-    <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}250 gramas de chocolate meio amargo em pedaços
-            </Text>
-          </TouchableOpacity>
-        
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara (chá) de chocolate branco picado
-            </Text>
-          </TouchableOpacity>
-        
+   
+
+
+ <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                250 gramas de chocolate meio amargo em pedaços
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1 xícara (chá) de chocolate branco picado
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item8')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                Gota de corante comestível (anilina) variado a gosto
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-       <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item8')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} gota de corante comestível (anilina) variado a gosto
-            </Text>
-          </TouchableOpacity>
-     
-        </View>
-      </View>
 
-
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text> Derreta o chocolate meio amargo no micro-ondas por 3 minutos na potência média. 
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step2')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Retire do forno e mexa até acabar de derreter. 
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step3')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Transfira para um refratário limpo e bem seco, e mexa o chocolate até que, ao encostar um pouco nos lábios, dê a sensação de frio. 
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step4')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Preencha formas para pirulito no formato de coelhinhos com o chocolate derretinho e coloque o palito para no lugar indicado.
-        </Text>
-      </TouchableOpacity>
-       <TouchableOpacity onPress={() => toggleCheck('step5')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Leve à geladeira e deixe secar até a forma ficar opaca.
-        </Text>
-      </TouchableOpacity>
-       <TouchableOpacity onPress={() => toggleCheck('step6')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6</Text> Retire a forma da geladeira e desenforme com cuidado. 
-        </Text>
-      </TouchableOpacity>
-       <TouchableOpacity onPress={() => toggleCheck('step7')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7</Text> Deixe secar completamente.
-        </Text>
-      </TouchableOpacity>
-       <TouchableOpacity onPress={() => toggleCheck('step8')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8</Text> Derreta o chocolate branco no banho-maria e retire do fogo.
-        </Text>
-      </TouchableOpacity>
-       <TouchableOpacity onPress={() => toggleCheck('step9')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step9 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8</Text> Use o chocolate branco para fazer os detalhes do coelho.
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>1</Text> Derreta o chocolate meio amargo no micro-ondas por 3 minutos na potência média.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>2</Text> Retire do forno e mexa até acabar de derreter.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>3</Text> Transfira para um refratário limpo e bem seco, e mexa o chocolate até que, ao encostar um pouco nos lábios, dê a sensação de frio.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>4</Text> Preencha formas para pirulito no formato de coelhinhos com o chocolate derretido e coloque o palito no lugar indicado.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>5</Text> Leve à geladeira e deixe secar até a forma ficar opaca.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>6</Text> Retire a forma da geladeira e desenforme com cuidado.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>7</Text> Deixe secar completamente.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>8</Text> Derreta o chocolate branco no banho-maria e retire do fogo.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step9')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step9 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>9</Text> Use o chocolate branco para fazer os detalhes do coelho.
+          </Text>
+        </TouchableOpacity>
     </ScrollView>
   </View>
 );

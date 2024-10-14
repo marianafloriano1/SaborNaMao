@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
 
 export default function App() {
   const nav = useNavigation();
@@ -12,15 +10,15 @@ export default function App() {
     item1: false,
     item2: false,
     item3: false,
-    item4: false,
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
+    step6: false,
+    step7: false,
   });
 
-  // Função para alternar a marcação de um item
   const toggleCheck = (item) => {
     setCheckedItems((prevState) => ({
       ...prevState,
@@ -28,92 +26,86 @@ export default function App() {
     }));
   };
 
-  
-
   return (
     <View style={styles.container}>
-      
-     
       <ScrollView showsVerticalScrollIndicator={false}>
+        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('festa_junina')}>
+          <FontAwesome name="arrow-circle-left" size={28} color="#cc4b4e" />
+        </TouchableOpacity>
 
-      
-
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('festa_junina')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#cc4b4e" />
-</TouchableOpacity>
-
-
-      <View style={styles.row}>
-        
-        <Text style={styles.paragraph}>
-        Paçoca
-        
-        </Text>
-      </View>
-
-
-    <Text style={styles.ingredientes}>INGREDIENTES</Text>
-    <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}500 g de amendoim torrado e moído com pele
-            </Text>
-          </TouchableOpacity>
-        
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}1 caixa de leite condensado
-            </Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}1 pacote de bolacha maisena
-            </Text>
-          </TouchableOpacity>     
+        <View style={styles.row}>
+          <Text style={styles.paragraph}>Paçoca</Text>
         </View>
-      </View>
 
+        <Text style={styles.ingredientes}>INGREDIENTES</Text>
+        <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                500 g de amendoim torrado e moído com pele
+              </Text>
+            </TouchableOpacity>
 
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1 caixa de leite condensado
+              </Text>
+            </TouchableOpacity>
 
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+                1 pacote de bolacha maisena
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
 
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Torre o amendoim por aproximadamente 20 minutos.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step2')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Bata no liquidificador até que fique todo triturado.
-        </Text>
-      </TouchableOpacity>
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>1</Text> Torre o amendoim por aproximadamente 20 minutos.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>2</Text> Bata no liquidificador até que fique todo triturado.
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Coloque em uma vasilha grande para que possa misturar todos os ingredientes bem.
-        </Text>
-      </TouchableOpacity> 
-       <TouchableOpacity onPress={() => toggleCheck('step4')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Bata a bolacha também no liquidificador, misture ao amendoim.
-        </Text>
-      </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step5')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Coloque o leite condensado aos poucos, mexendo bem, até que fique uma massa bem dura.
-        </Text>
-      </TouchableOpacity>  
-      <TouchableOpacity onPress={() => toggleCheck('step6')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6</Text>  Espalhe em uma forma média untada com margarina, apertando bem com as mãos.
-        </Text>
-      </TouchableOpacity>  
-      <TouchableOpacity onPress={() => toggleCheck('step7')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7</Text>  Deixe descansar por 20 minutos e corte os quadradinhos ou no formato.
-        </Text>
-      </TouchableOpacity>
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>3</Text> Coloque em uma vasilha grande para que possa misturar todos os ingredientes bem.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>4</Text> Bata a bolacha também no liquidificador, misture ao amendoim.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>5</Text> Coloque o leite condensado aos poucos, mexendo bem, até que fique uma massa bem dura.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>6</Text> Espalhe em uma forma média untada com margarina, apertando bem com as mãos.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
+            <Text style={styles.numero}>7</Text> Deixe descansar por 20 minutos e corte os quadradinhos ou no formato.
+          </Text>
+        </TouchableOpacity>
      
     </ScrollView>
   </View>

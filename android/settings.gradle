@@ -37,7 +37,7 @@ if (getRNMinorVersion() >= 75) {
   }
 }
 
-rootProject.name = 'Sabor Na Mão'
+rootProject.name = 'SaborNaMao'
 
 dependencyResolutionManagement {
   versionCatalogs {

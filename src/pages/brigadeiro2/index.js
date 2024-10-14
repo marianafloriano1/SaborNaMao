@@ -13,11 +13,17 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
   });
 
   // Função para alternar a marcação de um item
@@ -54,91 +60,88 @@ export default function App() {
 
     <Text style={styles.ingredientes}>INGREDIENTES</Text>
     <View style={styles.ingredientesContainer}>
-      <View style={styles.ingredientesColuna}>
-        <TouchableOpacity onPress={() => toggleCheck('item1')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 caixa de leite condensado
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item2')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 7 colheres (sopa) de achocolatado ou 4 colheres (sopa) de chocolate em pó.
-          </Text>
-        </TouchableOpacity>
-      
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 caixa de leite condensado
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 7 colheres (sopa) de achocolatado ou 4 colheres (sopa) de chocolate em pó.
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 colher (sopa) de margarina sem sal.
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} Chocolate granulado.
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
 
-        <TouchableOpacity onPress={() => toggleCheck('item3')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 colher (sopa) de margarina sem sal.
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => toggleCheck('item4')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} Chocolate granulado.
-          </Text>
-        </TouchableOpacity>
         <Text style={styles.ingredientes}>UTENSÍLIOS</Text>
         <TouchableOpacity onPress={() => toggleCheck('item5')}>
           <Text style={styles.topicos}>
-            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} Panela.
+            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} Panela.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item6')}>
           <Text style={styles.topicos}>
-            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} Espatula ou colher.
+            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} Espátula ou colher.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item7')}>
           <Text style={styles.topicos}>
-            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} Prato fundo ou tijela.
+            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} Prato fundo ou tigela.
           </Text>
         </TouchableOpacity>
-      
-      </View>
-    </View>
 
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Em uma panela funda, acrescente o leite condensado, a margarina e o chocolate em pó.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step2')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Cozinhe em fogo baixo e mexa até que o brigadeiro comece a desgrudar da panela. *Não pare de mexer antes de alcançar o ponto.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step3')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Deixe esfriar.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step4')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Coloque um pouco de granulado no prato fundo.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step5')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5.</Text> Passe um pouco de manteiga na mão.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step6')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6.</Text>Com uma colher de café pegue o brigadeiro e faça pequenas bolas com as maos.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step7')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>7.</Text> Passe a bolinha no granulado.
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => toggleCheck('step8')}>
-      <Text style={styles.topicos}>
-        {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>8.</Text> Se quiser pode colocar as bolinhas em formas próprias para brigadeiros.
-      </Text>
-    </TouchableOpacity>
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1.</Text> Em uma panela funda, acrescente o leite condensado, a margarina e o chocolate em pó.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2.</Text> Cozinhe em fogo baixo e mexa até que o brigadeiro comece a desgrudar da panela. *Não pare de mexer antes de alcançar o ponto.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3.</Text> Deixe esfriar.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step4')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4.</Text> Coloque um pouco de granulado no prato fundo.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step5')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>5.</Text> Passe um pouco de manteiga na mão.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step6')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>6.</Text> Com uma colher de café, pegue o brigadeiro e faça pequenas bolas com as mãos.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step7')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step7 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>7.</Text> Passe a bolinha no granulado.
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step8')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step8 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>8.</Text> Se quiser, pode colocar as bolinhas em formas próprias para brigadeiros.
+          </Text>
+        </TouchableOpacity>
 
    
     </ScrollView>

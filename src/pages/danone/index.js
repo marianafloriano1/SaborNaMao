@@ -13,11 +13,11 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
     step1: false,
     step2: false,
     step3: false,
-    step4: false,
-    step5: false,
+
   });
 
   // Função para alternar a marcação de um item
@@ -52,56 +52,69 @@ export default function App() {
 
 
     <Text style={styles.ingredientes}>INGREDIENTES</Text>
-    <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}10 morangos
-            </Text>
-          </TouchableOpacity>
-        
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}1 pacote de gelatina incolor
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 colher (sopa) de biomassa de banana verde
-            </Text>
-          </TouchableOpacity>
-         <TouchableOpacity onPress={() => toggleCheck('item4')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} 11 pote de iogurte natural
-            </Text>
-          </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item5')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} 1 colher (sopa) de mel
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View> 
-
-      
-
-
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
    
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Higienize os morangos e bata-os no liquidificador com o iogurte, a biomassa de banana verde, o mel e reserve.
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => toggleCheck('step2')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Hidrate a gelatina conforme instruções da embalagem e bata no liquidificador junto com os demais ingredientes.
-        </Text>
-      </TouchableOpacity>
+
+ <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                10 morangos
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                1 pacote de gelatina incolor
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                1 colher (sopa) de biomassa de banana verde
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                1 pote de iogurte natural
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item5')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+                1 colher (sopa) de mel
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>1</Text> Higienize os morangos e bata-os no liquidificador com o iogurte, a biomassa de banana verde, o mel e reserve.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => toggleCheck('step2')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>2</Text> Hidrate a gelatina conforme instruções da embalagem e bata no liquidificador junto com os demais ingredientes.
+          </Text>
+        </TouchableOpacity>
+
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text>Distribua em pequenas fôrmas e leve para geladeira por, no mínimo, 3 horas.
-        </Text>
-      </TouchableOpacity> 
+          <Text style={styles.topicos}>
+            {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 
+            <Text style={styles.numero}>3</Text> Distribua em pequenas fôrmas e leve para geladeira por, no mínimo, 3 horas.
+          </Text>
+        </TouchableOpacity>
      
     </ScrollView>
   </View>
