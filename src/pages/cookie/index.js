@@ -68,8 +68,8 @@
                 Meia xícara de (chá) de açúcar mascavo.
               </Text>
             </TouchableOpacity>
-          </View>
-          <View style={styles.ingredientesColuna}>
+      
+      
             <TouchableOpacity onPress={() => toggleCheck('item3')}>
               <Text style={styles.topicos}>
                 {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
@@ -82,7 +82,7 @@
                 1 ovo.
               </Text>
             </TouchableOpacity>
-          </View>
+          
           <TouchableOpacity onPress={() => toggleCheck('item5')}>
             <Text style={styles.topicos}>
               {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
@@ -102,7 +102,7 @@
             </Text>
           </TouchableOpacity>
         </View>
-
+</View>
         <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
         <TouchableOpacity onPress={() => toggleCheck('step1')}>
           <Text style={styles.topicos}>

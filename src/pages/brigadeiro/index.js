@@ -37,7 +37,7 @@ export default function App() {
       
 
 <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('kids')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#609f84" />
+<FontAwesome name="arrow-circle-left" size={28} color="#92ab79" />
 </TouchableOpacity>
 
 

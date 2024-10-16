@@ -18,6 +18,9 @@ export default function App() {
     step3: false,
     step4: false,
     step5: false,
+    step6: false,
+    step7: false,
+    step8: false,
   });
 
   // Função para alternar a marcação de um item
@@ -56,43 +59,43 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 1 xícara de arroz arbóreo
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 xícara de arroz arbóreo
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}>
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 200g de champignon fatiado
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 200g de champignon fatiado
             </Text>
           </TouchableOpacity>
-        </View>
+       
 
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}>
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 cebola picada
+              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 cebola picada
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item4')}>
             <Text style={styles.topicos}>
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} 2 colheres de sopa de manteiga
+              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 2 colheres de sopa de manteiga
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item5')}>
             <Text style={styles.topicos}>
-              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}1/2 xícara de vinho branco
+              {checkedItems.item5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1/2 xícara de vinho branco
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item6')}>
             <Text style={styles.topicos}>
-              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} Caldo de legumes (quente) a gosto
+              {checkedItems.item6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} Caldo de legumes (quente) a gosto
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item7')}>
             <Text style={styles.topicos}>
-              {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} Queijo parmesão ralado a gosto
+              {checkedItems.item7 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} Queijo parmesão ralado a gosto
             </Text>
           </TouchableOpacity>
 
-
+          </View>
         </View>
       
       
@@ -101,23 +104,23 @@ export default function App() {
     <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text> Refogue a cebola na manteiga em fogo médio até ficar transparente. Adicione os champignons.
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1.</Text> Refogue a cebola na manteiga em fogo médio até ficar transparente. Adicione os champignons.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text> Misture o arroz e adicione o vinho, mexendo até evaporar.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2.</Text> Misture o arroz e adicione o vinho, mexendo até evaporar.
         </Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => toggleCheck('step3')}>
         <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Vá adicionando o caldo aos poucos, mexendo sempre, até o arroz ficar al dente.
+          {checkedItems.step3 ?<Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3.</Text>Vá adicionando o caldo aos poucos, mexendo sempre, até o arroz ficar al dente.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step4')}>
         <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text>Finalize com queijo parmesão e sirva quente.
+          {checkedItems.step4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4.</Text>Finalize com queijo parmesão e sirva quente.
         </Text>
       </TouchableOpacity>
      

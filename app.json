@@ -15,11 +15,10 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.marianafloriano.sabornamao"
+      "package": "com.marianafloriano.sabornamao",
+      "versionCode": 1
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+
     "extra": {
       "eas": {
         "projectId": "3f75c654-afb4-4d45-934d-5a12a9f584cc"

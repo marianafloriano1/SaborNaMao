@@ -39,7 +39,7 @@ export default function App() {
       
 
 <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('kids')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#609f84" />
+<FontAwesome name="arrow-circle-left" size={28} color="#92ab79" />
 </TouchableOpacity>
 
 
@@ -56,18 +56,18 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}2 latas de leite condensado
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 latas de leite condensado
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}8 colheres (sopa) de chocolate em pó
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}8 colheres (sopa) de chocolate em pó
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}1 pacote de biscoito maisena (200g)
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1 pacote de biscoito maisena (200g)
             </Text>
           </TouchableOpacity>
         </View>
@@ -80,27 +80,27 @@ export default function App() {
    
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Coloque o leite condensado e o chocolate em pó no liquidificador e bata em velocidade alta por 3 minutos ou até ficar com aspecto cremoso.
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Coloque o leite condensado e o chocolate em pó no liquidificador e bata em velocidade alta por 3 minutos ou até ficar com aspecto cremoso.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Transfira para uma tigela e leve à geladeira por 2 horas.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text> Transfira para uma tigela e leve à geladeira por 2 horas.
         </Text>
       </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
         <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text>Para a montagem, em um refratário pequeno, faça camadas de creme de chocolate e de biscoito maisena até terminarem os ingredientes, finalizando em creme.
+          {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3</Text>Para a montagem, em um refratário pequeno, faça camadas de creme de chocolate e de biscoito maisena até terminarem os ingredientes, finalizando em creme.
         </Text>
       </TouchableOpacity> 
        <TouchableOpacity onPress={() => toggleCheck('step4')}>
         <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text>Cubra e leve à geladeira por mais 4 horas.
+          {checkedItems.step4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4</Text>Cubra e leve à geladeira por mais 4 horas.
         </Text>
       </TouchableOpacity> 
       <TouchableOpacity onPress={() => toggleCheck('step5')}>
         <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text>Retire e sirva, se desejar, decorado com raspas de chocolate.
+          {checkedItems.step5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>5</Text>Retire e sirva, se desejar, decorado com raspas de chocolate.
         </Text>
       </TouchableOpacity>
      

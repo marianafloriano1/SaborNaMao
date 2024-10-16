@@ -45,7 +45,11 @@ export default function App() {
         </TouchableOpacity>
 
         <View style={styles.row}>
+
           <Text style={styles.paragraph}>Cachorro Quente (no forno)</Text>
+
+          </View>
+          
         <Text style={styles.ingredientes}>INGREDIENTES</Text>
         <View style={styles.ingredientesContainer}>
           <View style={styles.ingredientesColuna}>
@@ -92,13 +96,14 @@ export default function App() {
                 1 à 2 tomates picados sem sementes.
               </Text>
             </TouchableOpacity>
-          </View>
+       
           <TouchableOpacity onPress={() => toggleCheck('item8')}>
             <Text style={styles.topicos}>
               {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
               1 à 3 latas de milho.
             </Text>
           </TouchableOpacity>
+
           <TouchableOpacity onPress={() => toggleCheck('item9')}>
             <Text style={styles.topicos}>
               {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
@@ -111,18 +116,21 @@ export default function App() {
               1 à 5 cebolas picadas.
             </Text>
           </TouchableOpacity>
+
           <TouchableOpacity onPress={() => toggleCheck('item11')}>
             <Text style={styles.topicos}>
               {checkedItems.item11 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
               1 à 6 pimentões picados.
             </Text>
           </TouchableOpacity>
+
           <TouchableOpacity onPress={() => toggleCheck('item12')}>
             <Text style={styles.topicos}>
               {checkedItems.item12 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
               1 à 7 latas de ervilha.
             </Text>
           </TouchableOpacity>
+
           <TouchableOpacity onPress={() => toggleCheck('item13')}>
             <Text style={styles.topicos}>
               {checkedItems.item13 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}

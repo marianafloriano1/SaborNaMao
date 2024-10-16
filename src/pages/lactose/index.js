@@ -11,7 +11,7 @@ export default function App() {
       
        <ScrollView contentContainerStyle={styles.scroll}>
 
-       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('restricoes')}>
+       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('restricao')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#57a8d6" />
       </TouchableOpacity>
 
@@ -34,7 +34,7 @@ export default function App() {
           onPress={() => nav.navigate('pao_lactose')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/esse.png')} />
+            <Image style={styles.img} source={require('../../img/pao_de_queijo.png')} />
             <Text style={styles.texto}>Pão de Queijo</Text>
           </View>
         </Pressable>
@@ -107,7 +107,7 @@ export default function App() {
           onPress={() => nav.navigate('bolo_lactose')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/bolo-de-cenoura.png')} />
+            <Image style={styles.img} source={require('../../img/bolo_lactose.png')} />
             <Text style={styles.texto}>Bolo de Laranja</Text>
           </View>
         </Pressable>

@@ -13,6 +13,9 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
     step1: false,
     step2: false,
     step3: false,
@@ -56,36 +59,36 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}¼ xíc. de azeite
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}¼ xíc. de azeite
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}½ col. (chá) de cominho
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}½ col. (chá) de cominho
             </Text>
           </TouchableOpacity>
           
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}¼ col. (chá) de tomilho
+              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}¼ col. (chá) de tomilho
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item4')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}1 col. (sopa) de suco de limão
+              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1 col. (sopa) de suco de limão
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item5')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}1 col. (sopa) de salsa picada
+              {checkedItems.item5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1 col. (sopa) de salsa picada
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item6')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''}¼ xíc. alho-poró picado
+              {checkedItems.item6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}¼ xíc. alho-poró picado
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item7')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''}600g de filés de salmão sal a gosto
+              {checkedItems.item7 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}600g de filés de salmão sal a gosto
             </Text>
           </TouchableOpacity>
         
@@ -97,12 +100,12 @@ export default function App() {
    
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Junte todos os temperos em uma tigela, coloque o peixe e deixe descansar por uma hora.
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Junte todos os temperos em uma tigela, coloque o peixe e deixe descansar por uma hora.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Tire os filés e grelhe cada um por 4 minutos de cada lado até que o peixe fique firme.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text> Tire os filés e grelhe cada um por 4 minutos de cada lado até que o peixe fique firme.
         </Text>
       </TouchableOpacity>
     

@@ -53,60 +53,60 @@ export default function App() {
 
     <Text style={styles.ingredientes}>INGREDIENTES</Text>
     <View style={styles.ingredientesContainer}>
-
+<View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}2 filés de pescada (cerca de 90 g cada)
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 filés de pescada (cerca de 90 g cada)
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}>
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 2 colheres (chá) de azeite
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 2 colheres (chá) de azeite
             </Text>
           </TouchableOpacity>
         
-        </View>
-       <View style={styles.ingredientesColuna}>
+       
+       
           <TouchableOpacity onPress={() => toggleCheck('item8')}>
             <Text style={styles.topicos}>
-              {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} ¼ de xícara (chá) de fubá (ou farinha de trigo)
+              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} ¼ de xícara (chá) de fubá (ou farinha de trigo)
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item9')}>
             <Text style={styles.topicos}>
-              {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''} sal
+              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} sal
             </Text>
           </TouchableOpacity>
          
         </View>
-      
+      </View>
 
 
     <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text> Tire os filés da geladeira 10 minutos antes de grelhar.
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text> Tire os filés da geladeira 10 minutos antes de grelhar.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text>Seque bem os filés com papel-toalha e tempere com sal a gosto.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text>Seque bem os filés com papel-toalha e tempere com sal a gosto.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step3')}>
         <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Coloque o fubá num prato raso, passe os dois lados dos filés de peixe no fubá e bata bem para tirar o excesso.
+          {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3</Text> Coloque o fubá num prato raso, passe os dois lados dos filés de peixe no fubá e bata bem para tirar o excesso.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step4')}>
         <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Regue a frigideira com o azeite e coloque os filés, um ao lado do outro, com o lado mais plano (onde estava a pele) para baixo. Deixe grelhar, sem mexer, até que eles estejam bem dourados e soltos da frigideira, por cerca de 4 minutos.  
+          {checkedItems.step4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4</Text> Regue a frigideira com o azeite e coloque os filés, um ao lado do outro, com o lado mais plano (onde estava a pele) para baixo. Deixe grelhar, sem mexer, até que eles estejam bem dourados e soltos da frigideira, por cerca de 4 minutos.  
         </Text>
       </TouchableOpacity>
        <TouchableOpacity onPress={() => toggleCheck('step5')}>
         <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Com uma espátula de peixe, vire os filés com cuidado para não quebrar (se preferir, utilize um garfo como apoio) e deixe grelhar por apenas 1 minuto do outro lado
+          {checkedItems.step5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>5</Text> Com uma espátula de peixe, vire os filés com cuidado para não quebrar (se preferir, utilize um garfo como apoio) e deixe grelhar por apenas 1 minuto do outro lado
         </Text>
       </TouchableOpacity>
      

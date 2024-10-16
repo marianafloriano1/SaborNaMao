@@ -13,11 +13,14 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
+    item6: false,
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
+    step6: false,
   });
 
   // Função para alternar a marcação de um item
@@ -57,32 +60,32 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}1 copo de açúcar
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1 copo de açúcar
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}cravo
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}cravo
             </Text>
           </TouchableOpacity>
           
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}1/2 litro de água
+              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1/2 litro de água
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item4')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}canela em rama
+              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}canela em rama
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item5')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}1 litro de vinho tinto seco
+              {checkedItems.item5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1 litro de vinho tinto seco
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item6')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''}1/2 maçã (verde ou vermelha) descascada e cortada em fatias
+              {checkedItems.item6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1/2 maçã (verde ou vermelha) descascada e cortada em fatias
             </Text>
           </TouchableOpacity>
         
@@ -97,32 +100,32 @@ export default function App() {
     <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Queime a metade do açúcar com o cravo e a canela.
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Queime a metade do açúcar com o cravo e a canela.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Acrescente o vinho, já misturado com a água.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text> Acrescente o vinho, já misturado com a água.
         </Text>
       </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
         <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Junte a maçã e o açúcar restante.
+          {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3</Text> Junte a maçã e o açúcar restante.
         </Text>
       </TouchableOpacity> 
        <TouchableOpacity onPress={() => toggleCheck('step4')}>
         <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Deixe cozinhar um pouco e sirva bem quente.
+          {checkedItems.step4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4</Text> Deixe cozinhar um pouco e sirva bem quente.
         </Text>
       </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step5')}>
         <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Quando estiver tudo bem misturado acrescente o fermento em pó e misture bem.
+          {checkedItems.step5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>5</Text> Quando estiver tudo bem misturado acrescente o fermento em pó e misture bem.
         </Text>
       </TouchableOpacity>  
        <Text style={styles.ingrediente}>Dica:</Text>
       <TouchableOpacity onPress={() => toggleCheck('step6')}>
         <Text style={styles.topicos}>
-          {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6</Text> Copo termico de isopor para servir em festas sem queimar a mão.
+          {checkedItems.step6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>6</Text> Copo termico de isopor para servir em festas sem queimar a mão.
         </Text>
       </TouchableOpacity>  
     </ScrollView>

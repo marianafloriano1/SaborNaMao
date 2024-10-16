@@ -56,23 +56,23 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}1 lata de leite condensado
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1 lata de leite condensado
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}2 xícaras de leite
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 xícaras de leite
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 3 ovos
+              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 3 ovos
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item4')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}1/2 xícara de gelatina vermelha
+              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}1/2 xícara de gelatina vermelha
             </Text>
           </TouchableOpacity>
        
@@ -86,27 +86,27 @@ export default function App() {
    
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Caramelize uma forma de pudim com açúcar (coloque açúcar na forma e leve ao fogo até derreter e dourar).
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Caramelize uma forma de pudim com açúcar (coloque açúcar na forma e leve ao fogo até derreter e dourar).
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> No liquidificador, adicione o leite condensado, o leite, os ovos e a gelatina. Bata até ficar homogêneo.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text> No liquidificador, adicione o leite condensado, o leite, os ovos e a gelatina. Bata até ficar homogêneo.
         </Text>
       </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
         <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text>Transfira a mistura para a forma caramelizada.
+          {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3</Text>Transfira a mistura para a forma caramelizada.
         </Text>
       </TouchableOpacity> 
       <TouchableOpacity onPress={() => toggleCheck('step4')}>
         <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text>Coloque a forma dentro de uma assadeira maior com água quente e leve ao forno a 180°C. Asse por cerca de 1 hora ou até que o pudim esteja firme.
+          {checkedItems.step4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4</Text>Coloque a forma dentro de uma assadeira maior com água quente e leve ao forno a 180°C. Asse por cerca de 1 hora ou até que o pudim esteja firme.
         </Text>
       </TouchableOpacity> 
       <TouchableOpacity onPress={() => toggleCheck('step5')}>
         <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Retire do forno e deixe esfriar à temperatura ambiente, depois leve à geladeira por pelo menos 4 horas.
+          {checkedItems.step5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>5</Text> Retire do forno e deixe esfriar à temperatura ambiente, depois leve à geladeira por pelo menos 4 horas.
         </Text>
       </TouchableOpacity> 
 

@@ -26,7 +26,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('kids')}>
+        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('mamaes')}>
           <FontAwesome name="arrow-circle-left" size={28} color="#609f84" />
         </TouchableOpacity>
 
@@ -36,6 +36,7 @@ export default function App() {
 
         <Text style={styles.ingredientes}>INGREDIENTES</Text>
         <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
               {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
@@ -55,6 +56,7 @@ export default function App() {
             </Text>
           </TouchableOpacity>
         </View>
+</View>
 
         <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
         <TouchableOpacity onPress={() => toggleCheck('step1')}>

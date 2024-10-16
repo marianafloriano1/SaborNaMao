@@ -11,14 +11,14 @@ export default function App() {
       
        <ScrollView contentContainerStyle={styles.scroll}>
 
-       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('restricoes')}>
+       <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('restricao')}>
         <FontAwesome name="arrow-circle-left" size={28} color="#5760d6" />
       </TouchableOpacity>
 
       
        <Text style={styles.texto2}>Receitas sem Glúten</Text>    
        <View style={styles.quadrado}>
-       <Image source={require('../../img/gluten.png')} style={styles.imagemm}></Image>
+       <Image source={require('../../img/glutennn.png')} style={styles.imagemm}></Image>
 
        <Pressable
           style={{
@@ -34,7 +34,7 @@ export default function App() {
           onPress={() => nav.navigate('sanduiche_gluten')}
         >
           <View style={styles.teste}>
-            <Image style={styles.img} source={require('../../img/sandu.png')} />
+            <Image style={styles.img} source={require('../../img/sanduiche.png')} />
             <Text style={styles.texto}>Sanduíche</Text>
           </View>
         </Pressable>
@@ -126,7 +126,7 @@ export default function App() {
         >
           <View style={styles.teste}>
             <Image style={styles.img2} source={require('../../img/bolo-de-cenoura.png')} />
-            <Text style={styles.texto3}>Bolo de Cenoura</Text>
+            <Text style={styles.texto3}>Bolo de Banana</Text>
           </View>
         </Pressable>
   

@@ -13,6 +13,9 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
     step1: false,
     step2: false,
     step3: false,
@@ -56,31 +59,31 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}3 col. (sopa) de ricota amassada
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}3 col. (sopa) de ricota amassada
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}3 tomates cereja cortados ao meio
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}3 tomates cereja cortados ao meio
             </Text>
           </TouchableOpacity>
           
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}2 colheres (chá) de salsa picada
+              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 colheres (chá) de salsa picada
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item4')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}10 folhas de alface americana picadas
+              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}10 folhas de alface americana picadas
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item5')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}6 fatias finas de manga cortadas em cubos
+              {checkedItems.item5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}6 fatias finas de manga cortadas em cubos
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item6')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''}2 fatias finas de abacate cortadas em cubos pequenos
+              {checkedItems.item6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 fatias finas de abacate cortadas em cubos pequenos
             </Text>
           </TouchableOpacity>
         
@@ -93,17 +96,17 @@ export default function App() {
    
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Lave bem as folhagens e cubra o fundo de uma travessa.
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Lave bem as folhagens e cubra o fundo de uma travessa.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Coloque a ricota, a uva passa e a salsa e misture bem.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text> Coloque a ricota, a uva passa e a salsa e misture bem.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step3')}>
         <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Junte a alface, a manga e o abacate. Tempere com limão e sal.
+          {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3</Text> Junte a alface, a manga e o abacate. Tempere com limão e sal.
         </Text>
       </TouchableOpacity>
     

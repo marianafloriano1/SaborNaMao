@@ -13,11 +13,22 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
+    item8: false,
+    item9: false,
+    item10: false,
+    item11: false,
+    item12: false,
+    item13: false,
+    item14: false,
     step1: false,
     step2: false,
     step3: false,
     step4: false,
     step5: false,
+    step6: false,
   });
 
   // Função para alternar a marcação de um item
@@ -56,71 +67,71 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}2 peitos de frango
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 peitos de frango
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}2 latas de seletas de legume
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 latas de seletas de legume
             </Text>
           </TouchableOpacity>
           
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}4 tomates picados sem sementes
+              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}4 tomates picados sem sementes
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item4')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''}50 g de uvas passas sem sementes
+              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}50 g de uvas passas sem sementes
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item5')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''}250 g de maionese
+              {checkedItems.item5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}250 g de maionese
             </Text>
           </TouchableOpacity><TouchableOpacity onPress={() => toggleCheck('item6')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''}Sal
+              {checkedItems.item6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}Sal
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item7')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''}2 cubos de caldo de galinha
+              {checkedItems.item7 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 cubos de caldo de galinha
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item8')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''}3 ovos
+              {checkedItems.item8 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}3 ovos
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item9')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item9 ? <Text style={styles.check}>✓ </Text> : ''}2 latas de milho verde
+              {checkedItems.item9 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 latas de milho verde
             </Text>
           </TouchableOpacity>
        <TouchableOpacity onPress={() => toggleCheck('item10')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item10 ? <Text style={styles.check}>✓ </Text> : ''}50 g de azeitonas verdes
+              {checkedItems.item10 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}50 g de azeitonas verdes
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item11')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item11 ? <Text style={styles.check}>✓ </Text> : ''}2 cenouras 
+              {checkedItems.item11 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 cenouras 
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item12')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item12 ? <Text style={styles.check}>✓ </Text> : ''}2 maçãs verdes 
+              {checkedItems.item12 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}2 maçãs verdes 
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item13')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item13 ? <Text style={styles.check}>✓ </Text> : ''}Salsa e cebolinha a gosto
+              {checkedItems.item13 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}Salsa e cebolinha a gosto
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item14')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item14 ? <Text style={styles.check}>✓ </Text> : ''}3 colheres de azeite
+              {checkedItems.item14 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}3 colheres de azeite
             </Text>
           </TouchableOpacity>
 
@@ -133,29 +144,29 @@ export default function App() {
     <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Refogue o frango e desfie.
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Refogue o frango e desfie.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Refogue o frango com os cubinhos e sal.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text> Refogue o frango com os cubinhos e sal.
         </Text>
       </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
         <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text> Pique os tomates sem sementes, corte a maçã com casca em cubinhos, rale a cenoura crua, pique a salsa, pique a cebolinha e reserve.
+          {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3</Text> Pique os tomates sem sementes, corte a maçã com casca em cubinhos, rale a cenoura crua, pique a salsa, pique a cebolinha e reserve.
         </Text>
       </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step4')}>
         <Text style={styles.topicos}>
-          {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4</Text> Pique também as azeitonas.
+          {checkedItems.step4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4</Text> Pique também as azeitonas.
         </Text>
       </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step5')}>
         <Text style={styles.topicos}>
-          {checkedItems.step5 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>5</Text> Juntar tudo em uma vazilha grande adicionando todos os ingredientes e a maionese no final.
+          {checkedItems.step5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>5</Text> Juntar tudo em uma vazilha grande adicionando todos os ingredientes e a maionese no final.
         </Text>
       </TouchableOpacity>  <TouchableOpacity onPress={() => toggleCheck('step6')}>
         <Text style={styles.topicos}>
-          {checkedItems.step6 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>6</Text> Bom Apetite!
+          {checkedItems.step6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>6</Text> Bom Apetite!
         </Text>
       </TouchableOpacity>  
     </ScrollView>

@@ -60,9 +60,7 @@ export default function App() {
                 Sal à gosto.
               </Text>
             </TouchableOpacity>
-          </View>
-
-          <View style={styles.ingredientesColuna}>
+          
             <TouchableOpacity onPress={() => toggleCheck('item3')}>
               <Text style={styles.topicos}>
                 {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}

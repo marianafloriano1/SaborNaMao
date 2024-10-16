@@ -109,8 +109,8 @@ export default function App() {
                 3 xícaras de farinha de milho grossa
               </Text>
             </TouchableOpacity>
-          </View>
-          <View style={styles.ingredientesColuna}>
+
+          
             <TouchableOpacity onPress={() => toggleCheck('item8')}>
               <Text style={styles.topicos}>
                 {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} 

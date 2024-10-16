@@ -129,7 +129,7 @@ export default function App() {
             <Text style={styles.texto3}>Minhocas Nojentas</Text>
           </View>
         </Pressable>
-        <Image source={require('../../img/junina.png')} style={styles.imagemm}></Image>
+
   
       </View>
       </ScrollView>

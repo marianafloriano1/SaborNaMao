@@ -28,7 +28,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('kids')}>
+        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('mamaes')}>
           <FontAwesome name="arrow-circle-left" size={28} color="#609f84" />
         </TouchableOpacity>
 

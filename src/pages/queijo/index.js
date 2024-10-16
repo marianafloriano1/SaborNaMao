@@ -13,6 +13,9 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
     step1: false,
     step2: false,
     step3: false,
@@ -56,42 +59,42 @@ export default function App() {
       <View style={styles.ingredientesColuna}>
         <TouchableOpacity onPress={() => toggleCheck('item1')}>
           <Text style={styles.topicos}>
-            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 400 g de queijo ralado grosso de fácil derretimento.
+            {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 400 g de queijo ralado grosso de fácil derretimento.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item2')}>
           <Text style={styles.topicos}>
-            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}  4 colheres de sopa de amido de milho.
+            {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}  4 colheres de sopa de amido de milho.
           </Text>
         </TouchableOpacity>
 
 
         <TouchableOpacity onPress={() => toggleCheck('item3')}>
           <Text style={styles.topicos}>
-            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 1 ovo.
+            {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 ovo.
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => toggleCheck('item4')}>
           <Text style={styles.topicos}>
-            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} 1 colher (sopa) de sal.
+            {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 colher (sopa) de sal.
           </Text>
         </TouchableOpacity>
         
         <TouchableOpacity onPress={() => toggleCheck('item5')}>
           <Text style={styles.topicos}>
-            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} 1 cebola picada.
+            {checkedItems.item5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 cebola picada.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item6')}>
           <Text style={styles.topicos}>
-            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} 1/2 xícara (chá) de azeite.
+            {checkedItems.item6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1/2 xícara (chá) de azeite.
           </Text>
         </TouchableOpacity>
         
         <TouchableOpacity onPress={() => toggleCheck('item7')}>
           <Text style={styles.topicos}>
-            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} 1 lata de milho verde (escorrido).
+            {checkedItems.item7 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 lata de milho verde (escorrido).
           </Text>
         </TouchableOpacity>
         
@@ -105,22 +108,22 @@ export default function App() {
     <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
       <Text style={styles.topicos}>
-        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Em um recipiente grande, adicione todos os ingredientes e misture bem, com as mãos, até formar uma massa lisinha e que não grude.
+        {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1.</Text>Em um recipiente grande, adicione todos os ingredientes e misture bem, com as mãos, até formar uma massa lisinha e que não grude.
       </Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => toggleCheck('step2')}>
       <Text style={styles.topicos}>
-        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Pegue pequenas porções da massa e forme bolinhas.
+        {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2.</Text>Pegue pequenas porções da massa e forme bolinhas.
       </Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => toggleCheck('step3')}>
       <Text style={styles.topicos}>
-        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Transfira para a air fryer, preaquecida a 180 ºC, por cerca de 20 minutos ou até dourarem.
+        {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3.</Text>Transfira para a air fryer, preaquecida a 180 ºC, por cerca de 20 minutos ou até dourarem.
       </Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => toggleCheck('step4')}>
       <Text style={styles.topicos}>
-        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text>Agora é só servir.
+        {checkedItems.step4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4.</Text>Agora é só servir.
       </Text>
     </TouchableOpacity>
  

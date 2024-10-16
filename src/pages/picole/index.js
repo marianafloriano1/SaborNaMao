@@ -39,7 +39,7 @@ export default function App() {
       
 
 <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('kids')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#609f84" />
+<FontAwesome name="arrow-circle-left" size={28} color="#92ab79" />
 </TouchableOpacity>
 
 
@@ -56,13 +56,13 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}Iogurte natural
+              {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}Iogurte natural
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}Frutas em pedacinho (morango, manga, kiwi, abacate…)
+              {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}Frutas em pedacinho (morango, manga, kiwi, abacate…)
             </Text>
           </TouchableOpacity>
          
@@ -75,17 +75,17 @@ export default function App() {
     <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Coloque o iogurte e as frutas em forminhas de picolé.
+          {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Coloque o iogurte e as frutas em forminhas de picolé.
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleCheck('step2')}>
         <Text style={styles.topicos}>
-          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2</Text> Coloque no freezer por no minímo 2 horas.
+          {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text> Coloque no freezer por no minímo 2 horas.
         </Text>
       </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('step3')}>
         <Text style={styles.topicos}>
-          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3</Text>Sirva.
+          {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3</Text>Sirva.
         </Text>
       </TouchableOpacity> 
      

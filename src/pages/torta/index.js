@@ -13,6 +13,10 @@ export default function App() {
     item2: false,
     item3: false,
     item4: false,
+    item5: false,
+    item6: false,
+    item7: false,
+    item8: false,
     step1: false,
     step2: false,
     step3: false,
@@ -56,47 +60,47 @@ export default function App() {
       <View style={styles.ingredientesColuna}>
         <TouchableOpacity onPress={() => toggleCheck('item1')}>
           <Text style={styles.topicos}>
-            {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''} 12 colheres de farinha de trigo.
+            {checkedItems.item1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 12 colheres de farinha de trigo.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item2')}>
           <Text style={styles.topicos}>
-            {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''} 3 ovos inteiros.
+            {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 3 ovos inteiros.
           </Text>
         </TouchableOpacity>
 
       <View style={styles.ingredientesColuna}>
         <TouchableOpacity onPress={() => toggleCheck('item3')}>
           <Text style={styles.topicos}>
-            {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''} 2 copos de leite.
+            {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 2 copos de leite.
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => toggleCheck('item4')}>
           <Text style={styles.topicos}>
-            {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} 100 g de mussarela ralada (opcional).
+            {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 100 g de mussarela ralada (opcional).
           </Text>
         </TouchableOpacity>
         </View>
         <TouchableOpacity onPress={() => toggleCheck('item5')}>
           <Text style={styles.topicos}>
-            {checkedItems.item5 ? <Text style={styles.check}>✓ </Text> : ''} 1 copo de óleo.
+            {checkedItems.item5 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 copo de óleo.
           </Text>
         </TouchableOpacity>
         
         <TouchableOpacity onPress={() => toggleCheck('item6')}>
           <Text style={styles.topicos}>
-            {checkedItems.item6 ? <Text style={styles.check}>✓ </Text> : ''} Sal à gosto.
+            {checkedItems.item6 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} Sal à gosto.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item7')}>
           <Text style={styles.topicos}>
-            {checkedItems.item7 ? <Text style={styles.check}>✓ </Text> : ''} 1 colher de fermento.
+            {checkedItems.item7 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 colher de fermento.
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleCheck('item8')}>
           <Text style={styles.topicos}>
-            {checkedItems.item8 ? <Text style={styles.check}>✓ </Text> : ''} Recheio a gosto (ex frango, sardinha, etc).
+            {checkedItems.item8 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} Recheio a gosto (ex frango, sardinha, etc).
           </Text>
         </TouchableOpacity>
 
@@ -107,22 +111,22 @@ export default function App() {
     <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
     <TouchableOpacity onPress={() => toggleCheck('step1')}>
       <Text style={styles.topicos}>
-        {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1.</Text>Bata todos os ingredientes no liquidificador.
+        {checkedItems.step1 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1.</Text>Bata todos os ingredientes no liquidificador.
       </Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => toggleCheck('step2')}>
       <Text style={styles.topicos}>
-        {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>2.</Text>Depois coloque a metade da massa em uma forma untada e coloque o recheio.
+        {checkedItems.step2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2.</Text>Depois coloque a metade da massa em uma forma untada e coloque o recheio.
       </Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => toggleCheck('step3')}>
       <Text style={styles.topicos}>
-        {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>3.</Text>Depois coloque o resto da massa.
+        {checkedItems.step3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3.</Text>Depois coloque o resto da massa.
       </Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => toggleCheck('step4')}>
       <Text style={styles.topicos}>
-        {checkedItems.step4 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>4.</Text> Leve para assar até ficar dourado.
+        {checkedItems.step4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>4.</Text> Leve para assar até ficar dourado.
       </Text>
     </TouchableOpacity>
 
