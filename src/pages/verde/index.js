@@ -1,9 +1,7 @@
-  
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
 
 export default function App() {
   const nav = useNavigation();
@@ -14,13 +12,8 @@ export default function App() {
     item3: false,
     item4: false,
     step1: false,
-    step2: false,
-    step3: false,
-    step4: false,
-    step5: false,
   });
 
-  // Função para alternar a marcação de um item
   const toggleCheck = (item) => {
     setCheckedItems((prevState) => ({
       ...prevState,
@@ -28,70 +21,58 @@ export default function App() {
     }));
   };
 
-  
-
   return (
     <View style={styles.container}>
-      
-     
       <ScrollView showsVerticalScrollIndicator={false}>
+        <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('sucos')}>
+          <FontAwesome name="arrow-circle-left" size={28} color="#ffc19a" />
+        </TouchableOpacity>
 
-      
-
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('sucos')}>
-<FontAwesome name="arrow-circle-left" size={28} color="#ffc19a" />
-</TouchableOpacity>
-
-
-      <View style={styles.row}>
-        
-        <Text style={styles.paragraph}>
-          Suco de Verde
-        </Text>
-      </View>
-
-
-    <Text style={styles.ingredientes}>INGREDIENTES</Text>
- 
-      
-    <View style={styles.ingredientesContainer}>
-        <View style={styles.ingredientesColuna}>
-          <TouchableOpacity onPress={() => toggleCheck('item1')}>
-            <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : ''}1 folha grande de couve manteiga orgânica
-            </Text>
-          </TouchableOpacity>
-        
-          <TouchableOpacity onPress={() => toggleCheck('item2')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : ''}suco de 1 limão tahiti
-            </Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : ''}1 rodela de gengibre
-            </Text>
-          </TouchableOpacity>    
-         
-           <TouchableOpacity onPress={() => toggleCheck('item4')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : ''} 200ml de água OU água de coco
-            </Text>
-          </TouchableOpacity>    
+        <View style={styles.row}>
+          <Text style={styles.paragraph}>Suco de Verde</Text>
         </View>
-      </View>
 
-    <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
-    <TouchableOpacity onPress={() => toggleCheck('step1')}>
-        <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : ''} <Text style={styles.numero}>1</Text>Bata tudo no liquidificador e sirva. Não precisa coar e não adoçar.
-        </Text>
-      </TouchableOpacity>
-    </ScrollView>
-  </View>
-);
+        <Text style={styles.ingredientes}>INGREDIENTES</Text>
+
+        <View style={styles.ingredientesContainer}>
+          <View style={styles.ingredientesColuna}>
+            <TouchableOpacity onPress={() => toggleCheck('item1')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}1 folha grande de couve manteiga orgânica
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item2')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}suco de 1 limão tahiti
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item3')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}1 rodela de gengibre
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => toggleCheck('item4')}>
+              <Text style={styles.topicos}>
+                {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}200ml de água OU água de coco
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <Text style={styles.ingredientes}>MODO DE PREPARO</Text>
+        <TouchableOpacity onPress={() => toggleCheck('step1')}>
+          <Text style={styles.topicos}>
+            {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Bata tudo no liquidificador e sirva. Não precisa coar e não adoçar.
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
+  );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -110,11 +91,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     color: '#ffc19a',
   },
-ingrediente: {
-    fontSize: 17,
-    marginBottom: 15,
-    color: '#ffc19a',
-  },
   ingredientes: {
     marginTop: 50,
     fontSize: 16,
@@ -127,7 +103,6 @@ ingrediente: {
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-
   topicos: {
     marginBottom: 10,
     lineHeight: 24,
@@ -140,6 +115,10 @@ ingrediente: {
   },
   check: {
     color: '#32CD32', // Cor verde para o check
+    fontSize: 20,
+    marginRight: 5,
+  },
+  bolinha: {
     fontSize: 20,
     marginRight: 5,
   },

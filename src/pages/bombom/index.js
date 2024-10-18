@@ -50,7 +50,7 @@ export default function App() {
       <View style={styles.row}>
         
         <Text style={styles.paragraph}>
-          Bom Bom de Banana Vegano
+          BomBom de Banana Vegano
         </Text>
       </View>
 

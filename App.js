@@ -156,7 +156,13 @@ import Frutas from './src/pages/frutas';
 import Saladabatata from './src/pages/saladabatata';
 import Lombo from './src/pages/lombo';
 import Risoto from './src/pages/risoto';
-
+import Festa from './src/pages/festa';
+import Espetinho from './src/pages/espetinho';
+import Tartare from './src/pages/tartare';
+import Queijo_festa from './src/pages/queijo_festa';
+import Espetinho_camarao from './src/pages/espetinho_camarao';
+import Ostras from './src/pages/ostras';
+import Canapes from './src/pages/canapes';
 
 
 
@@ -490,6 +496,22 @@ export default function App() {
 <Stack.Screen name="lombo" component={Lombo} options={{ headerShown: false }}/>
 
 <Stack.Screen name="coxa" component={Coxa} options={{ headerShown: false }}/>
+
+
+
+<Stack.Screen name="festa" component={Festa} options={{ headerShown: false }}/>
+
+<Stack.Screen name="espetinho" component={Espetinho} options={{ headerShown: false }}/>
+
+<Stack.Screen name="tartare" component={Tartare} options={{ headerShown: false }}/>
+
+<Stack.Screen name="queijo_festa" component={Queijo_festa} options={{ headerShown: false }}/>
+
+<Stack.Screen name="espetinho_camarao" component={Espetinho_camarao} options={{ headerShown: false }}/>
+
+<Stack.Screen name="ostras" component={Ostras} options={{ headerShown: false }}/>
+
+<Stack.Screen name="canapes" component={Canapes} options={{ headerShown: false }}/>
       </Stack.Navigator>
      
     </NavigationContainer>

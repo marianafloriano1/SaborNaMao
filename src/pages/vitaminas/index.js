@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
   },
 
   imagemm:{
-    width: 100,
+    width: 140,
     height: 80,
     marginLeft:150,
     borderRadius: 30,

@@ -115,6 +115,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    width: 'auto',
+    height: 'auto'
     
   },
   texto_cima: {

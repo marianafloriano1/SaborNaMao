@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -52,15 +52,16 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('vitaminas')}>
-          <FontAwesome name="arrow-circle-left" size={28} color="#f28d76" />
-        </TouchableOpacity>
+<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('festa')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#efd5ac" />
+</TouchableOpacity>
+
 
       <View style={styles.row}>
   
         <Text style={styles.paragraph}>
-        Vitamina de maçã
-        </Text>
+Canapés de Carpaccio
+         </Text>
       </View>
 
       <Text style={styles.ingredientes}>  INGREDIENTES</Text>
@@ -69,39 +70,47 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}1 maçã vermelha com casca e sem sementes;
+              {checkedItems.item1 ?  <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}Carpaccio de carne (fatiado fino)
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}1 copo de leite desnatado gelado;
+              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}Parmesão ralado
+            </Text>
+          </TouchableOpacity>
+    
+          <TouchableOpacity onPress={() => toggleCheck('item3')}>
+            <Text style={styles.topicos}> 
+              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}Rúcula
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}adoçante a gosto;
-            </Text>
-          </TouchableOpacity>
-           <TouchableOpacity onPress={() => toggleCheck('item4')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}2 gotas de essência de baunilha.
+              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}Azeite trufado
             </Text>
           </TouchableOpacity>
        
+        
           
         </View>
-      </View>
+      </View> 
 
       <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
       <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Leve todos os ingredientes para bater no liquidificador até ficar homogêneo. Sirva em seguida!
+          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Em pequenos pedaços de pão ou torradinhas, coloque uma fatia de carpaccio, algumas folhas de rúcula e finalize com parmesão ralado.
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step2')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text>Regue com azeite trufado para um toque sofisticado.
+        </Text>
+      </TouchableOpacity>
+       
      
      
-     
+      
     </View>
   );
 }
@@ -122,14 +131,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'left',
     marginLeft: 10,
-    color: '#f28d76',
+    color: '#efd5ac',
   },
-
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
+    color: '#abcb95',
+  },
   ingredientes: {
     marginTop: 50,
     fontSize: 16,
     marginBottom: 15,
-    backgroundColor: '#f28d76',
+    backgroundColor: '#efd5ac',
     paddingVertical: 5,
   },
   ingredientesContainer: {
@@ -146,13 +159,13 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   numero: {
-    color: '#f28d76',
+    color: '#efd5ac',
     fontWeight: 'bold',
     fontSize: 19,
     margin: 6,
   },
   check: {
-    color: '#32CD32', // Cor verde para o check
+    color: '#abcb95', // Cor verde para o check
     fontSize: 20,
     marginRight: 5,
   },

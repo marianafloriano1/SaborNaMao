@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
    imagemm:{
     width: '100%',
     height: 200,
-    marginTop: 30
+    marginTop: 5
 
     },
     imagem:{

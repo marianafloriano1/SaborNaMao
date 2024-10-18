@@ -121,7 +121,8 @@ const styles = StyleSheet.create({
    imagemm:{
     width: 420,
     height: 350,
-    marginTop: 20
+    marginTop: 80,
+    marginLeft: 3
 
     },
     imagem:{

@@ -68,7 +68,7 @@ export default function App() {
             <TouchableOpacity onPress={() => toggleCheck('item2')}>
               <Text style={styles.topicos}>
                 {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}
-                açúcar a gosto
+                Açúcar a gosto
               </Text>
             </TouchableOpacity>
 

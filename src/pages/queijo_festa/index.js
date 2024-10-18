@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity , ScrollView} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -51,15 +52,13 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
-<TouchableOpacity style={styles.seta} onPress={() => nav.navigate('vitaminas')}>
-          <FontAwesome name="arrow-circle-left" size={28} color="#f28d76" />
-        </TouchableOpacity>
-
+                    <TouchableOpacity style={styles.seta} onPress={() => nav.navigate('festa')}>
+<FontAwesome name="arrow-circle-left" size={28} color="#efd5ac" />
+</TouchableOpacity>
       <View style={styles.row}>
   
         <Text style={styles.paragraph}>
-        Vitamina de maçã
+Queijo Brie com Geleia
         </Text>
       </View>
 
@@ -69,39 +68,45 @@ export default function App() {
         <View style={styles.ingredientesColuna}>
           <TouchableOpacity onPress={() => toggleCheck('item1')}>
             <Text style={styles.topicos}>
-              {checkedItems.item1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}1 maçã vermelha com casca e sem sementes;
+              {checkedItems.item1 ?  <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>}Massa folhada pronta
             </Text>
           </TouchableOpacity>
         
           <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}1 copo de leite desnatado gelado;
+              {checkedItems.item2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}Queijo brie
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}> 
-              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}adoçante a gosto;
-            </Text>
-          </TouchableOpacity>
-           <TouchableOpacity onPress={() => toggleCheck('item4')}>
-            <Text style={styles.topicos}> 
-              {checkedItems.item4 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}2 gotas de essência de baunilha.
+              {checkedItems.item3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>}Geleia de damasco ou frutas vermelhas
             </Text>
           </TouchableOpacity>
        
+        
           
         </View>
-      </View>
+      </View> 
 
       <Text style={styles.ingredientes}>  MODO DE PREPARO</Text>
       <TouchableOpacity onPress={() => toggleCheck('step1')}>
         <Text style={styles.topicos}>
-          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Leve todos os ingredientes para bater no liquidificador até ficar homogêneo. Sirva em seguida!
+          {checkedItems.step1 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>1</Text>Corte a massa folhada em círculos.
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleCheck('step2')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step2 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>2</Text>Asse até dourar e recheie com um pedaço de queijo brie e uma colher de geleia.
+        </Text>
+      </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleCheck('step3')}>
+        <Text style={styles.topicos}>
+          {checkedItems.step3 ? <Text style={styles.check}>✓ </Text> : <Text style={styles.bolinha}>⚪ </Text>} <Text style={styles.numero}>3</Text>Leve ao forno brevemente para derreter o queijo.
+        </Text>
+      </TouchableOpacity> 
      
      
-     
+      
     </View>
   );
 }
@@ -122,14 +127,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'left',
     marginLeft: 10,
-    color: '#f28d76',
+    color: '#efd5ac',
   },
-
+ingrediente: {
+    fontSize: 17,
+    marginBottom: 15,
+    color: '#abcb95',
+  },
   ingredientes: {
     marginTop: 50,
     fontSize: 16,
     marginBottom: 15,
-    backgroundColor: '#f28d76',
+    backgroundColor: '#efd5ac',
     paddingVertical: 5,
   },
   ingredientesContainer: {
@@ -146,14 +155,15 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   numero: {
-    color: '#f28d76',
+    color: '#efd5ac',
     fontWeight: 'bold',
     fontSize: 19,
     margin: 6,
   },
   check: {
-    color: '#32CD32', // Cor verde para o check
+    color: '#abcb95', // Cor verde para o check
     fontSize: 20,
     marginRight: 5,
   },
 });
+

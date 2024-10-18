@@ -141,7 +141,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    zIndex: -1
+    backgroundColor: '#fff',
+    zIndex: -1,
+    height: 100 
   },
   quadrado: {
     backgroundColor: 'rgba(253, 237, 233, 1)',
@@ -154,6 +156,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     top: 110,
+    height: 'auto'
   },
   
   scroll: {

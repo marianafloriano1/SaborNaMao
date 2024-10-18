@@ -173,11 +173,6 @@ export default function App() {
             {checkedItems.item18 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 2 dentes de alho picados.
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item19')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item19 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} Sal e pimenta-do-reino a gosto.
-          </Text>
-        </TouchableOpacity>
         <Text style={styles.ingredientes}>CREME</Text>
         <TouchableOpacity onPress={() => toggleCheck('item20')}>
           <Text style={styles.topicos}>
@@ -194,11 +189,7 @@ export default function App() {
             {checkedItems.item22 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1 copo de requeijão cremoso (200g).
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => toggleCheck('item23')}>
-          <Text style={styles.topicos}>
-            {checkedItems.item23 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} Sal a gosto.
-          </Text>
-        </TouchableOpacity>
+
         
         
 

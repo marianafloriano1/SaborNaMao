@@ -60,7 +60,7 @@ export default function App() {
             </Text>
           </TouchableOpacity>
         
-          <TouchableOpacity onPress={() => toggleCheck('item3')}>
+          <TouchableOpacity onPress={() => toggleCheck('item2')}>
             <Text style={styles.topicos}>
               {checkedItems.item2 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 2 colheres (chá) de azeite
             </Text>
@@ -68,14 +68,14 @@ export default function App() {
         
        
        
-          <TouchableOpacity onPress={() => toggleCheck('item8')}>
+          <TouchableOpacity onPress={() => toggleCheck('item3')}>
             <Text style={styles.topicos}>
-              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} ¼ de xícara (chá) de fubá (ou farinha de trigo)
+              {checkedItems.item3 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} 1/4 de xícara (chá) de fubá (ou farinha de trigo)
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleCheck('item9')}>
+          <TouchableOpacity onPress={() => toggleCheck('item4')}>
             <Text style={styles.topicos}>
-              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} sal
+              {checkedItems.item4 ? <Text style={styles.check}>✓</Text> : <Text style={styles.bolinha}>⚪ </Text>} Sal
             </Text>
           </TouchableOpacity>
          

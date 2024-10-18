@@ -14,8 +14,8 @@ export default function App() {
     { title: 'Páscoa', image: require('../../img/Pascoa.png'), route: 'pascoa' },
     { title: 'Arraiá', image: require('../../img/arraia.png'), route: 'festa_junina' },
     { title: 'Halloween', image: require('../../img/halloween.png'), route: 'halloween' },
-    { title: 'Ano Novo', image: require('../../img/anonovo.PNG'), route: 'ano_novo' },
-    { title: 'Festas', image: require('../../img/brilhar.PNG'), route: 'festa_junina' },
+    { title: 'Ano Novo', image: require('../../img/anonovo.png'), route: 'ano_novo' },
+    { title: 'Festas', image: require('../../img/brilhar.png'), route: 'festa' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,7 +46,7 @@ export default function App() {
         <View style={styles.fundo}>
           <View style={styles.row}>
             <Text style={styles.text}>Sabor na Mão</Text>
-            <Image style={styles.img} source={require('../../img/lll.PNG')} />
+            <Image style={styles.img} source={require('../../img/lll.png')} />
           </View>
 
           <Text style={styles.textoo}>Feriados e datas comemorativas:</Text>
@@ -87,7 +87,7 @@ export default function App() {
             <View style={styles.buttonSplit}>
               <View style={styles.leftSide} />
               <View style={styles.rightSide} />
-              <Image style={styles.buttonImage1} source={require('../../img/kids.PNG')} />
+              <Image style={styles.buttonImage1} source={require('../../img/kids.png')} />
               <Text style={styles.texto1}>Kids</Text>
             </View>
           </TouchableOpacity>

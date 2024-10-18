@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
    imagemm:{
     width: '100%',
     height: 200,
-    marginTop: 150
+    marginTop: 180
 
     },
     imagem:{
